@@ -87,7 +87,7 @@ def main():
     ff = subprocess.Popen([
         "ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
         "-s", f"{C.W}x{C.H}", "-r", str(C.FPS), "-i", "-",
-        "-c:v", "libx264", "-preset", "slow", "-crf", "17", "-pix_fmt", "yuv420p",
+        "-c:v", "libx264", "-preset", "slow", "-crf", "21", "-pix_fmt", "yuv420p",
         "-profile:v", "high", "-movflags", "+faststart", silent], stdin=subprocess.PIPE)
 
     import multiprocessing as mp
