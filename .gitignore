@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+build/
+models/
+output/*.mp4.part
