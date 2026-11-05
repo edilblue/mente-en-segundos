@@ -1,57 +1,57 @@
 {
   "fps": 30,
-  "durationInFrames": 2007,
+  "durationInFrames": 1900,
   "voice": "gemini-3.8-flash-tts / Orus",
   "scenes": [
     {
       "id": "hook",
       "from": 0,
-      "len": 198
+      "len": 185
     },
     {
       "id": "context",
-      "from": 198,
-      "len": 170
+      "from": 185,
+      "len": 163
     },
     {
       "id": "day1",
-      "from": 368,
-      "len": 183
+      "from": 348,
+      "len": 176
     },
     {
       "id": "day23",
-      "from": 551,
-      "len": 165
+      "from": 524,
+      "len": 152
     },
     {
       "id": "brain",
-      "from": 716,
-      "len": 226
+      "from": 676,
+      "len": 214
     },
     {
       "id": "day4",
-      "from": 942,
-      "len": 268
+      "from": 890,
+      "len": 255
     },
     {
       "id": "day9",
-      "from": 1210,
-      "len": 257
+      "from": 1145,
+      "len": 243
     },
     {
       "id": "payoff",
-      "from": 1467,
-      "len": 248
+      "from": 1388,
+      "len": 234
     },
     {
       "id": "guinness",
-      "from": 1715,
-      "len": 131
+      "from": 1622,
+      "len": 124
     },
     {
       "id": "outro",
-      "from": 1846,
-      "len": 161
+      "from": 1746,
+      "len": 154
     }
   ],
   "lines": [
@@ -59,97 +59,97 @@
       "id": "h1",
       "scene": "hook",
       "start": 4,
-      "end": 89
+      "end": 83
     },
     {
       "id": "h2",
       "scene": "hook",
-      "start": 96,
-      "end": 192
+      "start": 89,
+      "end": 179
     },
     {
       "id": "c1",
       "scene": "context",
-      "start": 205,
-      "end": 362
+      "start": 192,
+      "end": 342
     },
     {
       "id": "d1",
       "scene": "day1",
-      "start": 375,
-      "end": 545
+      "start": 355,
+      "end": 518
     },
     {
       "id": "d2",
       "scene": "day23",
-      "start": 558,
-      "end": 638
+      "start": 531,
+      "end": 604
     },
     {
       "id": "d3",
       "scene": "day23",
-      "start": 644,
-      "end": 710
+      "start": 610,
+      "end": 670
     },
     {
       "id": "b1",
       "scene": "brain",
-      "start": 724,
-      "end": 859
+      "start": 683,
+      "end": 814
     },
     {
       "id": "b2",
       "scene": "brain",
-      "start": 866,
-      "end": 936
+      "start": 821,
+      "end": 884
     },
     {
       "id": "d4",
       "scene": "day4",
-      "start": 950,
-      "end": 1104
+      "start": 898,
+      "end": 1045
     },
     {
       "id": "d4b",
       "scene": "day4",
-      "start": 1110,
-      "end": 1204
+      "start": 1052,
+      "end": 1139
     },
     {
       "id": "d9",
       "scene": "day9",
-      "start": 1218,
-      "end": 1312
+      "start": 1152,
+      "end": 1239
     },
     {
       "id": "d11",
       "scene": "day9",
-      "start": 1319,
-      "end": 1461
+      "start": 1246,
+      "end": 1382
     },
     {
       "id": "p1",
       "scene": "payoff",
-      "start": 1475,
-      "end": 1612
+      "start": 1395,
+      "end": 1526
     },
     {
       "id": "p2",
       "scene": "payoff",
-      "start": 1619,
-      "end": 1709
+      "start": 1532,
+      "end": 1616
     },
     {
       "id": "g1",
       "scene": "guinness",
-      "start": 1723,
-      "end": 1840
+      "start": 1630,
+      "end": 1740
     },
     {
       "id": "o1",
       "scene": "outro",
-      "start": 1853,
-      "end": 1952
+      "start": 1754,
+      "end": 1846
     }
   ]
 }

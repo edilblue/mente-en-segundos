@@ -36,7 +36,7 @@ LINES = [
 def load(path):
     pcm = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-f", "f32le", "-ac", "1", "-ar", str(SR), "-"],
                          check=True, capture_output=True).stdout
-    return np.frombuffer(pcm, dtype=np.float32).copy()
+    return drop_tail_artifact(np.frombuffer(pcm, dtype=np.float32).copy())
 
 
 def silences(a, min_len=0.2):
@@ -57,6 +57,34 @@ def silences(a, min_len=0.2):
         else:
             i += 1
     return out
+
+
+def drop_tail_artifact(a, max_burst=0.35, min_gap=0.15):
+    """Gemini TTS a veces añade un ruido corto (~0.1 s) al final de cada toma,
+    después de un silencio. Si tras el último silencio queda menos de
+    `max_burst` s de sonido, se elimina."""
+    hop = int(0.01 * SR)
+    n = len(a) // hop
+    if n < 10:
+        return a
+    rms = np.sqrt((a[: n * hop].reshape(n, hop) ** 2).mean(1) + 1e-12)
+    thr = max(0.06 * np.percentile(rms, 95), 1e-4)
+    loud = np.nonzero(rms >= thr)[0]
+    if not len(loud):
+        return a
+    end = loud[-1]
+    # busca hacia atrás el último hueco silencioso de al menos min_gap
+    i = end
+    while i > 0 and rms[i] >= thr:
+        i -= 1
+    burst = (end - i) * 0.01
+    j = i
+    while j > 0 and rms[j] < thr:
+        j -= 1
+    gap = (i - j) * 0.01
+    if burst <= max_burst and gap >= min_gap and j > 0:
+        return a[: (j + 1) * hop + int(0.12 * SR)]
+    return a
 
 
 def trim(a, thr=0.004):
