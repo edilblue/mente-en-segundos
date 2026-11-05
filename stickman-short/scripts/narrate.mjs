@@ -121,48 +121,39 @@ function silenceList(f, minDur = 0.2) {
 
 const manifest = [];
 for (const line of VOICE_LINES) {
-  const tag = JSON.stringify({t: line.text, s: line.style ?? '', v: VOICE, m: MODEL});
+  const tag = JSON.stringify({t: line.text, v: VOICE, m: MODEL});
   const raw = path.join(outDir, `${line.id}_raw.wav`);
   const metaF = path.join(outDir, `${line.id}_raw.json`);
-  const cached = fs.existsSync(raw) && fs.existsSync(metaF) && fs.readFileSync(metaF, 'utf8') === tag;
-  const words = line.text.split(/\s+/).length;
-  const expected = words / 2.6 + 0.6;
-  if (!cached) {
-    const styled = `Say in Latin American Spanish, as an energetic and fun YouTube Shorts narrator${line.style ? ', ' + line.style : ''}: "${line.text}"`;
-    let d = toWav(await tts(styled), raw);
-    if (d > expected * 2 + 1.5) {
-      // Probablemente leyó la instrucción en voz alta: reintento solo con el texto.
-      console.warn(`  ${line.id}: ${d.toFixed(1)} s es demasiado largo (esperado ~${expected.toFixed(1)} s); reintento sin indicaciones`);
-      d = toWav(await tts(line.text), raw);
-    }
-    fs.writeFileSync(metaF, tag);
-  } else {
+  if (fs.existsSync(raw) && fs.existsSync(metaF) && fs.readFileSync(metaF, 'utf8') === tag) {
     console.log(`  ${line.id}: en caché`);
+  } else {
+    // Solo el texto: con indicaciones de estilo el modelo a veces las lee en voz alta.
+    const d = toWav(await tts(line.text), raw);
+    const words = line.text.split(/\s+/).length;
+    console.log(`  ${line.id}: generado ${d.toFixed(2)} s (${words} palabras)`);
+    fs.writeFileSync(metaF, tag);
   }
 
-  if (line.split) {
-    // Cuenta regresiva: cortar por los 3 silencios más largos.
-    const total = dur(raw);
-    const sil = silenceList(raw, 0.12).filter(([a, b]) => a > 0.05 && b < total - 0.05);
-    const gaps = [...sil].sort((x, y) => y[1] - y[0] - (x[1] - x[0])).slice(0, line.split.length - 1).sort((x, y) => x[0] - y[0]);
-    if (gaps.length === line.split.length - 1) {
-      const cuts = [0, ...gaps.map(([a, b]) => (a + b) / 2), total];
-      for (let k = 0; k < line.split.length; k++) {
-        const seg = path.join(outDir, `${line.id}_${k}_seg.wav`);
-        execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', raw, '-ss', String(cuts[k]), '-to', String(cuts[k + 1]), '-af', TRIM, seg]);
-        const slot = k + 1 < line.split.length ? line.split[k + 1] - line.split[k] : 1.8;
-        const dst = path.join(outDir, `${line.id}_${k}.wav`);
-        const d = fit(seg, dst, slot, `${line.id}.${k}`);
-        fs.rmSync(seg);
-        manifest.push({id: `${line.id}_${k}`, file: `audio/voz/${line.id}_${k}.wav`, start: line.split[k], duration: d});
-      }
-      continue;
-    }
-    console.warn(`  ${line.id}: no encontré ${line.split.length - 1} pausas; uso el clip entero`);
+  const n = line.parts.length;
+  const total = dur(raw);
+  let cuts = [0, total];
+  if (n > 1) {
+    const sil = silenceList(raw, 0.12).filter(([a, b]) => a > 0.15 && b < total - 0.15);
+    const gaps = [...sil].sort((x, y) => y[1] - y[0] - (x[1] - x[0])).slice(0, n - 1).sort((x, y) => x[0] - y[0]);
+    if (gaps.length === n - 1) cuts = [0, ...gaps.map(([a, b]) => (a + b) / 2), total];
+    else console.warn(`  ${line.id}: no encontré ${n - 1} pausas; uso el clip entero en ${line.parts[0].start} s`);
   }
-  const dst = path.join(outDir, `${line.id}.wav`);
-  const d = fit(raw, dst, line.slot, line.id);
-  manifest.push({id: line.id, file: `audio/voz/${line.id}.wav`, start: line.start, duration: d});
+  const pieces = cuts.length - 1;
+  for (let k = 0; k < pieces; k++) {
+    const part = line.parts[k];
+    const slot = (pieces === 1 ? line.parts[n - 1].end : part.end) - part.start;
+    const seg = path.join(outDir, `${line.id}_${k}_seg.wav`);
+    execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', raw, '-ss', cuts[k].toFixed(3), '-to', cuts[k + 1].toFixed(3), '-af', TRIM, seg]);
+    const dst = path.join(outDir, `${line.id}_${k}.wav`);
+    const d = fit(seg, dst, slot, `${line.id}.${k}`);
+    fs.rmSync(seg);
+    manifest.push({id: `${line.id}_${k}`, file: `audio/voz/${line.id}_${k}.wav`, start: part.start, duration: d});
+  }
 }
 
 fs.writeFileSync(
