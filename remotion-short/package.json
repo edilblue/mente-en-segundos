@@ -1,0 +1,21 @@
+{
+  "name": "short-sin-dormir",
+  "version": "1.0.0",
+  "private": true,
+  "description": "YouTube Short: ¿Qué pasaría si dejaras de dormir? (Remotion)",
+  "scripts": {
+    "studio": "remotion studio",
+    "render": "remotion render SinDormir out/short.mp4",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.540",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.540"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.8",
+    "typescript": "5.8.3"
+  }
+}
