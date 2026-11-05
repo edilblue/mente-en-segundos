@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, Easing, interpolate, interpolateColors, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Captions} from '../components/Captions';
 import {Chip} from '../components/Chip';
-import {voiceWindow} from '../narration';
+import {voiceWindow, wordTimes} from '../narration';
 import {CYAN, FONT, PINK} from '../theme';
 
 const COUNT_END = 150;
@@ -112,6 +112,7 @@ export const StepRecord: React.FC = () => {
         text="El récord registrado es de Randy Gardner: 11 días sin dormir en 1964"
         start={voiceWindow('step3').start}
         end={voiceWindow('step3').end}
+      times={wordTimes('step3')}
         top={1170}
         fontSize={74}
         highlights={{randy: CYAN, gardner: CYAN, '11': PINK, días: PINK, '1964': CYAN}}

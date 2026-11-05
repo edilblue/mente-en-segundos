@@ -3,7 +3,7 @@ import {AbsoluteFill, Easing, interpolate, spring, useCurrentFrame, useVideoConf
 import {Captions} from '../components/Captions';
 import {Chip} from '../components/Chip';
 import {Clock} from '../components/Clock';
-import {voiceWindow} from '../narration';
+import {voiceWindow, wordTimes} from '../narration';
 import {CYAN, PINK} from '../theme';
 
 const REACH = 120; // frame en que el reloj llega a 24h
@@ -39,6 +39,7 @@ export const StepClock: React.FC = () => {
         text="Después de 24 horas despierto, tus reflejos se parecen a los de alguien que bebió alcohol"
         start={voiceWindow('step1').start}
         end={voiceWindow('step1').end}
+      times={wordTimes('step1')}
         top={1110}
         fontSize={72}
         highlights={{'24': CYAN, horas: CYAN, reflejos: PINK, alcohol: PINK}}

@@ -6,6 +6,7 @@ type Props = {
   text: string;
   start: number; // frame (local) en que aparece la primera palabra
   end: number; // frame (local) en que aparece la última palabra
+  times?: number[]; // frame exacto de cada palabra (sincronizado con la voz)
   highlights?: Record<string, string>; // palabra (sin signos) -> color
   fontSize?: number;
   top: number;
@@ -27,11 +28,11 @@ export const wordStarts = (text: string, start: number, end: number) => {
   });
 };
 
-export const Captions: React.FC<Props> = ({text, start, end, highlights = {}, fontSize = 78, top}) => {
+export const Captions: React.FC<Props> = ({text, start, end, times, highlights = {}, fontSize = 78, top}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const words = text.split(' ');
-  const starts = wordStarts(text, start, end);
+  const starts = times && times.length === words.length ? times : wordStarts(text, start, end);
 
   return (
     <div
