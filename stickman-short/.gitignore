@@ -2,3 +2,4 @@ node_modules/
 out/*
 !out/short.mp4
 !out/frames/
+public/audio/voz/*_raw.*
