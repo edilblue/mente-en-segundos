@@ -64,11 +64,10 @@ export const Short: React.FC = () => {
     <AbsoluteFill style={{backgroundColor: '#060920', overflow: 'hidden'}}>
       <Background />
 
-      {/* AUDIO — voz en off generada con tools/narracion.py (Kokoro TTS local) */}
-      <Audio src={staticFile('audio/voz.wav')} />
-      {/* Música: coloca public/audio/musica.mp3 y descomenta:
-        <Audio src={staticFile('audio/musica.mp3')} volume={0.15} />
-      */}
+      {/* AUDIO — voz en off + música y FX sintetizados (tools/sonido.py) */}
+      <Audio src={staticFile('audio/voz.wav')} volume={1} />
+      <Audio src={staticFile('audio/musica.wav')} volume={0.16} />
+      <Audio src={staticFile('audio/fx.wav')} volume={0.45} />
 
       <AbsoluteFill style={{transform: `scale(${zoom})`}}>
         {/* Icono principal: cama + luna */}
