@@ -13,6 +13,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
+import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -161,6 +162,7 @@ function detectarSilencios(file) {
 
 async function pedir(url, body, intentos = 4) {
   let ultimo;
+  let esperas = 0;
   for (let i = 0; i < intentos; i++) {
     try {
       const r = await fetch(url, {
@@ -169,19 +171,32 @@ async function pedir(url, body, intentos = 4) {
         body: body ? JSON.stringify(body) : undefined,
       });
       const j = await r.json();
+      if (r.status === 429) {
+        // Límite por minuto → esperar lo que pide la API. Límite diario → pasar al siguiente modelo.
+        const msg = j?.error?.message || '';
+        const retry = (j?.error?.details || []).find((d) => d.retryDelay)?.retryDelay;
+        const seg = parseFloat(retry || (msg.match(/retry in ([\d.]+)s/) || [])[1] || '60');
+        const linea = (msg.match(/Quota exceeded for metric[^\n]*/) || [msg.split('\n')[0]])[0];
+        if (seg > 120) throw Object.assign(new Error(`429 cuota agotada (reintentar en ${Math.round(seg / 60)} min): ${linea}`), {diario: true});
+        console.log(`    … límite por minuto, esperando ${Math.ceil(seg + 2)} s (${linea.slice(0, 90)})`);
+        await new Promise((res) => setTimeout(res, (seg + 2) * 1000));
+        i--; // no cuenta como intento fallido
+        if (++esperas > 20) throw new Error('429 demasiadas esperas');
+        continue;
+      }
       if (!r.ok) throw new Error(`${r.status} ${j?.error?.message || ''}`);
       return j;
     } catch (e) {
       ultimo = e;
-      if (/\b(400|401|403|404)\b/.test(String(e.message))) break;
+      if (e.diario || /\b(400|401|403|404)\b/.test(String(e.message))) break;
       await new Promise((res) => setTimeout(res, 2000 * 2 ** i));
     }
   }
   throw ultimo;
 }
 
-async function elegirModelo() {
-  if (process.env.GEMINI_TTS_MODEL) return process.env.GEMINI_TTS_MODEL;
+async function elegirModelos() {
+  if (process.env.GEMINI_TTS_MODEL) return [process.env.GEMINI_TTS_MODEL];
   const disponibles = [];
   let token = '';
   do {
@@ -189,9 +204,9 @@ async function elegirModelo() {
     for (const m of j.models || []) disponibles.push(m.name.replace(/^models\//, ''));
     token = j.nextPageToken || '';
   } while (token);
-  for (const m of MODELOS_PREFERIDOS) if (disponibles.includes(m)) return m;
-  const tts = disponibles.filter((m) => /tts/i.test(m)).sort().reverse();
-  if (tts.length) return tts[0];
+  const tts = disponibles.filter((m) => /tts/i.test(m));
+  const orden = [...MODELOS_PREFERIDOS.filter((m) => tts.includes(m)), ...tts.filter((m) => !MODELOS_PREFERIDOS.includes(m)).sort().reverse()];
+  if (orden.length) return orden;
   throw new Error('La cuenta no expone ningún modelo de TTS');
 }
 
@@ -246,15 +261,45 @@ async function main() {
     process.exit(2);
   }
 
-  let modelo;
   try {
-    modelo = await elegirModelo();
-    console.log(`→ Modelo TTS: ${modelo} · voz: ${VOZ}`);
+    const candidatos = await elegirModelos();
+    let escenas = null;
+    let modelo = null;
+    // Un solo modelo para todas las escenas (voz consistente). Si un modelo no tiene
+    // cuota (429), se reintenta TODO con el siguiente.
+    for (const m of candidatos) {
+      try {
+        console.log(`→ Modelo TTS: ${m} · voz: ${VOZ}`);
+        escenas = await narrarTodo(m);
+        modelo = m;
+        break;
+      } catch (err) {
+        if (!err.diario && !/\b429\b/.test(String(err.message))) throw err;
+        console.warn(`  ⚠ ${m}: ${String(err.message).slice(0, 300)} → probando el siguiente modelo…`);
+      }
+    }
+    if (!escenas) throw new Error('Ningún modelo TTS tiene cuota disponible (429)');
+    guardar(escenas, {generadoCon: 'gemini', modelo, voz: VOZ});
+  } catch (err) {
+    console.error(`✖ Falló la API de Gemini (${err.message}). Se usa narracion.txt y se renderiza SIN voz.`);
+    sinAudio(`Gemini falló: ${err.message}`);
+    process.exitCode = 3;
+  }
+}
+
+async function narrarTodo(modelo) {
+  {
     fs.mkdirSync(AUDIO_DIR, {recursive: true});
     const escenas = [];
     for (const e of GUION.escenas) {
       const file = path.join(AUDIO_DIR, `escena${e.id}.wav`);
-      fs.writeFileSync(file, await sintetizar(modelo, e.texto));
+      const key = crypto.createHash('sha1').update(`${modelo}|${VOZ}|${GUION.estiloVoz}|${e.texto}`).digest('hex').slice(0, 16);
+      const cache = path.join(ROOT, '.tts-cache', `${key}.wav`);
+      if (!fs.existsSync(cache)) {
+        fs.mkdirSync(path.dirname(cache), {recursive: true});
+        fs.writeFileSync(cache, await sintetizar(modelo, e.texto));
+      }
+      fs.copyFileSync(cache, file);
       const dur = duracion(file);
       const sil = detectarSilencios(file);
       // Voz real: desde el fin del silencio inicial hasta el inicio del silencio final.
@@ -264,13 +309,11 @@ async function main() {
       const palabras = alinear(e.texto, inicio, fin, sil);
       const duracionEscena = +Math.max(e.minimo, dur + GUION.margenSegundos).toFixed(3);
       escenas.push({id: e.id, texto: e.texto, audio: `audio/narracion/escena${e.id}.wav`, duracionAudio: +dur.toFixed(3), duracion: duracionEscena, palabras});
+      const esperado = e.texto.split(/\s+/).length / 2.2;
+      if (dur > esperado * 1.9) console.warn(`  ⚠ escena ${e.id}: el audio dura mucho más de lo esperado (¿leyó la indicación de estilo?)`);
       console.log(`  escena ${e.id}: audio ${dur.toFixed(2)} s → escena ${duracionEscena.toFixed(2)} s`);
     }
-    guardar(escenas, {generadoCon: 'gemini', modelo, voz: VOZ});
-  } catch (err) {
-    console.error(`✖ Falló la API de Gemini (${err.message}). Se usa narracion.txt y se renderiza SIN voz.`);
-    sinAudio(`Gemini falló: ${err.message}`);
-    process.exitCode = 3;
+    return escenas;
   }
 }
 

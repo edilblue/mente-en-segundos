@@ -2,7 +2,7 @@
   "generadoCon": "estimado",
   "modelo": null,
   "voz": null,
-  "nota": "Render sin voz: tiempos estimados.",
+  "nota": "Gemini falló: Ningún modelo TTS tiene cuota disponible (429)",
   "escenas": [
     {
       "id": 1,

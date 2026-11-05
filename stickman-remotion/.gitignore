@@ -4,3 +4,4 @@ node_modules/
 out/*.png
 out/frames/
 out/*.log
+.tts-cache/
