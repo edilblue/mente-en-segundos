@@ -6,7 +6,9 @@
   "scripts": {
     "studio": "remotion studio",
     "render": "remotion render Short out/short.mp4",
-    "stills": "node scripts/stills.mjs"
+    "stills": "node scripts/stills.mjs",
+    "narrate": "node scripts/narrate.mjs",
+    "video": "node scripts/narrate.mjs && remotion render Short out/short.mp4"
   },
   "dependencies": {
     "@remotion/bundler": "^4.0.541",

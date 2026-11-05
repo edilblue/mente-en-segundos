@@ -4,14 +4,23 @@ YouTube Short animado estilo stickman hecho **100 % con código** (React + TypeS
 [Remotion](https://www.remotion.dev/)). Sin imágenes externas: personajes, emojis, Tierra, Luna,
 mapa, ciudad, lápiz y efectos se dibujan con SVG.
 
-**Video final:** [`out/short.mp4`](out/short.mp4) — 1080×1920, 30 fps, 80 s exactos (2400 frames), sin audio.
+**Video final:** [`out/short.mp4`](out/short.mp4) — 1080×1920, 30 fps, 80 s exactos (2400 frames).
+
+## Narración (Gemini TTS)
+
+`scripts/narrate.mjs` genera cada línea de `src/narration.ts` con la API de Gemini (voz `Puck`,
+español latino, tono de YouTuber de curiosidades), recorta silencios, la acelera si no cabe en su
+hueco y escribe `src/narration.generated.ts`; `src/Short.tsx` coloca cada clip en su segundo exacto.
+Variables: `GEMINI_API_KEY` (obligatoria), `GEMINI_VOICE`, `GEMINI_TTS_MODEL` (opcionales).
 
 ## Comandos
 
 ```bash
 npm install
 npm run studio                 # previsualizar en el navegador
-npm run render                 # → out/short.mp4
+GEMINI_API_KEY=... npm run narrate   # voz en off con Gemini TTS → public/audio/voz/*.wav
+npm run render                 # → out/short.mp4 (incluye la voz si ya se generó)
+npm run video                  # narrate + render en un paso
 node scripts/stills.mjs 3 12 22 35 44 60 72 --out=out/frames   # fotogramas de revisión
 ```
 

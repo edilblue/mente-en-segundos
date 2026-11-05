@@ -1,5 +1,6 @@
 import React from 'react';
-import {AbsoluteFill, Sequence, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame} from 'remotion';
+import {NARRATION} from './narration.generated';
 import {InkWipe} from './components/Effects';
 import {PencilProgress, Subtitles} from './components/Overlay';
 import {Scene1} from './scenes/Scene1';
@@ -60,6 +61,12 @@ export const Short: React.FC = () => {
       ))}
       {WIPES.map((w, i) => (
         <InkWipe key={i} frame={f} at={w.at} flip={w.flip} seed={`ink${i}`} />
+      ))}
+      {/* VOZ EN OFF: clips de Gemini TTS colocados en el segundo exacto de cada línea (src/narration.ts) */}
+      {NARRATION.map((n) => (
+        <Sequence key={n.id} from={Math.round(n.start * 30)} durationInFrames={Math.ceil(n.duration * 30) + 2} layout="none">
+          <Audio src={staticFile(n.file)} />
+        </Sequence>
       ))}
       <Subtitles frame={f} />
       <PencilProgress frame={f} total={TOTAL_FRAMES} />
