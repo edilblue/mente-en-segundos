@@ -60,3 +60,10 @@ assets/fonts/           tipografía Inter (licencia SIL OFL)
   divulgativos y no son valores clínicos.
 - Para cambiar la voz: `TTS_VOICE=em_santa python main.py` (también `ef_dora`, voz femenina);
   para cambiar la velocidad: `TTS_SPEED=1.1`.
+
+---
+
+## Stickman Pro — Parte 2 (Remotion)
+
+Short animado estilo stickman "¿Y si los animales también saltaran?" hecho con Remotion (React + TypeScript)
+en [`stickman-remotion/`](stickman-remotion/README.md). Narración con Gemini TTS (`GEMINI_API_KEY` desde el entorno).

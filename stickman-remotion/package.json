@@ -1,0 +1,28 @@
+{
+  "name": "stickman-remotion",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Mente en Segundos — Stickman Pro (Remotion)",
+  "scripts": {
+    "studio": "remotion studio",
+    "narracion": "node scripts/generar-narracion.mjs",
+    "narracion:sin-voz": "node scripts/generar-narracion.mjs --sin-voz",
+    "readme-audio": "tsx scripts/generar-readme-audio.ts",
+    "render": "remotion render Parte2 out/parte2.mp4",
+    "frames": "node scripts/frames-clave.mjs"
+  },
+  "dependencies": {
+    "@fontsource/bangers": "^5.3.0",
+    "@fontsource/luckiest-guy": "^5.3.0",
+    "@remotion/cli": "^4.0.541",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.541"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

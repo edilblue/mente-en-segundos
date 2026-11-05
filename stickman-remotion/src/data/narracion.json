@@ -1,0 +1,849 @@
+{
+  "generadoCon": "estimado",
+  "modelo": null,
+  "voz": null,
+  "nota": "Render sin voz: tiempos estimados.",
+  "escenas": [
+    {
+      "id": 1,
+      "texto": "En la parte uno saltamos todos los humanos… pero, ¿y si los animales también saltaran con nosotros?",
+      "audio": null,
+      "duracionAudio": null,
+      "duracion": 6,
+      "palabras": [
+        {
+          "w": "En",
+          "start": 0.35,
+          "end": 0.487
+        },
+        {
+          "w": "la",
+          "start": 0.487,
+          "end": 0.623
+        },
+        {
+          "w": "parte",
+          "start": 0.623,
+          "end": 0.888
+        },
+        {
+          "w": "uno",
+          "start": 0.888,
+          "end": 1.067
+        },
+        {
+          "w": "saltamos",
+          "start": 1.067,
+          "end": 1.459
+        },
+        {
+          "w": "todos",
+          "start": 1.459,
+          "end": 1.724
+        },
+        {
+          "w": "los",
+          "start": 1.724,
+          "end": 1.903
+        },
+        {
+          "w": "humanos…",
+          "start": 1.903,
+          "end": 2.253
+        },
+        {
+          "w": "pero,",
+          "start": 2.681,
+          "end": 2.919
+        },
+        {
+          "w": "¿y",
+          "start": 3.062,
+          "end": 3.2
+        },
+        {
+          "w": "si",
+          "start": 3.2,
+          "end": 3.338
+        },
+        {
+          "w": "los",
+          "start": 3.338,
+          "end": 3.52
+        },
+        {
+          "w": "animales",
+          "start": 3.52,
+          "end": 3.918
+        },
+        {
+          "w": "también",
+          "start": 3.918,
+          "end": 4.273
+        },
+        {
+          "w": "saltaran",
+          "start": 4.273,
+          "end": 4.67
+        },
+        {
+          "w": "con",
+          "start": 4.67,
+          "end": 4.852
+        },
+        {
+          "w": "nosotros?",
+          "start": 4.852,
+          "end": 5.25
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "texto": "Para empezar, se estima que hay unos 20 mil billones de hormigas en el planeta. ¡Millones por cada persona!",
+      "audio": null,
+      "duracionAudio": null,
+      "duracion": 10,
+      "palabras": [
+        {
+          "w": "Para",
+          "start": 0.35,
+          "end": 0.583
+        },
+        {
+          "w": "empezar,",
+          "start": 0.583,
+          "end": 0.95
+        },
+        {
+          "w": "se",
+          "start": 1.13,
+          "end": 1.304
+        },
+        {
+          "w": "estima",
+          "start": 1.304,
+          "end": 1.696
+        },
+        {
+          "w": "que",
+          "start": 1.696,
+          "end": 1.925
+        },
+        {
+          "w": "hay",
+          "start": 1.925,
+          "end": 2.154
+        },
+        {
+          "w": "unos",
+          "start": 2.154,
+          "end": 2.437
+        },
+        {
+          "w": "20",
+          "start": 2.437,
+          "end": 2.829
+        },
+        {
+          "w": "mil",
+          "start": 2.829,
+          "end": 3.058
+        },
+        {
+          "w": "billones",
+          "start": 3.058,
+          "end": 3.559
+        },
+        {
+          "w": "de",
+          "start": 3.559,
+          "end": 3.734
+        },
+        {
+          "w": "hormigas",
+          "start": 3.734,
+          "end": 4.235
+        },
+        {
+          "w": "en",
+          "start": 4.235,
+          "end": 4.409
+        },
+        {
+          "w": "el",
+          "start": 4.409,
+          "end": 4.583
+        },
+        {
+          "w": "planeta.",
+          "start": 4.583,
+          "end": 5.03
+        },
+        {
+          "w": "¡Millones",
+          "start": 5.39,
+          "end": 5.926
+        },
+        {
+          "w": "por",
+          "start": 5.926,
+          "end": 6.17
+        },
+        {
+          "w": "cada",
+          "start": 6.17,
+          "end": 6.473
+        },
+        {
+          "w": "persona!",
+          "start": 6.473,
+          "end": 6.95
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "texto": "Y aunque no lo parezca, las vacas, cerdos y demás animales de granja pesan casi el doble que todos los humanos juntos.",
+      "audio": null,
+      "duracionAudio": null,
+      "duracion": 10,
+      "palabras": [
+        {
+          "w": "Y",
+          "start": 0.35,
+          "end": 0.542
+        },
+        {
+          "w": "aunque",
+          "start": 0.542,
+          "end": 0.974
+        },
+        {
+          "w": "no",
+          "start": 0.974,
+          "end": 1.166
+        },
+        {
+          "w": "lo",
+          "start": 1.166,
+          "end": 1.358
+        },
+        {
+          "w": "parezca,",
+          "start": 1.358,
+          "end": 1.85
+        },
+        {
+          "w": "las",
+          "start": 2.03,
+          "end": 2.272
+        },
+        {
+          "w": "vacas,",
+          "start": 2.272,
+          "end": 2.63
+        },
+        {
+          "w": "cerdos",
+          "start": 2.81,
+          "end": 3.212
+        },
+        {
+          "w": "y",
+          "start": 3.212,
+          "end": 3.391
+        },
+        {
+          "w": "demás",
+          "start": 3.391,
+          "end": 3.737
+        },
+        {
+          "w": "animales",
+          "start": 3.737,
+          "end": 4.251
+        },
+        {
+          "w": "de",
+          "start": 4.251,
+          "end": 4.43
+        },
+        {
+          "w": "granja",
+          "start": 4.43,
+          "end": 4.832
+        },
+        {
+          "w": "pesan",
+          "start": 4.832,
+          "end": 5.179
+        },
+        {
+          "w": "casi",
+          "start": 5.179,
+          "end": 5.469
+        },
+        {
+          "w": "el",
+          "start": 5.469,
+          "end": 5.648
+        },
+        {
+          "w": "doble",
+          "start": 5.648,
+          "end": 5.994
+        },
+        {
+          "w": "que",
+          "start": 5.994,
+          "end": 6.229
+        },
+        {
+          "w": "todos",
+          "start": 6.229,
+          "end": 6.575
+        },
+        {
+          "w": "los",
+          "start": 6.575,
+          "end": 6.81
+        },
+        {
+          "w": "humanos",
+          "start": 6.81,
+          "end": 7.268
+        },
+        {
+          "w": "juntos.",
+          "start": 7.268,
+          "end": 7.67
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "texto": "Algunos serían los campeones del salto: una pulga puede saltar más de cien veces su tamaño, y un canguro puede avanzar unos ocho metros de un solo salto.",
+      "audio": null,
+      "duracionAudio": null,
+      "duracion": 12,
+      "palabras": [
+        {
+          "w": "Algunos",
+          "start": 0.35,
+          "end": 0.717
+        },
+        {
+          "w": "serían",
+          "start": 0.717,
+          "end": 1.04
+        },
+        {
+          "w": "los",
+          "start": 1.04,
+          "end": 1.228
+        },
+        {
+          "w": "campeones",
+          "start": 1.228,
+          "end": 1.684
+        },
+        {
+          "w": "del",
+          "start": 1.684,
+          "end": 1.872
+        },
+        {
+          "w": "salto:",
+          "start": 1.872,
+          "end": 2.15
+        },
+        {
+          "w": "una",
+          "start": 2.51,
+          "end": 2.748
+        },
+        {
+          "w": "pulga",
+          "start": 2.748,
+          "end": 3.099
+        },
+        {
+          "w": "puede",
+          "start": 3.099,
+          "end": 3.45
+        },
+        {
+          "w": "saltar",
+          "start": 3.45,
+          "end": 3.857
+        },
+        {
+          "w": "más",
+          "start": 3.857,
+          "end": 4.095
+        },
+        {
+          "w": "de",
+          "start": 4.095,
+          "end": 4.276
+        },
+        {
+          "w": "cien",
+          "start": 4.276,
+          "end": 4.57
+        },
+        {
+          "w": "veces",
+          "start": 4.57,
+          "end": 4.921
+        },
+        {
+          "w": "su",
+          "start": 4.921,
+          "end": 5.102
+        },
+        {
+          "w": "tamaño,",
+          "start": 5.102,
+          "end": 5.51
+        },
+        {
+          "w": "y",
+          "start": 5.69,
+          "end": 5.887
+        },
+        {
+          "w": "un",
+          "start": 5.887,
+          "end": 6.084
+        },
+        {
+          "w": "canguro",
+          "start": 6.084,
+          "end": 6.588
+        },
+        {
+          "w": "puede",
+          "start": 6.588,
+          "end": 6.969
+        },
+        {
+          "w": "avanzar",
+          "start": 6.969,
+          "end": 7.473
+        },
+        {
+          "w": "unos",
+          "start": 7.473,
+          "end": 7.793
+        },
+        {
+          "w": "ocho",
+          "start": 7.793,
+          "end": 8.113
+        },
+        {
+          "w": "metros",
+          "start": 8.113,
+          "end": 8.555
+        },
+        {
+          "w": "de",
+          "start": 8.555,
+          "end": 8.752
+        },
+        {
+          "w": "un",
+          "start": 8.752,
+          "end": 8.949
+        },
+        {
+          "w": "solo",
+          "start": 8.949,
+          "end": 9.269
+        },
+        {
+          "w": "salto.",
+          "start": 9.269,
+          "end": 9.65
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "texto": "Pero el elefante tendría un problema: es uno de los pocos animales que no puede saltar.",
+      "audio": null,
+      "duracionAudio": null,
+      "duracion": 8,
+      "palabras": [
+        {
+          "w": "Pero",
+          "start": 0.35,
+          "end": 0.595
+        },
+        {
+          "w": "el",
+          "start": 0.595,
+          "end": 0.746
+        },
+        {
+          "w": "elefante",
+          "start": 0.746,
+          "end": 1.179
+        },
+        {
+          "w": "tendría",
+          "start": 1.179,
+          "end": 1.566
+        },
+        {
+          "w": "un",
+          "start": 1.566,
+          "end": 1.716
+        },
+        {
+          "w": "problema:",
+          "start": 1.716,
+          "end": 2.15
+        },
+        {
+          "w": "es",
+          "start": 2.51,
+          "end": 2.721
+        },
+        {
+          "w": "uno",
+          "start": 2.721,
+          "end": 2.998
+        },
+        {
+          "w": "de",
+          "start": 2.998,
+          "end": 3.208
+        },
+        {
+          "w": "los",
+          "start": 3.208,
+          "end": 3.485
+        },
+        {
+          "w": "pocos",
+          "start": 3.485,
+          "end": 3.894
+        },
+        {
+          "w": "animales",
+          "start": 3.894,
+          "end": 4.5
+        },
+        {
+          "w": "que",
+          "start": 4.5,
+          "end": 4.776
+        },
+        {
+          "w": "no",
+          "start": 4.776,
+          "end": 4.987
+        },
+        {
+          "w": "puede",
+          "start": 4.987,
+          "end": 5.396
+        },
+        {
+          "w": "saltar.",
+          "start": 5.396,
+          "end": 5.87
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "texto": "Y los pájaros dirían: nosotros ya estamos arriba.",
+      "audio": null,
+      "duracionAudio": null,
+      "duracion": 6,
+      "palabras": [
+        {
+          "w": "Y",
+          "start": 0.35,
+          "end": 0.518
+        },
+        {
+          "w": "los",
+          "start": 0.518,
+          "end": 0.739
+        },
+        {
+          "w": "pájaros",
+          "start": 0.739,
+          "end": 1.171
+        },
+        {
+          "w": "dirían:",
+          "start": 1.171,
+          "end": 1.55
+        },
+        {
+          "w": "nosotros",
+          "start": 1.91,
+          "end": 2.426
+        },
+        {
+          "w": "ya",
+          "start": 2.426,
+          "end": 2.606
+        },
+        {
+          "w": "estamos",
+          "start": 2.606,
+          "end": 3.066
+        },
+        {
+          "w": "arriba.",
+          "start": 3.066,
+          "end": 3.47
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "texto": "Tres… dos… uno… ¡SALTEN!",
+      "audio": null,
+      "duracionAudio": null,
+      "duracion": 12,
+      "palabras": [
+        {
+          "w": "Tres…",
+          "start": 0.35,
+          "end": 0.65
+        },
+        {
+          "w": "dos…",
+          "start": 1.19,
+          "end": 1.49
+        },
+        {
+          "w": "uno…",
+          "start": 2.03,
+          "end": 2.33
+        },
+        {
+          "w": "¡SALTEN!",
+          "start": 2.87,
+          "end": 3.53
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "texto": "¿Y qué le pasaría a la Tierra? Absolutamente nada. Aun sumando a todos los animales, el planeta es muchísimo más pesado que todos nosotros.",
+      "audio": null,
+      "duracionAudio": null,
+      "duracion": 10,
+      "palabras": [
+        {
+          "w": "¿Y",
+          "start": 0.35,
+          "end": 0.557
+        },
+        {
+          "w": "qué",
+          "start": 0.557,
+          "end": 0.83
+        },
+        {
+          "w": "le",
+          "start": 0.83,
+          "end": 1.037
+        },
+        {
+          "w": "pasaría",
+          "start": 1.037,
+          "end": 1.569
+        },
+        {
+          "w": "a",
+          "start": 1.569,
+          "end": 1.776
+        },
+        {
+          "w": "la",
+          "start": 1.776,
+          "end": 1.983
+        },
+        {
+          "w": "Tierra?",
+          "start": 1.983,
+          "end": 2.45
+        },
+        {
+          "w": "Absolutamente",
+          "start": 2.81,
+          "end": 3.249
+        },
+        {
+          "w": "nada.",
+          "start": 3.249,
+          "end": 3.41
+        },
+        {
+          "w": "Aun",
+          "start": 3.77,
+          "end": 3.985
+        },
+        {
+          "w": "sumando",
+          "start": 3.985,
+          "end": 4.404
+        },
+        {
+          "w": "a",
+          "start": 4.404,
+          "end": 4.568
+        },
+        {
+          "w": "todos",
+          "start": 4.568,
+          "end": 4.885
+        },
+        {
+          "w": "los",
+          "start": 4.885,
+          "end": 5.1
+        },
+        {
+          "w": "animales,",
+          "start": 5.1,
+          "end": 5.57
+        },
+        {
+          "w": "el",
+          "start": 5.75,
+          "end": 5.925
+        },
+        {
+          "w": "planeta",
+          "start": 5.925,
+          "end": 6.375
+        },
+        {
+          "w": "es",
+          "start": 6.375,
+          "end": 6.551
+        },
+        {
+          "w": "muchísimo",
+          "start": 6.551,
+          "end": 7.11
+        },
+        {
+          "w": "más",
+          "start": 7.11,
+          "end": 7.34
+        },
+        {
+          "w": "pesado",
+          "start": 7.34,
+          "end": 7.735
+        },
+        {
+          "w": "que",
+          "start": 7.735,
+          "end": 7.965
+        },
+        {
+          "w": "todos",
+          "start": 7.965,
+          "end": 8.305
+        },
+        {
+          "w": "nosotros.",
+          "start": 8.305,
+          "end": 8.81
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "texto": "¿Qué animal te gustaría ver saltar en la parte tres? Déjalo en los comentarios.",
+      "audio": null,
+      "duracionAudio": null,
+      "duracion": 6,
+      "palabras": [
+        {
+          "w": "¿Qué",
+          "start": 0.35,
+          "end": 0.587
+        },
+        {
+          "w": "animal",
+          "start": 0.587,
+          "end": 0.993
+        },
+        {
+          "w": "te",
+          "start": 0.993,
+          "end": 1.173
+        },
+        {
+          "w": "gustaría",
+          "start": 1.173,
+          "end": 1.692
+        },
+        {
+          "w": "ver",
+          "start": 1.692,
+          "end": 1.928
+        },
+        {
+          "w": "saltar",
+          "start": 1.928,
+          "end": 2.334
+        },
+        {
+          "w": "en",
+          "start": 2.334,
+          "end": 2.515
+        },
+        {
+          "w": "la",
+          "start": 2.515,
+          "end": 2.695
+        },
+        {
+          "w": "parte",
+          "start": 2.695,
+          "end": 3.045
+        },
+        {
+          "w": "tres?",
+          "start": 3.045,
+          "end": 3.338
+        },
+        {
+          "w": "Déjalo",
+          "start": 3.696,
+          "end": 4.114
+        },
+        {
+          "w": "en",
+          "start": 4.114,
+          "end": 4.299
+        },
+        {
+          "w": "los",
+          "start": 4.299,
+          "end": 4.543
+        },
+        {
+          "w": "comentarios.",
+          "start": 4.543,
+          "end": 5.25
+        }
+      ]
+    }
+  ]
+}
