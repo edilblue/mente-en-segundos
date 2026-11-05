@@ -1,10 +1,15 @@
 <!--
   AUDIO DEL SHORT
-    public/audio/voz.wav      -> voz en off (generada con tools/narracion.py)
-    public/audio/musica.mp3   -> música de fondo: agrégala tú y descomenta la línea
-                                 de música en src/Short.tsx; luego: npm run render
+    voz.wav     -> narración (npm run voz, Google Gemini TTS)  o  tools/voz_externa.py <audio>
+    musica.wav  -> música de fondo sintetizada (tools/sonido.py)
+    fx.wav      -> efectos de sonido sintetizados (tools/sonido.py)
+  Para usar tu propia música: reemplaza musica.wav (o cambia la ruta en src/Short.tsx).
+  Volúmenes de cada pista: src/Short.tsx (componentes <Audio>). Luego: npm run render
 -->
 # Carpeta de audio
 
-- `voz.wav`: narración generada con `python tools/narracion.py` (Kokoro TTS local).
-- `musica.mp3`: agrega aquí tu música y descomenta la línea `musica.mp3` en `src/Short.tsx`, luego ejecuta `npm run render`.
+- `voz.wav`: narración (Google Gemini TTS, voz Orus).
+- `musica.wav`: música de fondo; reemplázala por tu propia música si quieres.
+- `fx.wav`: efectos de sonido.
+
+Los volúmenes se ajustan en `src/Short.tsx`. Después ejecuta `npm run render`.

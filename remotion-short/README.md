@@ -23,20 +23,19 @@ npm run render   # genera out/short.mp4
 La luna se va apagando (y la batería bajo la cama se vacía) a lo largo del video; en el cierre se recarga para que el último frame coincida con el primero.
 Zona segura: 150 px arriba (ahí empieza la barra de progreso) y 250 px libres abajo.
 
-## Narración
-La voz en off (`public/audio/voz.wav`) se genera en local con Kokoro TTS (voz `em_alex`, español):
-```bash
-pip install kokoro-onnx soundfile
-../download_models.sh          # descarga el modelo a ../models
-python tools/narracion.py      # crea public/audio/voz.wav y src/narration.json
-npm run render
-```
-`src/narration.json` guarda cuándo empieza y termina cada frase; los subtítulos palabra por palabra
-y el cambio "LIMPIEZA: OFF" del cerebro se sincronizan con esos tiempos.
-Para cambiar el texto o la voz, edita `LINES` / `TTS_VOICE` en `tools/narracion.py`.
-
-## Música
-Coloca `public/audio/musica.mp3` y descomenta la línea de música en `src/Short.tsx` (ver `public/audio/LEEME.md`).
+## Audio
+- **Voz:** Google Gemini TTS (modelo `gemini-3.8-flash-tts`, voz `Orus`), capa gratuita de Google AI Studio.
+  ```bash
+  export GEMINI_API_KEY=...        # https://aistudio.google.com/apikey  (no la subas al repo)
+  npm run voz                      # voz -> public/audio/voz.wav + src/narration.json, y rehace la música
+  npm run render
+  ```
+  Cambia la voz con `GEMINI_VOICE=Charon` (otras: Fenrir, Puck, Kore, Aoede…).
+  `tools/voz_externa.py audio.mp3` sirve para usar cualquier otra narración (ElevenLabs, tu propia voz…):
+  detecta las pausas, corta las 5 frases y coloca cada una en su escena.
+- **Música y FX:** `tools/sonido.py` los sintetiza con código (música ambiental con ducking bajo la voz y
+  filtro que se "apaga" con la luna; whooshes, tic-tac del reloj, campanita, apagado del cerebro, blips del conteo, brillo final).
+- `npm run render` normaliza el audio a -15 LUFS (volumen estándar de YouTube).
 
 ## Estructura
 - `src/Short.tsx` – composición principal, icono persistente, transiciones

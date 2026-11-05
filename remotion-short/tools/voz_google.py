@@ -26,11 +26,12 @@ from voz_externa import LINES  # noqa: E402
 
 KEY = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
 VOICE = os.environ.get("GEMINI_VOICE", "Orus")
-MODEL = os.environ.get("GEMINI_TTS_MODEL", "gemini-2.5-flash-preview-tts")
+MODEL = os.environ.get("GEMINI_TTS_MODEL", "gemini-3.8-flash-tts")
 
 STYLE = (
     "Lee en español latinoamericano neutro, como narrador de un video corto de ciencia para redes: "
-    "tono cercano, curioso y con energía, ritmo ágil pero claro. "
+    "tono cercano, curioso y con energía. Ritmo RÁPIDO, propio de un YouTube Short "
+    "(cada párrafo largo debe durar menos de 6 segundos), sin perder claridad. "
     "Haz una pausa de un segundo entre cada párrafo.\n\n"
 )
 
