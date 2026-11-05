@@ -9,7 +9,8 @@
     "narracion:sin-voz": "node scripts/generar-narracion.mjs --sin-voz",
     "readme-audio": "tsx scripts/generar-readme-audio.ts",
     "render": "remotion render Parte2 out/parte2.mp4",
-    "frames": "node scripts/frames-clave.mjs"
+    "frames": "node scripts/frames-clave.mjs",
+    "audio": "tsx scripts/exportar-tiempos.ts && python3 scripts/generar-audio-fx.py && tsx scripts/generar-readme-audio.ts"
   },
   "dependencies": {
     "@fontsource/bangers": "^5.3.0",

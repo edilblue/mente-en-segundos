@@ -51,6 +51,8 @@ add(7, b7.n3, 'conteo', 'Cuenta regresiva: 3', 0.5);
 add(7, b7.n2, 'conteo', 'Cuenta regresiva: 2', 0.5);
 add(7, b7.n1, 'conteo', 'Cuenta regresiva: 1', 0.5);
 add(7, b7.go, 'multitud', '¡SALTEN! — grito de multitud + whoosh', 0.45);
+add(7, b7.go, 'whoosh', 'Despegue de todos (whoosh ascendente)', 0.5);
+add(7, b7.apex, 'slowmo', 'Cámara lenta: zumbido grave', 0.55);
 add(7, b7.apex, 'boing', 'Impact frame y cámara lenta (¡BOING!)', 0.5);
 add(7, b7.land, 'splash', 'Cae la ballena (¡SPLASH!)', 0.55);
 add(7, b7.land, 'pum', 'Aterrizaje masivo + temblor', 0.6);

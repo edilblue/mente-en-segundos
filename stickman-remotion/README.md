@@ -21,8 +21,9 @@ npm run narracion                    # elige el modelo TTS vigente consultando /
 #    Cuota gratuita: ~10 peticiones/día por modelo y se necesitan 9. El audio se guarda en
 #    .tts-cache/ para no gastar peticiones al volver a ejecutar; los 429 por minuto se esperan solos.
 
-# 2) Segundos exactos de música y efectos (public/audio/README)
-npm run readme-audio
+# 2) Música original y 23 efectos de sonido sintetizados con código, sincronizados con la
+#    narración (+ public/audio/README con los segundos exactos). Requiere: pip install -r requirements-audio.txt
+npm run audio
 
 # 3) Render
 npm run render                       # → out/parte2.mp4
@@ -66,6 +67,15 @@ scripts/
   generar-readme-audio.ts public/audio/README
   frames-clave.mjs        render de fotogramas de revisión
 ```
+
+## Audio
+
+- **Narración** (Gemini TTS): volumen 1.0, siempre por encima de todo.
+- **Música** (`public/audio/musica/fondo.wav`): Do mayor, 116 BPM, ukelele (Karplus-Strong), bajo, batería suave y
+  glockenspiel; en la escena 7 cambia a redoble + golpe en "¡SALTEN!" + acorde de cámara lenta. Baja
+  automáticamente a ≈ -10 dB mientras habla el narrador (`src/mezcla.ts`).
+- **Efectos** (`public/audio/sfx/`): boing, pum, splash, swoosh, whoosh, muu, tragamonedas, ding, conteo, multitud,
+  cámara lenta, bostezo, grillos, risa, ¿eh?, sello, esfuerzo, aleteo, brillo... en los segundos de `src/cues.ts`.
 
 ## Zona segura
 

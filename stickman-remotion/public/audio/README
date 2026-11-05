@@ -5,19 +5,16 @@ Duración total: 85.33 s (2560 frames a 30 fps)
 Tiempos calculados a partir de: la narración real de Gemini.
 Si regeneras la narración, vuelve a ejecutar `npm run readme-audio` para actualizar estos segundos.
 
-PRIORIDAD DE VOLUMEN: la narración siempre manda.
-  - Narración (public/audio/narracion/escenaN.wav): volumen 1.0 (0 dB)
-  - Música de fondo: volumen 0.12 (≈ -18 dB); bájala aún más durante la voz si la editas aparte
-  - Efectos: 0.25–0.6 según la tabla (siempre por debajo de la voz)
-
-CÓMO AGREGARLOS SIN TOCAR CÓDIGO
-  - Música: guarda public/audio/musica/fondo.mp3 → suena en loop desde 0:00.00 hasta el final.
-  - Efectos: guarda public/audio/sfx/<nombre>.mp3 (o .wav) con el nombre de la columna "sfx";
-    Parte2.tsx lo reproduce automáticamente en cada segundo de la tabla. Luego `npm run render`.
+TODO EL AUDIO ESTÁ INCLUIDO Y SINTETIZADO CON CÓDIGO (npm run audio → scripts/generar-audio-fx.py)
+  - Narración: public/audio/narracion/escenaN.wav (Gemini TTS) — volumen 1.0, siempre por encima de todo
+  - Música:    public/audio/musica/fondo.wav — 0.34 sin voz, baja a 0.10 (≈ -10 dB) mientras habla el narrador
+  - Efectos:   public/audio/sfx/<nombre>.wav — 0.25–0.6 según la tabla; ×0.6 si coinciden con la voz
+  La mezcla está en src/mezcla.ts y los puntos de cada efecto en src/cues.ts.
+  Para usar tus propios sonidos: reemplaza el archivo con el mismo nombre (.wav o .mp3) y `npm run render`.
 
 MÚSICA DE FONDO
-  0:00.00 → 1:25.33  música alegre/curiosa (ukelele, pizzicato o chiptune suave)
-  0:55.00 → 1:06.00  escena del gran salto: sube la tensión (redoble) y corta la música en el impacto
+  0:00.00 → 1:25.33  música original en Do mayor a 116 BPM (ukelele, bajo, batería suave y glockenspiel)
+  0:55.00 → 1:06.00  escena del gran salto: pedal grave + redoble desde el "3", golpe en ¡SALTEN!, acorde suave en cámara lenta y vuelve el ritmo tras el aterrizaje
 
 ESCENAS
   Escena 1 (Gancho): 0:00.00 → 0:08.33
@@ -68,6 +65,8 @@ EFECTOS DE SONIDO (segundo exacto en el video final)
   0:56.13   |   56.13 | conteo        | 0.50 | Escena 7: Cuenta regresiva: 2
   0:57.23   |   57.23 | conteo        | 0.50 | Escena 7: Cuenta regresiva: 1
   0:58.06   |   58.06 | multitud      | 0.45 | Escena 7: ¡SALTEN! — grito de multitud + whoosh
+  0:58.06   |   58.06 | whoosh        | 0.50 | Escena 7: Despegue de todos (whoosh ascendente)
+  0:58.68   |   58.68 | slowmo        | 0.55 | Escena 7: Cámara lenta: zumbido grave
   0:58.68   |   58.68 | boing         | 0.50 | Escena 7: Impact frame y cámara lenta (¡BOING!)
   1:01.73   |   61.73 | splash        | 0.55 | Escena 7: Cae la ballena (¡SPLASH!)
   1:01.73   |   61.73 | pum           | 0.60 | Escena 7: Aterrizaje masivo + temblor
@@ -79,4 +78,4 @@ EFECTOS DE SONIDO (segundo exacto en el video final)
   1:22.39   |   82.39 | pum           | 0.45 | Escena 9: El elefante se cae
   1:22.59   |   82.59 | risa          | 0.35 | Escena 9: Stickman Pro se ríe 😂
 
-Nombres de archivo sugeridos: aleteo.mp3, boing.mp3, bostezo.mp3, brillo.mp3, conteo.mp3, ding.mp3, eh.mp3, esfuerzo.mp3, grillos.mp3, grito.mp3, hmm.mp3, hormigas.mp3, multitud.mp3, muu.mp3, pasitos.mp3, pum.mp3, risa.mp3, sello.mp3, splash.mp3, swoosh.mp3, tragamonedas.mp3
+Nombres de archivo sugeridos: aleteo.mp3, boing.mp3, bostezo.mp3, brillo.mp3, conteo.mp3, ding.mp3, eh.mp3, esfuerzo.mp3, grillos.mp3, grito.mp3, hmm.mp3, hormigas.mp3, multitud.mp3, muu.mp3, pasitos.mp3, pum.mp3, risa.mp3, sello.mp3, slowmo.mp3, splash.mp3, swoosh.mp3, tragamonedas.mp3, whoosh.mp3
