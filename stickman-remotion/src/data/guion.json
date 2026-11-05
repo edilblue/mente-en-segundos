@@ -1,0 +1,78 @@
+{
+  "estiloVoz": "Narrador en español latino, joven, enérgico y divertido, como un youtuber de curiosidades, con pausas dramáticas antes de los datos sorprendentes",
+  "margenSegundos": 0.7,
+  "escenas": [
+    {
+      "id": 1,
+      "nombre": "Gancho",
+      "texto": "En la parte uno saltamos todos los humanos… pero, ¿y si los animales también saltaran con nosotros?",
+      "objetivo": 6,
+      "minimo": 5,
+      "claves": ["parte", "uno", "humanos", "animales", "saltaran"]
+    },
+    {
+      "id": 2,
+      "nombre": "Las hormigas",
+      "texto": "Para empezar, se estima que hay unos 20 mil billones de hormigas en el planeta. ¡Millones por cada persona!",
+      "objetivo": 10,
+      "minimo": 8,
+      "claves": ["20", "mil", "billones", "hormigas", "millones", "persona"]
+    },
+    {
+      "id": 3,
+      "nombre": "Los animales de granja",
+      "texto": "Y aunque no lo parezca, las vacas, cerdos y demás animales de granja pesan casi el doble que todos los humanos juntos.",
+      "objetivo": 10,
+      "minimo": 8,
+      "claves": ["vacas", "cerdos", "granja", "doble"]
+    },
+    {
+      "id": 4,
+      "nombre": "Los campeones del salto",
+      "texto": "Algunos serían los campeones del salto: una pulga puede saltar más de cien veces su tamaño, y un canguro puede avanzar unos ocho metros de un solo salto.",
+      "objetivo": 12,
+      "minimo": 10,
+      "claves": ["campeones", "pulga", "cien", "veces", "canguro", "ocho", "metros"]
+    },
+    {
+      "id": 5,
+      "nombre": "El que no puede",
+      "texto": "Pero el elefante tendría un problema: es uno de los pocos animales que no puede saltar.",
+      "objetivo": 8,
+      "minimo": 7,
+      "claves": ["elefante", "problema", "no", "saltar"]
+    },
+    {
+      "id": 6,
+      "nombre": "Los que hacen trampa",
+      "texto": "Y los pájaros dirían: nosotros ya estamos arriba.",
+      "objetivo": 6,
+      "minimo": 5,
+      "claves": ["pájaros", "arriba"]
+    },
+    {
+      "id": 7,
+      "nombre": "El gran salto",
+      "texto": "Tres… dos… uno… ¡SALTEN!",
+      "objetivo": 12,
+      "minimo": 11,
+      "claves": ["tres", "dos", "uno", "salten"]
+    },
+    {
+      "id": 8,
+      "nombre": "El resultado",
+      "texto": "¿Y qué le pasaría a la Tierra? Absolutamente nada. Aun sumando a todos los animales, el planeta es muchísimo más pesado que todos nosotros.",
+      "objetivo": 10,
+      "minimo": 9,
+      "claves": ["tierra", "absolutamente", "nada", "muchísimo", "pesado"]
+    },
+    {
+      "id": 9,
+      "nombre": "Cierre",
+      "texto": "¿Qué animal te gustaría ver saltar en la parte tres? Déjalo en los comentarios.",
+      "objetivo": 6,
+      "minimo": 5.5,
+      "claves": ["animal", "parte", "tres", "comentarios"]
+    }
+  ]
+}

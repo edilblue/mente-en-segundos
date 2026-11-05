@@ -1,0 +1,82 @@
+AUDIO — PARTE 2: ¿Y si los animales también saltaran?
+=======================================================
+
+Duración total: 85.33 s (2560 frames a 30 fps)
+Tiempos calculados a partir de: la narración real de Gemini.
+Si regeneras la narración, vuelve a ejecutar `npm run readme-audio` para actualizar estos segundos.
+
+PRIORIDAD DE VOLUMEN: la narración siempre manda.
+  - Narración (public/audio/narracion/escenaN.wav): volumen 1.0 (0 dB)
+  - Música de fondo: volumen 0.12 (≈ -18 dB); bájala aún más durante la voz si la editas aparte
+  - Efectos: 0.25–0.6 según la tabla (siempre por debajo de la voz)
+
+CÓMO AGREGARLOS SIN TOCAR CÓDIGO
+  - Música: guarda public/audio/musica/fondo.mp3 → suena en loop desde 0:00.00 hasta el final.
+  - Efectos: guarda public/audio/sfx/<nombre>.mp3 (o .wav) con el nombre de la columna "sfx";
+    Parte2.tsx lo reproduce automáticamente en cada segundo de la tabla. Luego `npm run render`.
+
+MÚSICA DE FONDO
+  0:00.00 → 1:25.33  música alegre/curiosa (ukelele, pizzicato o chiptune suave)
+  0:55.00 → 1:06.00  escena del gran salto: sube la tensión (redoble) y corta la música en el impacto
+
+ESCENAS
+  Escena 1 (Gancho): 0:00.00 → 0:08.33
+  Escena 2 (Las hormigas): 0:08.33 → 0:19.07
+  Escena 3 (Los animales de granja): 0:19.07 → 0:29.03
+  Escena 4 (Los campeones del salto): 0:29.03 → 0:40.43
+  Escena 5 (El que no puede): 0:40.43 → 0:48.97
+  Escena 6 (Los que hacen trampa): 0:48.97 → 0:55.00
+  Escena 7 (El gran salto): 0:55.00 → 1:06.00
+  Escena 8 (El resultado): 1:06.00 → 1:19.73
+  Escena 9 (Cierre): 1:19.73 → 1:25.33
+
+EFECTOS DE SONIDO (segundo exacto en el video final)
+  tiempo    | seg     | sfx           | vol  | qué pasa
+  ----------+---------+---------------+------+-----------------------------------------
+  0:00.12   |    0.12 | pum           | 0.45 | Escena 1: Stickman Pro aterriza (¡PUM!)
+  0:03.68   |    3.68 | pasitos       | 0.30 | Escena 1: Entra la hormiga caminando
+  0:06.64   |    6.64 | hmm           | 0.35 | Escena 1: Stickman Pro mira a la hormiga 🤔
+  0:08.03   |    8.03 | swoosh        | 0.35 | Escena 2: Barrido de tinta hacia la escena 2
+  0:08.53   |    8.53 | hormigas      | 0.25 | Escena 2: Hormigas correteando (loop suave hasta el final de la escena)
+  0:10.55   |   10.55 | tragamonedas  | 0.45 | Escena 2: Palanca + rodillos del contador girando
+  0:12.74   |   12.74 | ding          | 0.45 | Escena 2: El contador se detiene: 20.000.000.000.000.000
+  0:15.63   |   15.63 | grito         | 0.35 | Escena 2: Stickman Pro levanta los pies asustado 😱
+  0:18.77   |   18.77 | swoosh        | 0.35 | Escena 3: Barrido de tinta hacia la escena 3
+  0:19.12   |   19.12 | swoosh        | 0.35 | Escena 3: Entra la balanza
+  0:21.59   |   21.59 | pum           | 0.25 | Escena 3: Cae animal 1 en la balanza
+  0:22.10   |   22.10 | pum           | 0.25 | Escena 3: Cae animal 2 en la balanza
+  0:22.61   |   22.61 | pum           | 0.25 | Escena 3: Cae animal 3 en la balanza
+  0:23.12   |   23.12 | pum           | 0.25 | Escena 3: Cae animal 4 en la balanza
+  0:23.63   |   23.63 | pum           | 0.25 | Escena 3: Cae animal 5 en la balanza
+  0:24.14   |   24.14 | pum           | 0.25 | Escena 3: Cae animal 6 en la balanza
+  0:25.36   |   25.36 | pum           | 0.60 | Escena 3: La balanza se inclina hacia la granja (golpe fuerte)
+  0:27.43   |   27.43 | muu           | 0.45 | Escena 3: La vaca hace ¡MUU! 😂
+  0:28.73   |   28.73 | swoosh        | 0.35 | Escena 4: Barrido de tinta hacia la escena 4
+  0:33.18   |   33.18 | boing         | 0.45 | Escena 4: Despega la pulga
+  0:35.28   |   35.28 | swoosh        | 0.35 | Escena 4: Barrido hacia el canguro
+  0:36.72   |   36.72 | boing         | 0.45 | Escena 4: El canguro salta sobre Stickman Pro
+  0:38.22   |   38.22 | pum           | 0.40 | Escena 4: Aterriza el canguro
+  0:40.13   |   40.13 | swoosh        | 0.35 | Escena 5: Barrido de tinta hacia la escena 5
+  0:42.42   |   42.42 | esfuerzo      | 0.35 | Escena 5: El elefante hace fuerza para saltar
+  0:44.66   |   44.66 | sello         | 0.50 | Escena 5: Sello rojo "NO PUEDE SALTAR"
+  0:47.46   |   47.46 | eh            | 0.40 | Escena 5: "¿EH?" / grillos
+  0:48.67   |   48.67 | swoosh        | 0.35 | Escena 6: Barrido de tinta hacia la escena 6
+  0:49.07   |   49.07 | aleteo        | 0.35 | Escena 6: Pasa el pájaro volando
+  0:50.96   |   50.96 | brillo        | 0.30 | Escena 6: Destello de los lentes 😎
+  0:54.70   |   54.70 | swoosh        | 0.35 | Escena 7: Barrido de tinta hacia la escena 7
+  0:55.27   |   55.27 | conteo        | 0.50 | Escena 7: Cuenta regresiva: 3
+  0:56.13   |   56.13 | conteo        | 0.50 | Escena 7: Cuenta regresiva: 2
+  0:57.23   |   57.23 | conteo        | 0.50 | Escena 7: Cuenta regresiva: 1
+  0:58.06   |   58.06 | multitud      | 0.45 | Escena 7: ¡SALTEN! — grito de multitud + whoosh
+  0:58.68   |   58.68 | boing         | 0.50 | Escena 7: Impact frame y cámara lenta (¡BOING!)
+  1:01.73   |   61.73 | splash        | 0.55 | Escena 7: Cae la ballena (¡SPLASH!)
+  1:01.73   |   61.73 | pum           | 0.60 | Escena 7: Aterrizaje masivo + temblor
+  1:05.70   |   65.70 | swoosh        | 0.35 | Escena 8: Barrido de tinta hacia la escena 8
+  1:10.90   |   70.90 | bostezo       | 0.45 | Escena 8: La Tierra bosteza
+  1:14.13   |   74.13 | grillos       | 0.25 | Escena 8: Animales decepcionados 😐
+  1:19.43   |   79.43 | swoosh        | 0.35 | Escena 9: Barrido de tinta hacia la escena 9
+  1:21.89   |   81.89 | boing         | 0.30 | Escena 9: El elefante intenta saltar (boing mini)
+  1:22.39   |   82.39 | pum           | 0.45 | Escena 9: El elefante se cae
+  1:22.59   |   82.59 | risa          | 0.35 | Escena 9: Stickman Pro se ríe 😂
+
+Nombres de archivo sugeridos: aleteo.mp3, boing.mp3, bostezo.mp3, brillo.mp3, conteo.mp3, ding.mp3, eh.mp3, esfuerzo.mp3, grillos.mp3, grito.mp3, hmm.mp3, hormigas.mp3, multitud.mp3, muu.mp3, pasitos.mp3, pum.mp3, risa.mp3, sello.mp3, splash.mp3, swoosh.mp3, tragamonedas.mp3

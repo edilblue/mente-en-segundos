@@ -1,0 +1,408 @@
+#!/usr/bin/env node
+// Genera la narración de la Parte 2 con el TTS de Gemini (un WAV por escena)
+// y escribe src/data/narracion.json con la duración real de cada escena y los
+// tiempos de cada palabra para sincronizar los subtítulos.
+//
+// Uso:
+//   GEMINI_API_KEY=... node scripts/generar-narracion.mjs      → voz real
+//   node scripts/generar-narracion.mjs --sin-voz               → tiempos estimados, sin audio
+//
+// La clave SOLO se lee de la variable de entorno GEMINI_API_KEY; nunca se guarda.
+// Variables opcionales: GEMINI_TTS_MODEL (forzar modelo), GEMINI_TTS_VOICE (voz, por defecto "Puck").
+
+import fs from 'node:fs';
+import path from 'node:path';
+import {execFileSync} from 'node:child_process';
+import crypto from 'node:crypto';
+import {fileURLToPath} from 'node:url';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const GUION = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/guion.json'), 'utf8'));
+const OUT_JSON = path.join(ROOT, 'src/data/narracion.json');
+const AUDIO_DIR = path.join(ROOT, 'public/audio/narracion');
+const TXT = path.join(ROOT, 'narracion.txt');
+const API = 'https://generativelanguage.googleapis.com/v1beta';
+
+// Orden de preferencia (el primero que exista en la cuenta gana). Se consulta
+// /models en tiempo de ejecución, así que también detecta modelos TTS nuevos.
+const MODELOS_PREFERIDOS = [
+  'gemini-3.8-flash-tts',
+  'gemini-3.1-flash-tts',
+  'gemini-3.1-flash-tts-preview',
+  'gemini-2.5-pro-tts',
+  'gemini-2.5-flash-tts',
+  'gemini-2.5-pro-preview-tts',
+  'gemini-2.5-flash-preview-tts',
+];
+const VOZ = process.env.GEMINI_TTS_VOICE || 'Puck'; // "Upbeat": joven y enérgica
+// Ritmo de youtuber: acelera la voz sin cambiar el tono (ffmpeg atempo). 1 = original.
+const VELOCIDAD = parseFloat(process.env.NARRACION_VELOCIDAD || '1.15');
+
+const sinVoz = process.argv.includes('--sin-voz');
+
+// ---------------------------------------------------------------- narracion.txt
+function escribirTxt() {
+  const lineas = [
+    '¿Qué pasaría si todas las personas del mundo saltaran al mismo tiempo? — PARTE 2',
+    '¿Y si los animales también saltaran junto a las personas?',
+    '',
+    `Estilo de voz: ${GUION.estiloVoz}`,
+    '',
+    ...GUION.escenas.map((e) => `Escena ${e.id} — ${e.nombre}:\n${e.texto}\n`),
+  ];
+  fs.writeFileSync(TXT, lineas.join('\n'));
+}
+
+// ---------------------------------------------------------------- tiempos de palabras
+const PAUSA = (w) => (/[…]$|\.\.\.$/.test(w) ? 3 : /[.!?:]$/.test(w) ? 2 : /[,;]$/.test(w) ? 1 : 0);
+const peso = (w) => Math.max(2, w.replace(/[^\p{L}\p{N}]/gu, '').length + (/\d/.test(w) ? 4 : 0)) + 1.2;
+
+function repartir(words, t0, t1) {
+  const total = words.reduce((s, w) => s + peso(w), 0);
+  let t = t0;
+  return words.map((w) => {
+    const d = ((t1 - t0) * peso(w)) / total;
+    const r = {w, start: +t.toFixed(3), end: +(t + d).toFixed(3)};
+    t += d;
+    return r;
+  });
+}
+
+// Divide el texto en frases (cortes en puntuación) y reparte las palabras entre
+// los tramos con voz detectados en el audio.
+function alinear(texto, inicio, fin, silencios) {
+  const words = texto.split(/\s+/).filter(Boolean);
+  const cortes = []; // índice de palabra tras la cual hay pausa
+  words.forEach((w, i) => i < words.length - 1 && PAUSA(w) > 0 && cortes.push(i));
+  let elegidos = cortes;
+  let sil = silencios.filter((s) => s.start > inicio + 0.05 && s.end < fin - 0.05);
+  if (sil.length > cortes.length) {
+    sil = [...sil].sort((a, b) => b.end - b.start - (a.end - a.start)).slice(0, cortes.length);
+    sil.sort((a, b) => a.start - b.start);
+  } else if (sil.length < cortes.length) {
+    elegidos = [...cortes]
+      .sort((a, b) => PAUSA(words[b]) - PAUSA(words[a]) || a - b)
+      .slice(0, sil.length)
+      .sort((a, b) => a - b);
+  }
+  const res = [];
+  let desde = 0;
+  let t = inicio;
+  elegidos.forEach((c, k) => {
+    res.push(...repartir(words.slice(desde, c + 1), t, sil[k].start));
+    desde = c + 1;
+    t = sil[k].end;
+  });
+  res.push(...repartir(words.slice(desde), t, fin));
+  return res;
+}
+
+// Con audio real: reparte las palabras (por longitud) solo sobre el tiempo con voz,
+// saltando todas las pausas detectadas, estén o no en la puntuación.
+function alinearVoz(texto, inicio, fin, silencios) {
+  const words = texto.split(/\s+/).filter(Boolean);
+  const segs = [];
+  let t = inicio;
+  for (const s of silencios.filter((x) => x.end > inicio && x.start < fin).sort((a, b) => a.start - b.start)) {
+    if (s.start > t) segs.push([t, s.start]);
+    t = Math.max(t, s.end);
+  }
+  if (fin > t) segs.push([t, fin]);
+  const total = segs.reduce((a, [x, y]) => a + (y - x), 0);
+  const aReal = (v, inicioDePalabra) => {
+    for (let i = 0; i < segs.length; i++) {
+      const [x, y] = segs[i];
+      const len = y - x;
+      // una palabra que empezaría en los últimos 0,12 s de un tramo, empieza tras la pausa
+      if (v < len - (inicioDePalabra && i < segs.length - 1 ? 0.06 : 0) || i === segs.length - 1) return x + Math.min(v, len);
+      v = Math.max(0, v - len);
+    }
+    return fin;
+  };
+  const pesos = words.map(peso);
+  const sum = pesos.reduce((a, b) => a + b, 0);
+  let acc = 0;
+  return words.map((w, i) => {
+    const v0 = (acc / sum) * total;
+    acc += pesos[i];
+    const v1 = (acc / sum) * total;
+    return {w, start: +aReal(v0, true).toFixed(3), end: +aReal(v1, false).toFixed(3)};
+  });
+}
+
+// Con audio: empareja (en orden) signos de puntuación con pausas reales eligiendo el
+// emparejamiento cuyo ritmo de habla sea más constante (camino mínimo en un DAG), y
+// dentro de cada tramo reparte las palabras por tiempo con voz.
+function alinearAudio(texto, inicio, fin, silencios) {
+  const words = texto.split(/\s+/).filter(Boolean);
+  const sil = silencios.filter((x) => x.start > inicio + 0.05 && x.end < fin - 0.05).sort((a, b) => a.start - b.start);
+  const W = words.map(peso);
+  const cum = [0];
+  W.forEach((w) => cum.push(cum[cum.length - 1] + w));
+  const voz = (t0, t1) => sil.reduce((a, x) => a - (x.start >= t0 && x.end <= t1 ? x.end - x.start : 0), t1 - t0);
+  const ritmo = cum[words.length] / Math.max(0.1, voz(inicio, fin));
+  const breaks = words.map((w, i) => i).filter((i) => i < words.length - 1 && PAUSA(words[i]));
+  // nodos: inicio, (break, pausa), fin
+  const nodos = [{w: -1, t0: inicio, t1: inicio, si: -1}];
+  breaks.forEach((bi) => sil.forEach((x, si) => nodos.push({w: bi, t0: x.start, t1: x.end, si})));
+  nodos.push({w: words.length - 1, t0: fin, t1: fin, si: sil.length});
+  const costo = (a, b) => {
+    if (b.w <= a.w || b.si <= a.si || b.t0 < a.t1) return Infinity;
+    const n = b.w - a.w;
+    const v = voz(a.t1, b.t0);
+    if (v < 0.12 * n) return Infinity;
+    const r = (cum[b.w + 1] - cum[a.w + 1]) / v;
+    const sinUsar = breaks.filter((x) => x > a.w && x < b.w).reduce((acc, x) => acc + 0.4 * PAUSA(words[x]), 0);
+    const pausasLibres = sil.filter((x) => x.start >= a.t1 && x.end <= b.t0).reduce((acc, x) => acc + 0.8 * Math.min(1, x.end - x.start), 0);
+    return Math.log(r / ritmo) ** 2 * n + sinUsar + pausasLibres;
+  };
+  const best = nodos.map(() => Infinity);
+  const prev = nodos.map(() => -1);
+  best[0] = 0;
+  const orden = nodos.map((_, i) => i).sort((x, y) => nodos[x].w - nodos[y].w || nodos[x].si - nodos[y].si);
+  for (const j of orden)
+    for (const i of orden) {
+      if (best[i] === Infinity) continue;
+      const c = best[i] + costo(nodos[i], nodos[j]);
+      if (c < best[j]) {
+        best[j] = c;
+        prev[j] = i;
+      }
+    }
+  const camino = [];
+  for (let j = nodos.length - 1; j >= 0; j = prev[j]) camino.unshift(nodos[j]);
+  if (camino[0] !== nodos[0]) return alinearVoz(texto, inicio, fin, sil);
+  const res = [];
+  for (let k = 1; k < camino.length; k++) {
+    const a = camino[k - 1];
+    const b = camino[k];
+    res.push(...alinearVoz(words.slice(a.w + 1, b.w + 1).join(' '), a.t1, b.t0, sil.filter((x) => x.start >= a.t1 && x.end <= b.t0)));
+  }
+  return res;
+}
+
+function estimarSinAudio(escena) {
+  // ~2.9 palabras/s con pausas en la puntuación; se encaja dentro de la duración objetivo.
+  const words = escena.texto.split(/\s+/);
+  const habla = words.reduce((s, w) => s + 0.3 + PAUSA(w) * 0.18, 0);
+  const inicio = 0.35;
+  const fin = Math.min(escena.objetivo - 0.75, inicio + habla);
+  const silencios = [];
+  let t = inicio;
+  words.forEach((w, i) => {
+    t += ((fin - inicio) * (0.3 + PAUSA(w) * 0.18)) / habla;
+    if (PAUSA(w) && i < words.length - 1) {
+      const d = ((fin - inicio) * PAUSA(w) * 0.18) / habla;
+      silencios.push({start: t - d, end: t});
+    }
+  });
+  return alinear(escena.texto, inicio, fin, silencios);
+}
+
+// ---------------------------------------------------------------- audio
+function wav(pcm, rate, canales = 1) {
+  const h = Buffer.alloc(44);
+  h.write('RIFF', 0);
+  h.writeUInt32LE(36 + pcm.length, 4);
+  h.write('WAVE', 8);
+  h.write('fmt ', 12);
+  h.writeUInt32LE(16, 16);
+  h.writeUInt16LE(1, 20);
+  h.writeUInt16LE(canales, 22);
+  h.writeUInt32LE(rate, 24);
+  h.writeUInt32LE(rate * canales * 2, 28);
+  h.writeUInt16LE(canales * 2, 32);
+  h.writeUInt16LE(16, 34);
+  h.write('data', 36);
+  h.writeUInt32LE(pcm.length, 40);
+  return Buffer.concat([h, pcm]);
+}
+
+function duracion(file) {
+  return parseFloat(
+    execFileSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', file]).toString(),
+  );
+}
+
+function detectarSilencios(file) {
+  let txt = '';
+  try {
+    const r = execFileSync('sh', ['-c', `ffmpeg -hide_banner -i "${file}" -af silencedetect=noise=-38dB:d=0.16 -f null - 2>&1`]);
+    txt = r.toString();
+  } catch (e) {
+    txt = String(e.stdout || '');
+  }
+  const out = [];
+  let s = null;
+  for (const line of txt.split('\n')) {
+    const a = line.match(/silence_start: ([\d.]+)/);
+    const b = line.match(/silence_end: ([\d.]+)/);
+    if (a) s = parseFloat(a[1]);
+    if (b && s !== null) {
+      out.push({start: s, end: parseFloat(b[1])});
+      s = null;
+    }
+  }
+  return out;
+}
+
+async function pedir(url, body, intentos = 4) {
+  let ultimo;
+  let esperas = 0;
+  for (let i = 0; i < intentos; i++) {
+    try {
+      const r = await fetch(url, {
+        method: body ? 'POST' : 'GET',
+        headers: {'Content-Type': 'application/json', 'x-goog-api-key': process.env.GEMINI_API_KEY},
+        body: body ? JSON.stringify(body) : undefined,
+      });
+      const j = await r.json();
+      if (r.status === 429) {
+        // Límite por minuto → esperar lo que pide la API. Límite diario → pasar al siguiente modelo.
+        const msg = j?.error?.message || '';
+        const retry = (j?.error?.details || []).find((d) => d.retryDelay)?.retryDelay;
+        const seg = parseFloat(retry || (msg.match(/retry in ([\d.]+)s/) || [])[1] || '60');
+        const linea = (msg.match(/Quota exceeded for metric[^\n]*/) || [msg.split('\n')[0]])[0];
+        if (seg > 120) throw Object.assign(new Error(`429 cuota agotada (reintentar en ${Math.round(seg / 60)} min): ${linea}`), {diario: true});
+        console.log(`    … límite por minuto, esperando ${Math.ceil(seg + 2)} s (${linea.slice(0, 90)})`);
+        await new Promise((res) => setTimeout(res, (seg + 2) * 1000));
+        i--; // no cuenta como intento fallido
+        if (++esperas > 20) throw new Error('429 demasiadas esperas');
+        continue;
+      }
+      if (!r.ok) throw new Error(`${r.status} ${j?.error?.message || ''}`);
+      return j;
+    } catch (e) {
+      ultimo = e;
+      if (e.diario || /\b(400|401|403|404)\b/.test(String(e.message))) break;
+      await new Promise((res) => setTimeout(res, 2000 * 2 ** i));
+    }
+  }
+  throw ultimo;
+}
+
+async function elegirModelos() {
+  if (process.env.GEMINI_TTS_MODEL) return [process.env.GEMINI_TTS_MODEL];
+  const disponibles = [];
+  let token = '';
+  do {
+    const j = await pedir(`${API}/models?pageSize=1000${token ? `&pageToken=${token}` : ''}`);
+    for (const m of j.models || []) disponibles.push(m.name.replace(/^models\//, ''));
+    token = j.nextPageToken || '';
+  } while (token);
+  const tts = disponibles.filter((m) => /tts/i.test(m));
+  const orden = [...MODELOS_PREFERIDOS.filter((m) => tts.includes(m)), ...tts.filter((m) => !MODELOS_PREFERIDOS.includes(m)).sort().reverse()];
+  if (orden.length) return orden;
+  throw new Error('La cuenta no expone ningún modelo de TTS');
+}
+
+async function sintetizar(modelo, texto) {
+  const prompt = `${GUION.estiloVoz}. Lee en voz alta exactamente este texto, sin añadir nada:\n\n${texto}`;
+  const j = await pedir(`${API}/models/${modelo}:generateContent`, {
+    contents: [{parts: [{text: prompt}]}],
+    generationConfig: {
+      responseModalities: ['AUDIO'],
+      speechConfig: {voiceConfig: {prebuiltVoiceConfig: {voiceName: VOZ}}},
+    },
+  });
+  const part = j?.candidates?.[0]?.content?.parts?.find((p) => p.inlineData);
+  if (!part) throw new Error('Respuesta sin audio');
+  const mime = part.inlineData.mimeType || '';
+  const rate = parseInt((mime.match(/rate=(\d+)/) || [])[1] || '24000', 10);
+  const pcm = Buffer.from(part.inlineData.data, 'base64');
+  if (/wav/i.test(mime)) return pcm;
+  return wav(pcm, rate);
+}
+
+// ---------------------------------------------------------------- main
+function guardar(escenas, extra) {
+  const data = {generadoCon: extra.generadoCon, modelo: extra.modelo || null, voz: extra.voz || null, nota: extra.nota || null, escenas};
+  fs.writeFileSync(OUT_JSON, JSON.stringify(data, null, 2) + '\n');
+  const total = escenas.reduce((s, e) => s + e.duracion, 0);
+  console.log(`✔ ${path.relative(ROOT, OUT_JSON)} — ${escenas.length} escenas, ${total.toFixed(2)} s en total (${extra.generadoCon})`);
+}
+
+function sinAudio(nota) {
+  const escenas = GUION.escenas.map((e) => ({
+    id: e.id,
+    texto: e.texto,
+    audio: null,
+    duracionAudio: null,
+    duracion: e.objetivo,
+    palabras: estimarSinAudio(e),
+  }));
+  guardar(escenas, {generadoCon: 'estimado', nota});
+}
+
+async function main() {
+  escribirTxt();
+  console.log(`✔ narracion.txt escrito`);
+  if (sinVoz) return sinAudio('Render sin voz: tiempos estimados.');
+
+  if (!process.env.GEMINI_API_KEY) {
+    console.error(
+      '✖ Falta GEMINI_API_KEY. Agrégala como variable de entorno (no la pongas en el código) y vuelve a ejecutar.\n' +
+        '  Para continuar sin voz: npm run narracion:sin-voz',
+    );
+    process.exit(2);
+  }
+
+  try {
+    const candidatos = await elegirModelos();
+    let escenas = null;
+    let modelo = null;
+    // Un solo modelo para todas las escenas (voz consistente). Si un modelo no tiene
+    // cuota (429), se reintenta TODO con el siguiente.
+    for (const m of candidatos) {
+      try {
+        console.log(`→ Modelo TTS: ${m} · voz: ${VOZ}`);
+        escenas = await narrarTodo(m);
+        modelo = m;
+        break;
+      } catch (err) {
+        if (!err.diario && !/\b429\b/.test(String(err.message))) throw err;
+        console.warn(`  ⚠ ${m}: ${String(err.message).slice(0, 300)} → probando el siguiente modelo…`);
+      }
+    }
+    if (!escenas) throw new Error('Ningún modelo TTS tiene cuota disponible (429)');
+    guardar(escenas, {generadoCon: 'gemini', modelo, voz: VOZ, nota: `velocidad ${VELOCIDAD}x`});
+  } catch (err) {
+    console.error(`✖ Falló la API de Gemini (${err.message}). Se usa narracion.txt y se renderiza SIN voz.`);
+    sinAudio(`Gemini falló: ${err.message}`);
+    process.exitCode = 3;
+  }
+}
+
+async function narrarTodo(modelo) {
+  {
+    fs.mkdirSync(AUDIO_DIR, {recursive: true});
+    const escenas = [];
+    for (const e of GUION.escenas) {
+      const file = path.join(AUDIO_DIR, `escena${e.id}.wav`);
+      const key = crypto.createHash('sha1').update(`${modelo}|${VOZ}|${GUION.estiloVoz}|${e.texto}`).digest('hex').slice(0, 16);
+      const cache = path.join(ROOT, '.tts-cache', `${key}.wav`);
+      if (!fs.existsSync(cache)) {
+        fs.mkdirSync(path.dirname(cache), {recursive: true});
+        fs.writeFileSync(cache, await sintetizar(modelo, e.texto));
+      }
+      if (VELOCIDAD !== 1) {
+        execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-i', cache, '-af', `atempo=${VELOCIDAD}`, '-ar', '24000', '-ac', '1', file]);
+      } else fs.copyFileSync(cache, file);
+      const dur = duracion(file);
+      const sil = detectarSilencios(file);
+      // Voz real: desde el fin del silencio inicial hasta el inicio del silencio final.
+      const inicio = sil.length && sil[0].start < 0.05 ? sil[0].end : 0;
+      const ultimo = sil[sil.length - 1];
+      const fin = ultimo && ultimo.end > dur - 0.05 ? ultimo.start : dur;
+      const palabras = alinearAudio(e.texto, inicio, fin, sil);
+      const duracionEscena = +Math.max(e.minimo, dur + GUION.margenSegundos).toFixed(3);
+      escenas.push({id: e.id, texto: e.texto, audio: `audio/narracion/escena${e.id}.wav`, duracionAudio: +dur.toFixed(3), duracion: duracionEscena, palabras});
+      const esperado = e.texto.split(/\s+/).length / 2.2;
+      if (dur > esperado * 1.9 && dur > esperado + 4) console.warn(`  ⚠ escena ${e.id}: el audio dura mucho más de lo esperado (¿leyó la indicación de estilo?)`);
+      console.log(`  escena ${e.id}: audio ${dur.toFixed(2)} s → escena ${duracionEscena.toFixed(2)} s`);
+    }
+    return escenas;
+  }
+}
+
+main();
