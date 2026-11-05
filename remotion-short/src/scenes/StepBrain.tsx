@@ -1,11 +1,14 @@
 import React from 'react';
 import {AbsoluteFill, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Brain} from '../components/Brain';
-import {Captions} from '../components/Captions';
+import {Captions, wordStarts} from '../components/Captions';
 import {Chip} from '../components/Chip';
+import {voiceWindow} from '../narration';
 import {CYAN, PINK} from '../theme';
 
-const SWITCH = 128; // "Sin dormir..."
+const TEXT = 'Mientras duermes, tu cerebro limpia desechos que se acumulan durante el día. Sin dormir, esa limpieza no ocurre';
+const W = voiceWindow('step2');
+const SWITCH = wordStarts(TEXT, W.start, W.end)[TEXT.split(' ').indexOf('Sin')]; // "Sin dormir..."
 
 export const StepBrain: React.FC = () => {
   const frame = useCurrentFrame();
@@ -23,9 +26,9 @@ export const StepBrain: React.FC = () => {
         </div>
       </div>
       <Captions
-        text="Mientras duermes, tu cerebro limpia desechos que se acumulan durante el día. Sin dormir, esa limpieza no ocurre"
-        start={6}
-        end={196}
+        text={TEXT}
+        start={voiceWindow('step2').start}
+        end={voiceWindow('step2').end}
         top={1110}
         fontSize={70}
         highlights={{limpia: CYAN, desechos: CYAN, duermes: CYAN, sin: PINK, dormir: PINK, no: PINK, ocurre: PINK}}

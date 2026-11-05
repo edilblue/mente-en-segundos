@@ -1,0 +1,22 @@
+{
+  "hook": {
+    "start": 4,
+    "end": 64
+  },
+  "step1": {
+    "start": 100,
+    "end": 262
+  },
+  "step2": {
+    "start": 340,
+    "end": 533
+  },
+  "step3": {
+    "start": 580,
+    "end": 751
+  },
+  "outro": {
+    "start": 816,
+    "end": 865
+  }
+}

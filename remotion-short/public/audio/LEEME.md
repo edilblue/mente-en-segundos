@@ -1,13 +1,10 @@
 <!--
-  AUDIO DEL SHORT — coloca aquí tus archivos:
-
-    public/audio/musica.mp3   -> música de fondo (30 s o más; se recorta sola)
-    public/audio/voz.mp3      -> voz en off (empieza en el segundo 0)
-
-  Luego abre src/Short.tsx y descomenta el bloque marcado con
-  "AUDIO" (componentes <Audio>). Vuelve a renderizar con:  npm run render
+  AUDIO DEL SHORT
+    public/audio/voz.wav      -> voz en off (generada con tools/narracion.py)
+    public/audio/musica.mp3   -> música de fondo: agrégala tú y descomenta la línea
+                                 de música en src/Short.tsx; luego: npm run render
 -->
 # Carpeta de audio
 
-Agrega aquí la **música** (`musica.mp3`) y la **voz en off** (`voz.mp3`).
-Después descomenta el bloque `AUDIO` en `src/Short.tsx` y ejecuta `npm run render`.
+- `voz.wav`: narración generada con `python tools/narracion.py` (Kokoro TTS local).
+- `musica.mp3`: agrega aquí tu música y descomenta la línea `musica.mp3` en `src/Short.tsx`, luego ejecuta `npm run render`.

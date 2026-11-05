@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {AbsoluteFill, continueRender, delayRender, interpolate, Easing, Sequence, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Audio, continueRender, delayRender, interpolate, Easing, Sequence, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Background} from './components/Background';
 import {MoonBed} from './components/MoonBed';
 import {ProgressBar} from './components/ProgressBar';
@@ -64,12 +64,10 @@ export const Short: React.FC = () => {
     <AbsoluteFill style={{backgroundColor: '#060920', overflow: 'hidden'}}>
       <Background />
 
-      {/*
-        AUDIO — coloca los archivos en public/audio/ y descomenta:
-
-        import {Audio} from 'remotion';
-        <Audio src={staticFile('audio/musica.mp3')} volume={0.25} />
-        <Audio src={staticFile('audio/voz.mp3')} volume={1} />
+      {/* AUDIO — voz en off generada con tools/narracion.py (Kokoro TTS local) */}
+      <Audio src={staticFile('audio/voz.wav')} />
+      {/* Música: coloca public/audio/musica.mp3 y descomenta:
+        <Audio src={staticFile('audio/musica.mp3')} volume={0.15} />
       */}
 
       <AbsoluteFill style={{transform: `scale(${zoom})`}}>

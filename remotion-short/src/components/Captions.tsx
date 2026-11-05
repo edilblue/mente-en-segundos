@@ -14,19 +14,24 @@ type Props = {
 const clean = (w: string) => w.toLowerCase().replace(/[¿?¡!.,:]/g, '');
 const isEmoji = (w: string) => /\p{Extended_Pictographic}/u.test(w);
 
-export const Captions: React.FC<Props> = ({text, start, end, highlights = {}, fontSize = 78, top}) => {
-  const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const words = text.split(' ');
-  // Tiempo de cada palabra proporcional a su longitud (como un ritmo de habla)
-  const weights = words.map((w) => w.length + 3);
+// Momento (frame local) en que aparece cada palabra: proporcional a su longitud,
+// repartido entre el inicio y el final de la frase narrada.
+export const wordStarts = (text: string, start: number, end: number) => {
+  const weights = text.split(' ').map((w) => w.length + 3);
   const total = weights.reduce((a, b) => a + b, 0);
   let acc = 0;
-  const starts = weights.map((w) => {
+  return weights.map((w) => {
     const s = start + ((end - start) * acc) / total;
     acc += w;
     return Math.round(s);
   });
+};
+
+export const Captions: React.FC<Props> = ({text, start, end, highlights = {}, fontSize = 78, top}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const words = text.split(' ');
+  const starts = wordStarts(text, start, end);
 
   return (
     <div

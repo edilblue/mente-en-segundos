@@ -1,6 +1,7 @@
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
 import {Captions} from '../components/Captions';
+import {voiceWindow} from '../narration';
 import {CYAN, PINK} from '../theme';
 
 // Escena 1 y 5 comparten este diseño para que el loop se sienta natural.
@@ -11,7 +12,7 @@ export const Hook: React.FC = () => (
     <Captions
       text="¿Qué pasaría si dejaras de dormir?"
       start={0}
-      end={40}
+      end={voiceWindow('hook').end}
       top={HERO_CAPTION_TOP}
       fontSize={104}
       highlights={{dormir: CYAN, dejaras: PINK}}
@@ -23,8 +24,8 @@ export const Outro: React.FC = () => (
   <AbsoluteFill>
     <Captions
       text="¿Cuántas horas duermes tú? 👇"
-      start={4}
-      end={40}
+      start={voiceWindow('outro').start}
+      end={voiceWindow('outro').end}
       top={HERO_CAPTION_TOP}
       fontSize={104}
       highlights={{horas: CYAN, tú: PINK}}
