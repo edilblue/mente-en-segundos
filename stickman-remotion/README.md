@@ -17,6 +17,9 @@ npm install
 export GEMINI_API_KEY=...            # o agrégala en los secretos del entorno
 npm run narracion                    # elige el modelo TTS vigente consultando /models
 #    Opcionales: GEMINI_TTS_VOICE=Puck (por defecto)  GEMINI_TTS_MODEL=<forzar modelo>
+#                NARRACION_VELOCIDAD=1.15 (ritmo de youtuber, sin cambiar el tono; 1 = original)
+#    Cuota gratuita: ~10 peticiones/día por modelo y se necesitan 9. El audio se guarda en
+#    .tts-cache/ para no gastar peticiones al volver a ejecutar; los 429 por minuto se esperan solos.
 
 # 2) Segundos exactos de música y efectos (public/audio/README)
 npm run readme-audio
