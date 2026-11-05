@@ -1,10 +1,11 @@
 import React from 'react';
-import {useCurrentFrame} from 'remotion';
-import {CYAN, DURATION, PINK, SAFE_TOP, WIDTH} from '../theme';
+import {useCurrentFrame, useVideoConfig} from 'remotion';
+import {CYAN, PINK, SAFE_TOP, WIDTH} from '../theme';
 
 export const ProgressBar: React.FC = () => {
   const frame = useCurrentFrame();
-  const p = Math.min(1, frame / (DURATION - 1));
+  const {durationInFrames} = useVideoConfig();
+  const p = Math.min(1, frame / (durationInFrames - 1));
   const margin = 70;
   const w = WIDTH - margin * 2;
   return (

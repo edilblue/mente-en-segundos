@@ -1,11 +1,11 @@
 import React from 'react';
-import {AbsoluteFill, random, useCurrentFrame} from 'remotion';
-import {CYAN, DURATION, HEIGHT, PINK, WIDTH} from '../theme';
+import {AbsoluteFill, random, useCurrentFrame, useVideoConfig} from 'remotion';
+import {CYAN, HEIGHT, PINK, WIDTH} from '../theme';
 
 const TAU = Math.PI * 2;
 const GRID = 90;
 
-// Todo es periódico con DURATION para que el loop sea perfecto.
+// Todo es periódico con la duración del video para que el loop sea perfecto.
 const PARTICLES = new Array(55).fill(0).map((_, i) => ({
   x: random(`px${i}`) * WIDTH,
   y: random(`py${i}`) * (HEIGHT + 60),
@@ -19,7 +19,8 @@ const PARTICLES = new Array(55).fill(0).map((_, i) => ({
 
 export const Background: React.FC = () => {
   const frame = useCurrentFrame();
-  const t = frame / DURATION; // 0..1
+  const {durationInFrames} = useVideoConfig();
+  const t = frame / durationInFrames; // 0..1 (periódico con la duración del video)
   const shift = (t * GRID * 2) % GRID;
 
   return (

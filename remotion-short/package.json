@@ -7,7 +7,9 @@
     "studio": "remotion studio",
     "render": "remotion render SinDormir out/short.raw.mp4 && ffmpeg -v error -y -i out/short.raw.mp4 -c:v copy -af loudnorm=I=-15:TP=-1.5:LRA=11 -ar 48000 -c:a aac -b:a 192k out/short.mp4 && rm out/short.raw.mp4",
     "typecheck": "tsc --noEmit",
-    "voz": "python3 tools/voz_google.py && python3 tools/sonido.py"
+    "voz": "python3 tools/voz_google.py && python3 tools/sonido.py",
+    "render:v2": "remotion render SinDormirV2 out/short_v2.raw.mp4 && ffmpeg -v error -y -i out/short_v2.raw.mp4 -c:v copy -af loudnorm=I=-14:TP=-1.5:LRA=11 -ar 48000 -c:a aac -b:a 192k out/short_v2.mp4 && rm out/short_v2.raw.mp4",
+    "voz:v2": "python3 tools/voz_v2.py && python3 tools/sonido_v2.py"
   },
   "dependencies": {
     "@remotion/cli": "4.0.540",

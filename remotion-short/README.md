@@ -1,5 +1,18 @@
 # Short: ¿Qué pasaría si dejaras de dormir? (Remotion)
 
+## ⭐ Versión 2 (67 s, optimizada para retención) → [`out/short_v2.mp4`](out/short_v2.mp4)
+Historia real de Randy Gardner (11 días sin dormir, 1963–64) contada **día por día**:
+gancho con el dato fuerte en el primer frame, contador "DÍA X / 11" siempre visible, un cambio visual por
+escena, "golpe" de zoom en cada frase, destello en cada cambio de día, desenlace al final
+(durmió casi 15 h y se recuperó; Guinness ya no acepta el récord) y loop con el inicio.
+
+- Guion: `src/v2/script.json` (texto hablado y texto en pantalla por frase).
+- Voz: `npm run voz:v2` (Google Gemini TTS, necesita `GEMINI_API_KEY`) → genera la voz, la línea de tiempo
+  `src/v2/timeline.json` (la duración de cada escena sale de la propia voz) y la música/FX.
+- Render: `npm run render:v2`.
+
+## Versión 1 (30 s) → [`out/short.mp4`](out/short.mp4)
+
 YouTube Short vertical 1080x1920, 30 fps, 30 s, hecho al 100 % con código (React + TypeScript + SVG, sin imágenes externas).
 
 **Video renderizado:** [`out/short.mp4`](out/short.mp4)

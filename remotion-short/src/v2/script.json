@@ -1,0 +1,20 @@
+{
+  "lines": [
+    {"id": "h1", "scene": "hook", "spoken": "Este chico estuvo once días sin dormir.", "display": "Este chico estuvo 11 días sin dormir."},
+    {"id": "h2", "scene": "hook", "spoken": "Esto es lo que le pasó a su cerebro, día por día.", "display": "Esto es lo que le pasó a su cerebro, día por día."},
+    {"id": "c1", "scene": "context", "spoken": "Se llamaba Randy Gardner, tenía diecisiete años, y lo hizo para una feria de ciencias.", "display": "Se llamaba Randy Gardner, tenía 17 años, y lo hizo para una feria de ciencias."},
+    {"id": "d1", "scene": "day1", "spoken": "Día uno. Tras veinticuatro horas despierto, tus reflejos ya son como los de alguien que bebió alcohol.", "display": "Día 1. Tras 24 horas despierto, tus reflejos ya son como los de alguien que bebió alcohol."},
+    {"id": "d2", "scene": "day23", "spoken": "Día dos: le costaba enfocar la vista.", "display": "Día 2: le costaba enfocar la vista."},
+    {"id": "d3", "scene": "day23", "spoken": "Día tres: mal humor y torpeza.", "display": "Día 3: mal humor y torpeza."},
+    {"id": "b1", "scene": "brain", "spoken": "¿Por qué pasa esto? Mientras duermes, tu cerebro limpia los desechos que acumula durante el día.", "display": "¿Por qué pasa esto? Mientras duermes, tu cerebro limpia los desechos que acumula durante el día."},
+    {"id": "b2", "scene": "brain", "spoken": "Sin dormir, esa basura se queda ahí.", "display": "Sin dormir, esa basura se queda ahí."},
+    {"id": "d4", "scene": "day4", "spoken": "Día cuatro: empezó a alucinar. Confundió una señal de tráfico con una persona.", "display": "Día 4: empezó a alucinar. Confundió una señal de tráfico con una persona."},
+    {"id": "d4b", "scene": "day4", "spoken": "Y llegó a creer que era un famoso jugador de fútbol americano.", "display": "Y llegó a creer que era un famoso jugador de fútbol americano."},
+    {"id": "d9", "scene": "day9", "spoken": "Día nueve: ya no podía terminar sus frases.", "display": "Día 9: ya no podía terminar sus frases."},
+    {"id": "d11", "scene": "day9", "spoken": "Día once: hablaba lento, sin expresión, y olvidaba lo que estaba diciendo.", "display": "Día 11: hablaba lento, sin expresión, y olvidaba lo que estaba diciendo."},
+    {"id": "p1", "scene": "payoff", "spoken": "Pero lo más sorprendente vino al final: durmió casi quince horas seguidas.", "display": "Pero lo más sorprendente vino al final: durmió casi 15 horas seguidas."},
+    {"id": "p2", "scene": "payoff", "spoken": "Y al despertar, estaba prácticamente recuperado.", "display": "Y al despertar, estaba prácticamente recuperado."},
+    {"id": "g1", "scene": "guinness", "spoken": "Hoy, Guinness ya no acepta este récord: es demasiado peligroso.", "display": "Hoy, Guinness ya no acepta este récord: es demasiado peligroso."},
+    {"id": "o1", "scene": "outro", "spoken": "¿Y tú, cuántas horas duermes? Te leo en comentarios.", "display": "¿Y tú, cuántas horas duermes? Te leo en comentarios 👇"}
+  ]
+}

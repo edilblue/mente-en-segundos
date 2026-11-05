@@ -41,12 +41,21 @@ const poly = (x: number, y: number, s: number, sides: number, rot: number) =>
     })
     .join(' ');
 
-// Fase "limpieza" (desechos que salen) y fase "sin dormir" (desechos que se acumulan)
-const CLEAN = make('c', 26, 0, 110);
-const DIRT = make('d', 95, 125, 225);
+// Fase "limpieza" (desechos que salen) y fase "sin dormir" (desechos que se acumulan).
+// Las ventanas se calculan a partir de `switchAt` (frame de "Sin dormir").
+const CLEAN_BASE = make('c', 26, 0, 1);
+const DIRT_BASE = make('d', 95, 0, 1);
 
-export const Brain: React.FC<{frame: number; switchAt: number; width: number}> = ({frame, switchAt, width}) => {
-  const health = interpolate(frame, [switchAt, 235], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+export const Brain: React.FC<{frame: number; switchAt: number; width: number; fillFrames?: number}> = ({
+  frame,
+  switchAt,
+  width,
+  fillFrames = 100,
+}) => {
+  const cleanEnd = Math.max(20, switchAt - 18);
+  const CLEAN = CLEAN_BASE.map((p) => ({...p, born: p.born * cleanEnd}));
+  const DIRT = DIRT_BASE.map((p) => ({...p, born: switchAt - 3 + p.born * fillFrames}));
+  const health = interpolate(frame, [switchAt, switchAt + fillFrames + 10], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const fillA = interpolateColors(health, [0, 1], ['#3a1636', '#4a2a9a']);
   const fillB = interpolateColors(health, [0, 1], ['#5a1d3a', '#a03bb8']);
   const stroke = interpolateColors(health, [0, 1], [PINK, CYAN]);
@@ -120,7 +129,7 @@ export const Brain: React.FC<{frame: number; switchAt: number; width: number}> =
         const f = frame - p.born;
         if (f < 0) return null;
         const prog = Math.min(1, f / 22);
-        const settle = interpolate(frame, [switchAt, 240], [1.0, 0.82], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+        const settle = interpolate(frame, [switchAt, switchAt + fillFrames + 15], [1.0, 0.82], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
         const k = (1.9 - 0.9 * (1 - Math.pow(1 - prog, 3))) * settle;
         const a = p.a + frame * 0.002 * p.spin;
         const x = CX + Math.cos(a) * p.rx * k + Math.sin(frame / 6 + i) * 4;
