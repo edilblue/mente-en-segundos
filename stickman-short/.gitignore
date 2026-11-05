@@ -1,0 +1,4 @@
+node_modules/
+out/*
+!out/short.mp4
+!out/frames/
