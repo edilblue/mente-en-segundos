@@ -87,17 +87,51 @@ function toWav(data, out) {
   return dur(out);
 }
 
+/**
+ * Gemini TTS añade al final de cada clip ~0.1-0.2 s de ruido a volumen máximo
+ * tras un silencio. Se recorta: desde el final, se salta el ruido fuerte y luego
+ * el silencio, y se corta 120 ms después del último sonido de voz.
+ */
+function cleanTail(src, dst) {
+  const sr = 48000;
+  const pcm = execFileSync('ffmpeg', ['-v', 'error', '-i', src, '-f', 'f32le', '-ac', '1', '-ar', String(sr), '-'], {maxBuffer: 1 << 28});
+  const x = new Float32Array(pcm.buffer, pcm.byteOffset, pcm.byteLength / 4);
+  const win = sr / 100; // 10 ms
+  const nf = Math.floor(x.length / win);
+  const db = (i) => {
+    let e = 0;
+    for (let k = i * win; k < (i + 1) * win; k++) e += x[k] * x[k];
+    return 10 * Math.log10(e / win + 1e-12);
+  };
+  let i = nf - 1;
+  const limit = Math.max(0, nf - 60); // como mucho 0.6 s de cola
+  while (i > limit && db(i) > -45) i--; // ruido final
+  const noisy = nf - 1 - i;
+  let j = i;
+  while (j > 0 && db(j) < -50) j--; // silencio previo
+  let end = x.length;
+  if (noisy >= 3 && i - j >= 3) end = Math.min(x.length, (j + 1) * win + Math.round(0.12 * sr));
+  const out = x.slice(0, end);
+  const tmp = dst + '.f32';
+  fs.writeFileSync(tmp, Buffer.from(out.buffer));
+  execFileSync('ffmpeg', ['-v', 'error', '-y', '-f', 'f32le', '-ar', String(sr), '-ac', '1', '-i', tmp, '-c:a', 'pcm_s16le', dst]);
+  fs.rmSync(tmp);
+  return {cut: (x.length - end) / sr, noisy: noisy / 100};
+}
+
+const FADES = (d) => `afade=t=in:d=0.008,afade=t=out:st=${Math.max(0, d - 0.05).toFixed(3)}:d=0.05`;
+
 /** Ajusta un clip a su hueco (acelera con atempo si hace falta). */
 function fit(src, dst, slot, label) {
   const d = dur(src);
   const max = slot - 0.1;
   if (d > max) {
     const tempo = Math.min(1.5, d / max);
-    execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', src, '-af', `atempo=${tempo.toFixed(3)}`, dst]);
+    execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', src, '-af', `atempo=${tempo.toFixed(3)},${FADES(d / tempo)}`, dst]);
     console.log(`  ${label}: ${d.toFixed(2)} s → x${tempo.toFixed(2)} para caber en ${slot} s`);
   } else {
-    fs.copyFileSync(src, dst);
-    console.log(`  ${label}: ${d.toFixed(2)} s (cabe en ${slot} s)`);
+    execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', src, '-af', FADES(d), dst]);
+    console.log(`  ${label}: ${d.toFixed(2)} s (cabe en ${slot.toFixed(2)} s)`);
   }
   return Number(dur(dst).toFixed(3));
 }
@@ -134,11 +168,14 @@ for (const line of VOICE_LINES) {
     fs.writeFileSync(metaF, tag);
   }
 
+  const cleanF = path.join(outDir, `${line.id}_clean.wav`);
+  const c = cleanTail(raw, cleanF);
+  if (c.cut > 0) console.log(`  ${line.id}: recortados ${c.cut.toFixed(2)} s de ruido final`);
   const n = line.parts.length;
-  const total = dur(raw);
+  const total = dur(cleanF);
   let cuts = [0, total];
   if (n > 1) {
-    const sil = silenceList(raw, 0.12).filter(([a, b]) => a > 0.15 && b < total - 0.15);
+    const sil = silenceList(cleanF, 0.12).filter(([a, b]) => a > 0.15 && b < total - 0.15);
     const gaps = [...sil].sort((x, y) => y[1] - y[0] - (x[1] - x[0])).slice(0, n - 1).sort((x, y) => x[0] - y[0]);
     if (gaps.length === n - 1) cuts = [0, ...gaps.map(([a, b]) => (a + b) / 2), total];
     else console.warn(`  ${line.id}: no encontré ${n - 1} pausas; uso el clip entero en ${line.parts[0].start} s`);
@@ -148,12 +185,13 @@ for (const line of VOICE_LINES) {
     const part = line.parts[k];
     const slot = (pieces === 1 ? line.parts[n - 1].end : part.end) - part.start;
     const seg = path.join(outDir, `${line.id}_${k}_seg.wav`);
-    execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', raw, '-ss', cuts[k].toFixed(3), '-to', cuts[k + 1].toFixed(3), '-af', TRIM, seg]);
+    execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', cleanF, '-ss', cuts[k].toFixed(3), '-to', cuts[k + 1].toFixed(3), '-af', TRIM, seg]);
     const dst = path.join(outDir, `${line.id}_${k}.wav`);
     const d = fit(seg, dst, slot, `${line.id}.${k}`);
     fs.rmSync(seg);
     manifest.push({id: `${line.id}_${k}`, file: `audio/voz/${line.id}_${k}.wav`, start: part.start, duration: d});
   }
+  fs.rmSync(cleanF);
 }
 
 fs.writeFileSync(

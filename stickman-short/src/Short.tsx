@@ -62,6 +62,8 @@ export const Short: React.FC = () => {
       {WIPES.map((w, i) => (
         <InkWipe key={i} frame={f} at={w.at} flip={w.flip} seed={`ink${i}`} />
       ))}
+      {/* MÚSICA + EFECTOS: pista generada por scripts/sound.py (sintetizada por código, con ducking bajo la voz) */}
+      <Audio src={staticFile('audio/fondo.wav')} />
       {/* VOZ EN OFF: clips de Gemini TTS colocados en el segundo exacto de cada línea (src/narration.ts) */}
       {NARRATION.map((n) => (
         <Sequence key={n.id} from={Math.round(n.start * 30)} durationInFrames={Math.ceil(n.duration * 30) + 2} layout="none">

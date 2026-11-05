@@ -1,11 +1,17 @@
 # Audio — marcas de tiempo exactas
 
-El video `out/short.mp4` se renderiza **sin audio**. Aquí están los segundos exactos
-para montar música, voz en off y efectos (30 fps → frame = segundo × 30).
+El video `out/short.mp4` ya lleva las tres capas de audio, todas generadas por código:
+
+- **Voz en off**: Gemini TTS (`scripts/narrate.mjs` → `public/audio/voz/*.wav`).
+- **Música + efectos**: sintetizados con numpy/scipy (`scripts/sound.py` → `public/audio/fondo.wav`),
+  con *ducking* automático bajo la voz.
+- **Mezcla final**: `scripts/mix.sh out/short.mp4` (normaliza a −14 LUFS y la une al video).
+
+Abajo están los segundos exactos de cada elemento (30 fps → frame = segundo × 30).
 Los mismos puntos están marcados con comentarios `SFX:` en `src/scenes/*.tsx` y en `src/Short.tsx`.
 
-Para añadir los archivos a Remotion: copia los audios en esta carpeta y usa
-`<Audio src={staticFile('audio/boing.mp3')} />` dentro de una `<Sequence from={frame}>`.
+Para cambiar un efecto, edita su línea en `scripts/sound.py` (sección "efectos de sonido") y
+vuelve a ejecutar `python3 scripts/sound.py && scripts/mix.sh out/short.mp4`.
 
 ## 1. Música de fondo
 

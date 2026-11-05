@@ -21,6 +21,8 @@ npm run studio                 # previsualizar en el navegador
 GEMINI_API_KEY=... npm run narrate   # voz en off con Gemini TTS → public/audio/voz/*.wav
 npm run render                 # → out/short.mp4 (incluye la voz si ya se generó)
 npm run video                  # narrate + render en un paso
+python3 scripts/sound.py       # música + efectos sintetizados → public/audio/fondo.wav
+scripts/mix.sh out/short.mp4   # mezcla voz + fondo y la pone en el MP4 (sin re-renderizar)
 node scripts/stills.mjs 3 12 22 35 44 60 72 --out=out/frames   # fotogramas de revisión
 ```
 

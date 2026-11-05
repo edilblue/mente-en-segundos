@@ -10,7 +10,7 @@ export const NARRATION: {id: string; file: string; start: number; duration: numb
     "id": "01_1",
     "file": "audio/voz/01_1.wav",
     "start": 5.2,
-    "duration": 3.11
+    "duration": 2.736
   },
   {
     "id": "02_0",
@@ -22,7 +22,7 @@ export const NARRATION: {id: string; file: string; start: number; duration: numb
     "id": "02_1",
     "file": "audio/voz/02_1.wav",
     "start": 11.4,
-    "duration": 3.219
+    "duration": 2.845
   },
   {
     "id": "03_0",
@@ -34,7 +34,7 @@ export const NARRATION: {id: string; file: string; start: number; duration: numb
     "id": "03_1",
     "file": "audio/voz/03_1.wav",
     "start": 19.1,
-    "duration": 6.63
+    "duration": 6.346
   },
   {
     "id": "04_0",
@@ -58,7 +58,7 @@ export const NARRATION: {id: string; file: string; start: number; duration: numb
     "id": "04_3",
     "file": "audio/voz/04_3.wav",
     "start": 31.2,
-    "duration": 1.638
+    "duration": 1.016
   },
   {
     "id": "05_0",
@@ -70,13 +70,13 @@ export const NARRATION: {id: string; file: string; start: number; duration: numb
     "id": "05_1",
     "file": "audio/voz/05_1.wav",
     "start": 44.2,
-    "duration": 2.804
+    "duration": 2.281
   },
   {
     "id": "06_0",
     "file": "audio/voz/06_0.wav",
     "start": 48.2,
-    "duration": 4.168
+    "duration": 3.712
   },
   {
     "id": "07_0",
@@ -88,18 +88,18 @@ export const NARRATION: {id: string; file: string; start: number; duration: numb
     "id": "07_1",
     "file": "audio/voz/07_1.wav",
     "start": 63,
-    "duration": 3.499
+    "duration": 3.017
   },
   {
     "id": "08_0",
     "file": "audio/voz/08_0.wav",
     "start": 68.3,
-    "duration": 4.728
+    "duration": 4.397
   },
   {
     "id": "09_0",
     "file": "audio/voz/09_0.wav",
     "start": 75.3,
-    "duration": 2.208
+    "duration": 1.631
   }
 ];
