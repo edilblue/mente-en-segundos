@@ -22,6 +22,12 @@ Fuentes: Storey & Storey (criobiología de Rana sylvatica); Larson et al. 2014, 
 (despensa sumergida, refugio de barro congelado, apnea ~15 min, grasa en la cola, esmalte con hierro).
 
 ## Estado
-- Imágenes: s01 (ElevenLabs). Faltan s02–s10.
-- Audio: s01, s03, s05, s06, s07, s08 (ElevenLabs). Faltan s02, s04, s09, s10.
-- Montaje: `./montar.sh` (ffmpeg, 1080x1920, H.264 + AAC, fundidos de 0,5 s, música ambiental sintetizada muy baja).
+- Narración: 10/10 con Gemini TTS (`gemini-2.5-flash-preview-tts`, voz "Vindemiatrix"), en `audio/sNN.wav`.
+  Se monta acelerada ×1,2 sin cambiar el tono. Las tomas antiguas de ElevenLabs están en `audio_elevenlabs/`.
+- Imágenes: solo `img/s01.png` (ElevenLabs, gpt-image-2.5). Las escenas 2–10 no se pudieron generar:
+  ElevenLabs llegó al límite diario del plan gratuito y se quedó sin créditos, y los modelos de imagen de Gemini
+  tienen cuota 0 en el plan gratuito.
+- `rana_castor_provisional.mp4`: 1080x1920, H.264 + AAC, 80 s. Usa `img_provisional/` (la imagen 1 con
+  encuadres y color por estación, creados con `provisional.sh`).
+- Versión final: generar img/s02–s10 con `GEMINI_API_KEY=... python3 gen_gemini.py img 2 3 4 5 6 7 8 9 10`
+  (necesita facturación activa en Google AI Studio) y luego ejecutar `./montar.sh`.
