@@ -1,0 +1,5 @@
+node_modules/
+out/frames/
+out/render.log
+out/*.mp4
+public/audio/mix_raw.wav

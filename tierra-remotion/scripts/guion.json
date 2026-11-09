@@ -1,0 +1,18 @@
+{
+  "voz": "em_alex",
+  "velocidad": 1.12,
+  "escenas": [
+    {"id": 1, "nombre": "gancho", "minimo": 6.0, "entrada": 0.25, "salida": 0.9,
+     "frases": ["¿Qué pasaría si la Tierra dejara de girar,", "en un solo segundo?"]},
+    {"id": 2, "nombre": "inercia", "minimo": 12.0, "entrada": 0.3, "salida": 0.6,
+     "frases": ["Cerca del ecuador,", "la superficie terrestre gira a más de mil seiscientos kilómetros por hora.", "Cerca de los polos, mucho menos.", "Si se detuviera de golpe,", "todo lo que no estuviera firmemente sujeto", "tendería a seguir moviéndose por inercia."]},
+    {"id": 3, "nombre": "vientos", "minimo": 11.0, "entrada": 0.3, "salida": 0.7,
+     "frases": ["Y el aire tampoco se detendría al instante.", "La atmósfera podría generar vientos devastadores,", "capaces de destruir enormes zonas."]},
+    {"id": 4, "nombre": "oceanos", "minimo": 11.0, "entrada": 0.3, "salida": 0.7,
+     "frases": ["Los océanos también conservarían parte de su movimiento.", "El resultado podría incluir olas gigantescas", "e inundaciones catastróficas."]},
+    {"id": 5, "nombre": "dia", "minimo": 13.0, "entrada": 0.3, "salida": 0.7,
+     "frases": ["Y si la Tierra permaneciera sin girar sobre su eje,", "pero siguiera orbitando el Sol,", "un día solar duraría aproximadamente un año.", "Muchas regiones pasarían meses bajo la luz,", "y meses en la oscuridad."]},
+    {"id": 6, "nombre": "final", "minimo": 15.0, "entrada": 0.3, "salida": 2.6,
+     "frases": ["Por suerte, la Tierra no puede detenerse así de la nada.", "Pero esto demuestra algo increíble:", "incluso cuando estás sentado sin moverte,", "estás viajando a una velocidad impresionante", "gracias a la rotación de nuestro planeta."]}
+  ]
+}
