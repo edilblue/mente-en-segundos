@@ -13,7 +13,11 @@ npm install
 pip install kokoro-onnx soundfile scipy        # voz local + audio
 (cd .. && ./download_models.sh)                # modelo Kokoro en ../models
 
-python3 scripts/narracion.py   # voz (Kokoro TTS, em_alex, es) → public/audio/narracion.wav + src/data/narracion.json
+export GEMINI_API_KEY=...       # solo como variable de entorno; nunca en el código
+GEMINI_TTS_MODEL=gemini-3.1-flash-tts-preview python3 scripts/narracion_gemini.py
+                               # Gemini TTS (voz Puck), una petición por escena; transcribe cada escena
+                               # con Gemini para verificar que dice exactamente el guion
+# alternativa sin clave: python3 scripts/narracion.py  (Kokoro TTS local, voz em_alex)
 python3 scripts/audio.py       # música + efectos + mezcla con ducking → public/audio/mix_raw.wav
 ffmpeg -y -i public/audio/mix_raw.wav -af loudnorm=I=-14:TP=-1.5:LRA=11 -ar 48000 public/audio/mix.wav
 npx remotion render Tierra out/tierra_deja_de_girar_mente_en_segundos.mp4 --concurrency=4 --gl=swangle
@@ -28,9 +32,11 @@ Las escenas (`src/scenes/S1..S6.tsx`) y los efectos de sonido (`scripts/audio.py
 (`fs(escena, frase)`, `ws(escena, 'palabra')`), así que la animación, los subtítulos y los efectos caen en la palabra exacta.
 
 ### Voz
-Se pidió Gemini TTS, pero en esta sesión no había `GEMINI_API_KEY` y el TTS de ElevenLabs no tenía créditos;
-se usó **Kokoro TTS** local (voz masculina `em_alex`, español). Para cambiarla basta con reemplazar
-`public/audio/narracion.wav` y regenerar `narracion.json` con los tiempos reales.
+**Gemini TTS** (`gemini-3.1-flash-tts-preview`, voz masculina *Puck*, ritmo ×1.12 con `atempo`).
+Notas aprendidas: los modelos TTS leen en voz alta cualquier indicación de estilo que vaya en el texto
+y no aceptan `systemInstruction`, así que solo se envía el guion. La cuota gratuita es de pocas peticiones
+diarias por modelo; el audio se guarda en `.tts-cache/` para no repetir peticiones.
+Los tiempos de cada frase salen de las pausas reales del audio (la más cercana a la posición esperada por sílabas).
 
 ## Escenas
 | # | Tiempo | Acción |

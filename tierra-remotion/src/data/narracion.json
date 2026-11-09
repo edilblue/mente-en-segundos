@@ -1,7 +1,8 @@
 {
- "generadoCon": "kokoro-onnx",
- "voz": "em_alex",
- "total": 73.211,
+ "generadoCon": "gemini-tts",
+ "modelo": "gemini-3.1-flash-tts-preview",
+ "voz": "Puck",
+ "total": 73.08,
  "escenas": [
   {
    "id": 1,
@@ -12,74 +13,74 @@
     {
      "texto": "¿Qué pasaría si la Tierra dejara de girar,",
      "start": 0.25,
-     "end": 2.491,
+     "end": 2.2,
      "palabras": [
       {
        "w": "¿Qué",
        "start": 0.25,
-       "end": 0.433
+       "end": 0.409
       },
       {
        "w": "pasaría",
-       "start": 0.433,
-       "end": 0.845
+       "start": 0.409,
+       "end": 0.767
       },
       {
        "w": "si",
-       "start": 0.845,
-       "end": 1.027
+       "start": 0.767,
+       "end": 0.927
       },
       {
        "w": "la",
-       "start": 1.027,
-       "end": 1.21
+       "start": 0.927,
+       "end": 1.086
       },
       {
        "w": "Tierra",
-       "start": 1.21,
-       "end": 1.508
+       "start": 1.086,
+       "end": 1.344
       },
       {
        "w": "dejara",
-       "start": 1.508,
-       "end": 1.919
+       "start": 1.344,
+       "end": 1.703
       },
       {
        "w": "de",
-       "start": 1.919,
-       "end": 2.102
+       "start": 1.703,
+       "end": 1.862
       },
       {
        "w": "girar,",
-       "start": 2.102,
-       "end": 2.491
+       "start": 1.862,
+       "end": 2.2
       }
      ]
     },
     {
      "texto": "en un solo segundo?",
-     "start": 2.651,
-     "end": 3.838,
+     "start": 2.52,
+     "end": 4.15,
      "palabras": [
       {
        "w": "en",
-       "start": 2.651,
-       "end": 2.837
+       "start": 2.52,
+       "end": 2.776
       },
       {
        "w": "un",
-       "start": 2.837,
-       "end": 3.023
+       "start": 2.776,
+       "end": 3.031
       },
       {
        "w": "solo",
-       "start": 3.023,
-       "end": 3.326
+       "start": 3.031,
+       "end": 3.447
       },
       {
        "w": "segundo?",
-       "start": 3.326,
-       "end": 3.838
+       "start": 3.447,
+       "end": 4.15
       }
      ]
     }
@@ -89,242 +90,242 @@
    "id": 2,
    "nombre": "inercia",
    "inicio": 6.0,
-   "duracion": 15.413,
+   "duracion": 15.45,
    "frases": [
     {
      "texto": "Cerca del ecuador,",
      "start": 0.3,
-     "end": 1.375,
+     "end": 0.91,
      "palabras": [
       {
        "w": "Cerca",
        "start": 0.3,
-       "end": 0.625
+       "end": 0.484
       },
       {
        "w": "del",
-       "start": 0.625,
-       "end": 0.825
+       "start": 0.484,
+       "end": 0.598
       },
       {
        "w": "ecuador,",
-       "start": 0.825,
-       "end": 1.375
+       "start": 0.598,
+       "end": 0.91
       }
      ]
     },
     {
      "texto": "la superficie terrestre gira a más de mil seiscientos kilómetros por hora.",
-     "start": 1.535,
-     "end": 5.659,
+     "start": 1.18,
+     "end": 5.18,
      "palabras": [
       {
        "w": "la",
-       "start": 1.535,
-       "end": 1.741
+       "start": 1.18,
+       "end": 1.38
       },
       {
        "w": "superficie",
-       "start": 1.741,
-       "end": 2.334
+       "start": 1.38,
+       "end": 1.955
       },
       {
        "w": "terrestre",
-       "start": 2.334,
-       "end": 2.798
+       "start": 1.955,
+       "end": 2.405
       },
       {
        "w": "gira",
-       "start": 2.798,
-       "end": 3.133
+       "start": 2.405,
+       "end": 2.73
       },
       {
        "w": "a",
-       "start": 3.133,
-       "end": 3.339
+       "start": 2.73,
+       "end": 2.93
       },
       {
        "w": "más",
-       "start": 3.339,
-       "end": 3.545
+       "start": 2.93,
+       "end": 3.13
       },
       {
        "w": "de",
-       "start": 3.545,
-       "end": 3.751
+       "start": 3.13,
+       "end": 3.33
       },
       {
        "w": "mil",
-       "start": 3.751,
-       "end": 3.958
+       "start": 3.33,
+       "end": 3.53
       },
       {
        "w": "seiscientos",
-       "start": 3.958,
-       "end": 4.421
+       "start": 3.53,
+       "end": 3.98
       },
       {
        "w": "kilómetros",
-       "start": 4.421,
-       "end": 5.014
+       "start": 3.98,
+       "end": 4.555
       },
       {
        "w": "por",
-       "start": 5.014,
-       "end": 5.22
+       "start": 4.555,
+       "end": 4.755
       },
       {
        "w": "hora.",
-       "start": 5.22,
-       "end": 5.659
+       "start": 4.755,
+       "end": 5.18
       }
      ]
     },
     {
      "texto": "Cerca de los polos, mucho menos.",
-     "start": 5.998,
-     "end": 7.777,
+     "start": 5.78,
+     "end": 7.44,
      "palabras": [
       {
        "w": "Cerca",
-       "start": 5.998,
-       "end": 6.303
+       "start": 5.78,
+       "end": 6.064
       },
       {
        "w": "de",
-       "start": 6.303,
-       "end": 6.49
+       "start": 6.064,
+       "end": 6.239
       },
       {
        "w": "los",
-       "start": 6.49,
-       "end": 6.677
+       "start": 6.239,
+       "end": 6.413
       },
       {
        "w": "polos,",
-       "start": 6.677,
-       "end": 7.075
+       "start": 6.413,
+       "end": 6.785
       },
       {
        "w": "mucho",
-       "start": 7.075,
-       "end": 7.379
+       "start": 6.785,
+       "end": 7.069
       },
       {
        "w": "menos.",
-       "start": 7.379,
-       "end": 7.777
+       "start": 7.069,
+       "end": 7.44
       }
      ]
     },
     {
      "texto": "Si se detuviera de golpe,",
-     "start": 8.117,
-     "end": 9.53,
+     "start": 8.03,
+     "end": 9.36,
      "palabras": [
       {
        "w": "Si",
-       "start": 8.117,
-       "end": 8.294
+       "start": 8.03,
+       "end": 8.196
       },
       {
        "w": "se",
-       "start": 8.294,
-       "end": 8.47
+       "start": 8.196,
+       "end": 8.362
       },
       {
        "w": "detuviera",
-       "start": 8.47,
-       "end": 8.978
+       "start": 8.362,
+       "end": 8.84
       },
       {
        "w": "de",
-       "start": 8.978,
-       "end": 9.155
+       "start": 8.84,
+       "end": 9.007
       },
       {
        "w": "golpe,",
-       "start": 9.155,
-       "end": 9.53
+       "start": 9.007,
+       "end": 9.36
       }
      ]
     },
     {
      "texto": "todo lo que no estuviera firmemente sujeto",
-     "start": 9.69,
-     "end": 11.989,
+     "start": 9.77,
+     "end": 12.04,
      "palabras": [
       {
        "w": "todo",
-       "start": 9.69,
-       "end": 9.986
+       "start": 9.77,
+       "end": 10.062
       },
       {
        "w": "lo",
-       "start": 9.986,
-       "end": 10.168
+       "start": 10.062,
+       "end": 10.242
       },
       {
        "w": "que",
-       "start": 10.168,
-       "end": 10.35
+       "start": 10.242,
+       "end": 10.422
       },
       {
        "w": "no",
-       "start": 10.35,
-       "end": 10.532
+       "start": 10.422,
+       "end": 10.602
       },
       {
        "w": "estuviera",
-       "start": 10.532,
-       "end": 11.056
+       "start": 10.602,
+       "end": 11.119
       },
       {
        "w": "firmemente",
-       "start": 11.056,
-       "end": 11.579
+       "start": 11.119,
+       "end": 11.635
       },
       {
        "w": "sujeto",
-       "start": 11.579,
-       "end": 11.989
+       "start": 11.635,
+       "end": 12.04
       }
      ]
     },
     {
      "texto": "tendería a seguir moviéndose por inercia.",
-     "start": 12.149,
-     "end": 14.473,
+     "start": 12.37,
+     "end": 14.85,
      "palabras": [
       {
        "w": "tendería",
-       "start": 12.149,
-       "end": 12.603
+       "start": 12.37,
+       "end": 12.855
       },
       {
        "w": "a",
-       "start": 12.603,
-       "end": 12.805
+       "start": 12.855,
+       "end": 13.071
       },
       {
        "w": "seguir",
-       "start": 12.805,
-       "end": 13.134
+       "start": 13.071,
+       "end": 13.421
       },
       {
        "w": "moviéndose",
-       "start": 13.134,
-       "end": 13.715
+       "start": 13.421,
+       "end": 14.041
       },
       {
        "w": "por",
-       "start": 13.715,
-       "end": 13.917
+       "start": 14.041,
+       "end": 14.257
       },
       {
        "w": "inercia.",
-       "start": 13.917,
-       "end": 14.473
+       "start": 14.257,
+       "end": 14.85
       }
      ]
     }
@@ -333,122 +334,122 @@
   {
    "id": 3,
    "nombre": "vientos",
-   "inicio": 21.413,
+   "inicio": 21.45,
    "duracion": 11.0,
    "frases": [
     {
      "texto": "Y el aire tampoco se detendría al instante.",
      "start": 0.3,
-     "end": 2.697,
+     "end": 2.33,
      "palabras": [
       {
        "w": "Y",
        "start": 0.3,
-       "end": 0.486
+       "end": 0.458
       },
       {
        "w": "el",
-       "start": 0.486,
-       "end": 0.672
+       "start": 0.458,
+       "end": 0.615
       },
       {
        "w": "aire",
-       "start": 0.672,
-       "end": 0.975
+       "start": 0.615,
+       "end": 0.872
       },
       {
        "w": "tampoco",
-       "start": 0.975,
-       "end": 1.394
+       "start": 0.872,
+       "end": 1.226
       },
       {
        "w": "se",
-       "start": 1.394,
-       "end": 1.58
+       "start": 1.226,
+       "end": 1.384
       },
       {
        "w": "detendría",
-       "start": 1.58,
-       "end": 1.999
+       "start": 1.384,
+       "end": 1.739
       },
       {
        "w": "al",
-       "start": 1.999,
-       "end": 2.185
+       "start": 1.739,
+       "end": 1.896
       },
       {
        "w": "instante.",
-       "start": 2.185,
-       "end": 2.697
+       "start": 1.896,
+       "end": 2.33
       }
      ]
     },
     {
      "texto": "La atmósfera podría generar vientos devastadores,",
-     "start": 3.037,
-     "end": 5.81,
+     "start": 2.58,
+     "end": 5.993,
      "palabras": [
       {
        "w": "La",
-       "start": 3.037,
-       "end": 3.244
+       "start": 2.58,
+       "end": 2.835
       },
       {
        "w": "atmósfera",
-       "start": 3.244,
-       "end": 3.84
+       "start": 2.835,
+       "end": 3.569
       },
       {
        "w": "podría",
-       "start": 3.84,
-       "end": 4.177
+       "start": 3.569,
+       "end": 3.983
       },
       {
        "w": "generar",
-       "start": 4.177,
-       "end": 4.644
+       "start": 3.983,
+       "end": 4.558
       },
       {
        "w": "vientos",
-       "start": 4.644,
-       "end": 4.981
+       "start": 4.558,
+       "end": 4.972
       },
       {
        "w": "devastadores,",
-       "start": 4.981,
-       "end": 5.81
+       "start": 4.972,
+       "end": 5.993
       }
      ]
     },
     {
      "texto": "capaces de destruir enormes zonas.",
-     "start": 5.97,
-     "end": 7.937,
+     "start": 5.993,
+     "end": 7.95,
      "palabras": [
       {
        "w": "capaces",
-       "start": 5.97,
-       "end": 6.448
+       "start": 5.993,
+       "end": 6.469
       },
       {
        "w": "de",
-       "start": 6.448,
-       "end": 6.661
+       "start": 6.469,
+       "end": 6.681
       },
       {
        "w": "destruir",
-       "start": 6.661,
-       "end": 7.006
+       "start": 6.681,
+       "end": 7.024
       },
       {
        "w": "enormes",
-       "start": 7.006,
-       "end": 7.485
+       "start": 7.024,
+       "end": 7.5
       },
       {
        "w": "zonas.",
-       "start": 7.485,
-       "end": 7.937
+       "start": 7.5,
+       "end": 7.95
       }
      ]
     }
@@ -457,112 +458,112 @@
   {
    "id": 4,
    "nombre": "oceanos",
-   "inicio": 32.413,
+   "inicio": 32.45,
    "duracion": 11.0,
    "frases": [
     {
      "texto": "Los océanos también conservarían parte de su movimiento.",
      "start": 0.3,
-     "end": 3.474,
+     "end": 2.99,
      "palabras": [
       {
        "w": "Los",
        "start": 0.3,
-       "end": 0.515
+       "end": 0.482
       },
       {
        "w": "océanos",
-       "start": 0.515,
-       "end": 0.999
+       "start": 0.482,
+       "end": 0.893
       },
       {
        "w": "también",
-       "start": 0.999,
-       "end": 1.349
+       "start": 0.893,
+       "end": 1.189
       },
       {
        "w": "conservarían",
-       "start": 1.349,
-       "end": 1.967
+       "start": 1.189,
+       "end": 1.713
       },
       {
        "w": "parte",
-       "start": 1.967,
-       "end": 2.317
+       "start": 1.713,
+       "end": 2.01
       },
       {
        "w": "de",
-       "start": 2.317,
-       "end": 2.532
+       "start": 2.01,
+       "end": 2.192
       },
       {
        "w": "su",
-       "start": 2.532,
-       "end": 2.747
+       "start": 2.192,
+       "end": 2.374
       },
       {
        "w": "movimiento.",
-       "start": 2.747,
-       "end": 3.474
+       "start": 2.374,
+       "end": 2.99
       }
      ]
     },
     {
      "texto": "El resultado podría incluir olas gigantescas",
-     "start": 3.814,
-     "end": 6.446,
+     "start": 3.55,
+     "end": 6.6,
      "palabras": [
       {
        "w": "El",
-       "start": 3.814,
-       "end": 4.04
+       "start": 3.55,
+       "end": 3.812
       },
       {
        "w": "resultado",
-       "start": 4.04,
-       "end": 4.691
+       "start": 3.812,
+       "end": 4.567
       },
       {
        "w": "podría",
-       "start": 4.691,
-       "end": 5.059
+       "start": 4.567,
+       "end": 4.993
       },
       {
        "w": "incluir",
-       "start": 5.059,
-       "end": 5.427
+       "start": 4.993,
+       "end": 5.419
       },
       {
        "w": "olas",
-       "start": 5.427,
-       "end": 5.795
+       "start": 5.419,
+       "end": 5.846
       },
       {
        "w": "gigantescas",
-       "start": 5.795,
-       "end": 6.446
+       "start": 5.846,
+       "end": 6.6
       }
      ]
     },
     {
      "texto": "e inundaciones catastróficas.",
-     "start": 6.606,
-     "end": 8.38,
+     "start": 6.6,
+     "end": 8.7,
      "palabras": [
       {
        "w": "e",
-       "start": 6.606,
-       "end": 6.814
+       "start": 6.6,
+       "end": 6.847
       },
       {
        "w": "inundaciones",
-       "start": 6.814,
-       "end": 7.545
+       "start": 6.847,
+       "end": 7.712
       },
       {
        "w": "catastróficas.",
-       "start": 7.545,
-       "end": 8.38
+       "start": 7.712,
+       "end": 8.7
       }
      ]
     }
@@ -571,211 +572,211 @@
   {
    "id": 5,
    "nombre": "dia",
-   "inicio": 43.413,
-   "duracion": 13.564,
+   "inicio": 43.45,
+   "duracion": 13.57,
    "frases": [
     {
      "texto": "Y si la Tierra permaneciera sin girar sobre su eje,",
      "start": 0.3,
-     "end": 3.124,
+     "end": 2.74,
      "palabras": [
       {
        "w": "Y",
        "start": 0.3,
-       "end": 0.482
+       "end": 0.457
       },
       {
        "w": "si",
-       "start": 0.482,
-       "end": 0.664
+       "start": 0.457,
+       "end": 0.615
       },
       {
        "w": "la",
-       "start": 0.664,
-       "end": 0.847
+       "start": 0.615,
+       "end": 0.772
       },
       {
        "w": "Tierra",
-       "start": 0.847,
-       "end": 1.143
+       "start": 0.772,
+       "end": 1.028
       },
       {
        "w": "permaneciera",
-       "start": 1.143,
-       "end": 1.78
+       "start": 1.028,
+       "end": 1.579
       },
       {
        "w": "sin",
-       "start": 1.78,
-       "end": 1.962
+       "start": 1.579,
+       "end": 1.736
       },
       {
        "w": "girar",
-       "start": 1.962,
-       "end": 2.258
+       "start": 1.736,
+       "end": 1.992
       },
       {
        "w": "sobre",
-       "start": 2.258,
-       "end": 2.554
+       "start": 1.992,
+       "end": 2.248
       },
       {
        "w": "su",
-       "start": 2.554,
-       "end": 2.737
+       "start": 2.248,
+       "end": 2.405
       },
       {
        "w": "eje,",
-       "start": 2.737,
-       "end": 3.124
+       "start": 2.405,
+       "end": 2.74
       }
      ]
     },
     {
      "texto": "pero siguiera orbitando el Sol,",
-     "start": 3.284,
-     "end": 5.063,
+     "start": 2.91,
+     "end": 4.39,
      "palabras": [
       {
        "w": "pero",
-       "start": 3.284,
-       "end": 3.596
+       "start": 2.91,
+       "end": 3.17
       },
       {
        "w": "siguiera",
-       "start": 3.596,
-       "end": 4.029
+       "start": 3.17,
+       "end": 3.53
       },
       {
        "w": "orbitando",
-       "start": 4.029,
-       "end": 4.582
+       "start": 3.53,
+       "end": 3.99
       },
       {
        "w": "el",
-       "start": 4.582,
-       "end": 4.774
+       "start": 3.99,
+       "end": 4.15
       },
       {
        "w": "Sol,",
-       "start": 4.774,
-       "end": 5.063
+       "start": 4.15,
+       "end": 4.39
       }
      ]
     },
     {
      "texto": "un día solar duraría aproximadamente un año.",
-     "start": 5.223,
-     "end": 7.966,
+     "start": 4.83,
+     "end": 7.73,
      "palabras": [
       {
        "w": "un",
-       "start": 5.223,
-       "end": 5.422
+       "start": 4.83,
+       "end": 5.041
       },
       {
        "w": "día",
-       "start": 5.422,
-       "end": 5.622
+       "start": 5.041,
+       "end": 5.252
       },
       {
        "w": "solar",
-       "start": 5.622,
-       "end": 5.946
+       "start": 5.252,
+       "end": 5.595
       },
       {
        "w": "duraría",
-       "start": 5.946,
-       "end": 6.395
+       "start": 5.595,
+       "end": 6.069
       },
       {
        "w": "aproximadamente",
-       "start": 6.395,
-       "end": 7.342
+       "start": 6.069,
+       "end": 7.071
       },
       {
        "w": "un",
-       "start": 7.342,
-       "end": 7.542
+       "start": 7.071,
+       "end": 7.282
       },
       {
        "w": "año.",
-       "start": 7.542,
-       "end": 7.966
+       "start": 7.282,
+       "end": 7.73
       }
      ]
     },
     {
      "texto": "Muchas regiones pasarían meses bajo la luz,",
-     "start": 8.306,
-     "end": 10.929,
+     "start": 8.43,
+     "end": 10.74,
      "palabras": [
       {
        "w": "Muchas",
-       "start": 8.306,
-       "end": 8.665
+       "start": 8.43,
+       "end": 8.746
       },
       {
        "w": "regiones",
-       "start": 8.665,
-       "end": 9.162
+       "start": 8.746,
+       "end": 9.184
       },
       {
        "w": "pasarían",
-       "start": 9.162,
-       "end": 9.659
+       "start": 9.184,
+       "end": 9.621
       },
       {
        "w": "meses",
-       "start": 9.659,
-       "end": 10.018
+       "start": 9.621,
+       "end": 9.938
       },
       {
        "w": "bajo",
-       "start": 10.018,
-       "end": 10.377
+       "start": 9.938,
+       "end": 10.254
       },
       {
        "w": "la",
-       "start": 10.377,
-       "end": 10.598
+       "start": 10.254,
+       "end": 10.448
       },
       {
        "w": "luz,",
-       "start": 10.598,
-       "end": 10.929
+       "start": 10.448,
+       "end": 10.74
       }
      ]
     },
     {
      "texto": "y meses en la oscuridad.",
-     "start": 11.089,
-     "end": 12.524,
+     "start": 11.1,
+     "end": 12.87,
      "palabras": [
       {
        "w": "y",
-       "start": 11.089,
-       "end": 11.268
+       "start": 11.1,
+       "end": 11.321
       },
       {
        "w": "meses",
-       "start": 11.268,
-       "end": 11.56
+       "start": 11.321,
+       "end": 11.681
       },
       {
        "w": "en",
-       "start": 11.56,
-       "end": 11.739
+       "start": 11.681,
+       "end": 11.902
       },
       {
        "w": "la",
-       "start": 11.739,
-       "end": 11.919
+       "start": 11.902,
+       "end": 12.123
       },
       {
        "w": "oscuridad.",
-       "start": 11.919,
-       "end": 12.524
+       "start": 12.123,
+       "end": 12.87
       }
      ]
     }
@@ -784,216 +785,216 @@
   {
    "id": 6,
    "nombre": "final",
-   "inicio": 56.977,
-   "duracion": 16.234,
+   "inicio": 57.02,
+   "duracion": 16.06,
    "frases": [
     {
      "texto": "Por suerte, la Tierra no puede detenerse así de la nada.",
      "start": 0.3,
-     "end": 3.221,
+     "end": 3.24,
      "palabras": [
       {
        "w": "Por",
        "start": 0.3,
-       "end": 0.472
+       "end": 0.473
       },
       {
        "w": "suerte,",
-       "start": 0.472,
-       "end": 0.837
+       "start": 0.473,
+       "end": 0.84
       },
       {
        "w": "la",
-       "start": 0.837,
-       "end": 1.009
+       "start": 0.84,
+       "end": 1.013
       },
       {
        "w": "Tierra",
-       "start": 1.009,
-       "end": 1.288
+       "start": 1.013,
+       "end": 1.294
       },
       {
        "w": "no",
-       "start": 1.288,
-       "end": 1.46
+       "start": 1.294,
+       "end": 1.467
       },
       {
        "w": "puede",
-       "start": 1.46,
-       "end": 1.739
+       "start": 1.467,
+       "end": 1.748
       },
       {
        "w": "detenerse",
-       "start": 1.739,
-       "end": 2.233
+       "start": 1.748,
+       "end": 2.246
       },
       {
        "w": "así",
-       "start": 2.233,
-       "end": 2.512
+       "start": 2.246,
+       "end": 2.527
       },
       {
        "w": "de",
-       "start": 2.512,
-       "end": 2.684
+       "start": 2.527,
+       "end": 2.7
       },
       {
        "w": "la",
-       "start": 2.684,
-       "end": 2.856
+       "start": 2.7,
+       "end": 2.872
       },
       {
        "w": "nada.",
-       "start": 2.856,
-       "end": 3.221
+       "start": 2.872,
+       "end": 3.24
       }
      ]
     },
     {
      "texto": "Pero esto demuestra algo increíble:",
-     "start": 3.561,
-     "end": 5.757,
+     "start": 3.7,
+     "end": 5.43,
      "palabras": [
       {
        "w": "Pero",
-       "start": 3.561,
-       "end": 3.923
+       "start": 3.7,
+       "end": 3.985
       },
       {
        "w": "esto",
-       "start": 3.923,
-       "end": 4.284
+       "start": 3.985,
+       "end": 4.269
       },
       {
        "w": "demuestra",
-       "start": 4.284,
-       "end": 4.784
+       "start": 4.269,
+       "end": 4.664
       },
       {
        "w": "algo",
-       "start": 4.784,
-       "end": 5.146
+       "start": 4.664,
+       "end": 4.948
       },
       {
        "w": "increíble:",
-       "start": 5.146,
-       "end": 5.757
+       "start": 4.948,
+       "end": 5.43
       }
      ]
     },
     {
      "texto": "incluso cuando estás sentado sin moverte,",
-     "start": 6.097,
-     "end": 8.325,
+     "start": 5.7,
+     "end": 8.11,
      "palabras": [
       {
        "w": "incluso",
-       "start": 6.097,
-       "end": 6.533
+       "start": 5.7,
+       "end": 6.172
       },
       {
        "w": "cuando",
-       "start": 6.533,
-       "end": 6.848
+       "start": 6.172,
+       "end": 6.512
       },
       {
        "w": "estás",
-       "start": 6.848,
-       "end": 7.163
+       "start": 6.512,
+       "end": 6.853
       },
       {
        "w": "sentado",
-       "start": 7.163,
-       "end": 7.599
+       "start": 6.853,
+       "end": 7.324
       },
       {
        "w": "sin",
-       "start": 7.599,
-       "end": 7.792
+       "start": 7.324,
+       "end": 7.534
       },
       {
        "w": "moverte,",
-       "start": 7.792,
-       "end": 8.325
+       "start": 7.534,
+       "end": 8.11
       }
      ]
     },
     {
      "texto": "estás viajando a una velocidad impresionante",
-     "start": 8.485,
-     "end": 10.957,
+     "start": 8.45,
+     "end": 11.08,
      "palabras": [
       {
        "w": "estás",
-       "start": 8.485,
-       "end": 8.797
+       "start": 8.45,
+       "end": 8.782
       },
       {
        "w": "viajando",
-       "start": 8.797,
-       "end": 9.229
+       "start": 8.782,
+       "end": 9.242
       },
       {
        "w": "a",
-       "start": 9.229,
-       "end": 9.421
+       "start": 9.242,
+       "end": 9.446
       },
       {
        "w": "una",
-       "start": 9.421,
-       "end": 9.733
+       "start": 9.446,
+       "end": 9.778
       },
       {
        "w": "velocidad",
-       "start": 9.733,
-       "end": 10.285
+       "start": 9.778,
+       "end": 10.365
       },
       {
        "w": "impresionante",
-       "start": 10.285,
-       "end": 10.957
+       "start": 10.365,
+       "end": 11.08
       }
      ]
     },
     {
      "texto": "gracias a la rotación de nuestro planeta.",
-     "start": 11.117,
-     "end": 13.294,
+     "start": 11.3,
+     "end": 13.46,
      "palabras": [
       {
        "w": "gracias",
-       "start": 11.117,
-       "end": 11.432
+       "start": 11.3,
+       "end": 11.612
       },
       {
        "w": "a",
-       "start": 11.432,
-       "end": 11.625
+       "start": 11.612,
+       "end": 11.804
       },
       {
        "w": "la",
-       "start": 11.625,
-       "end": 11.819
+       "start": 11.804,
+       "end": 11.996
       },
       {
        "w": "rotación",
-       "start": 11.819,
-       "end": 12.254
+       "start": 11.996,
+       "end": 12.428
       },
       {
        "w": "de",
-       "start": 12.254,
-       "end": 12.447
+       "start": 12.428,
+       "end": 12.62
       },
       {
        "w": "nuestro",
-       "start": 12.447,
-       "end": 12.762
+       "start": 12.62,
+       "end": 12.932
       },
       {
        "w": "planeta.",
-       "start": 12.762,
-       "end": 13.294
+       "start": 12.932,
+       "end": 13.46
       }
      ]
     }

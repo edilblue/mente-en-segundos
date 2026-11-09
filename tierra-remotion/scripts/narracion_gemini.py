@@ -17,8 +17,9 @@ API = "https://generativelanguage.googleapis.com/v1beta"
 KEY = os.environ.get("GEMINI_API_KEY")
 MODEL = os.environ.get("GEMINI_TTS_MODEL", "gemini-3.8-flash-tts")
 VOICE = os.environ.get("GEMINI_TTS_VOICE", "Puck")
-SPEED = float(os.environ.get("NARRACION_VELOCIDAD", "1.0"))
-STYLE = "Narra en español latino, con tono intrigante, expresivo y ágil"
+SPEED = float(os.environ.get("NARRACION_VELOCIDAD", "1.12"))
+# Sin indicación de estilo: el modelo la leía en voz alta. Solo se envía el guion; el ritmo se ajusta con atempo.
+STYLE = ""
 SR = 24000
 CACHE = os.path.join(ROOT, ".tts-cache")
 
@@ -33,19 +34,23 @@ def post(url, body):
             if e.code == 429 or e.code >= 500:
                 m = re.search(r'"retryDelay":\s*"([\d.]+)s"', msg)
                 wait = float(m.group(1)) + 2 if m else 15 * (intento + 1)
+                if wait > 180:
+                    raise SystemExit(f"Gemini 429: cuota agotada para este modelo (reintentar en {wait/3600:.1f} h)")
                 print(f"  … {e.code}, esperando {wait:.0f} s", flush=True)
                 time.sleep(wait); continue
             raise SystemExit(f"Gemini {e.code}: {msg[:400]}")
+        except (TimeoutError, urllib.error.URLError) as e:
+            print(f"  … {e}, reintentando", flush=True); time.sleep(5)
     raise SystemExit("Gemini: demasiados reintentos")
 
 def tts(text):
     os.makedirs(CACHE, exist_ok=True)
-    key = hashlib.sha1(f"{MODEL}|{VOICE}|{STYLE}|{text}".encode()).hexdigest()[:16]
+    key = hashlib.sha1(f"v2|{MODEL}|{VOICE}|{STYLE}|{text}".encode()).hexdigest()[:16]
     path = os.path.join(CACHE, f"{key}.npy")
     if os.path.exists(path):
         return np.load(path)
     j = post(f"{API}/models/{MODEL}:generateContent", {
-        "contents": [{"parts": [{"text": f"{STYLE}: {text}"}]}],
+        "contents": [{"parts": [{"text": text}]}],
         "generationConfig": {"responseModalities": ["AUDIO"], "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": VOICE}}}},
     })
     part = next(p for p in j["candidates"][0]["content"]["parts"] if "inlineData" in p)
@@ -57,6 +62,18 @@ def tts(text):
         pcm = resample_poly(pcm, SR, rate).astype(np.float32)
     np.save(path, pcm)
     return pcm
+
+def verificar(a, esperado):
+    """Transcribe el audio con un modelo de texto de Gemini y compara con el guion."""
+    import io, difflib
+    buf = io.BytesIO(); sf.write(buf, a, SR, format="WAV", subtype="PCM_16")
+    j = post(f"{API}/models/gemini-flash-lite-latest:generateContent", {"contents": [{"parts": [
+        {"inlineData": {"mimeType": "audio/wav", "data": base64.b64encode(buf.getvalue()).decode()}},
+        {"text": "Transcribe exactamente lo que se dice en este audio en español. Responde solo con el texto."}]}]})
+    txt = j["candidates"][0]["content"]["parts"][0]["text"].strip()
+    norm = lambda x: re.sub(r"[^a-záéíóúüñ0-9 ]", " ", x.lower()).split()
+    ratio = difflib.SequenceMatcher(None, norm(esperado), norm(txt)).ratio()
+    return txt, ratio
 
 def tempo(a):
     if SPEED == 1.0: return a
@@ -106,12 +123,22 @@ def main():
         a = a[int(max(0, s0 - 0.02) * SR): int(min(len(a) / SR, s1 + 0.06) * SR)]
         sil = [(x - s0 + 0.02, y - s0 + 0.02) for x, y in silences(a) if x > 0.05 and y < len(a) / SR - 0.05]
         dur_a = len(a) / SR
-        # n-1 pausas más largas = límites de frase (en orden)
+        if os.environ.get("VERIFICAR", "1") == "1":
+            txt, ratio = verificar(a, texto)
+            print(f"  transcripción ({ratio:.0%}): {txt}")
+        # límite de frase = la pausa real más cercana a la posición esperada por sílabas
         nb = len(e["frases"]) - 1
-        cuts = sorted(sorted(sil, key=lambda s: s[1] - s[0], reverse=True)[:nb])
-        if len(cuts) < nb:  # sin pausas suficientes: reparto proporcional por sílabas
-            w = [sum(syl(x) for x in f.split()) for f in e["frases"]]; acc = np.cumsum(w) / sum(w)
-            cuts = [(acc[i] * dur_a, acc[i] * dur_a) for i in range(nb)]
+        w = [sum(syl(x) for x in f.split()) for f in e["frases"]]
+        acc = np.cumsum(w) / sum(w)
+        cuts = []; usadas = set(); prev = 0.0
+        for i in range(nb):
+            esperado = acc[i] * dur_a
+            cand = [(abs((x + y) / 2 - esperado) - 0.6 * min(1.0, y - x), k) for k, (x, y) in enumerate(sil)
+                    if k not in usadas and x > prev and abs((x + y) / 2 - esperado) < 1.3]
+            if cand:
+                k = min(cand)[1]; usadas.add(k); cuts.append(sil[k]); prev = sil[k][1]
+            else:
+                cuts.append((float(esperado), float(esperado))); prev = float(esperado)
         bounds = [0.0] + [c for cut in cuts for c in cut] + [dur_a]
         start = t; off = e["entrada"]
         frases = []
@@ -123,7 +150,7 @@ def main():
         i0 = int(e["entrada"] * SR); seg[i0: i0 + len(a)] = a[: len(seg) - i0]
         track.append(seg)
         escenas.append({"id": e["id"], "nombre": e["nombre"], "inicio": round(start, 3), "duracion": round(dur, 3), "frases": frases})
-        print(f"escena {e['id']}: voz {dur_a:5.2f} s → {start:6.2f}–{start + dur:6.2f}  pausas usadas {[(round(x,2),round(y,2)) for x,y in cuts]}")
+        print(f"escena {e['id']}: voz {dur_a:5.2f} s → {start:6.2f}–{start + dur:6.2f}  pausas usadas {[(round(float(x),2),round(float(y),2)) for x,y in cuts]}")
         t += dur
     audio = np.concatenate(track)
     audio = audio / max(1e-6, np.abs(audio).max()) * 0.92
