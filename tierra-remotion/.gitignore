@@ -3,3 +3,4 @@ out/frames/
 out/render.log
 out/*.mp4
 public/audio/mix_raw.wav
+.tts-cache/
