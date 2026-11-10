@@ -1,0 +1,47 @@
+{
+  "titulo": "¿Qué le pasa a tu corazón y a tu cerebro cuando te enamoras perdidamente?",
+  "voz": "Charon",
+  "estilo": "# AUDIO PROFILE: Narrador de documental\n## Hombre adulto, voz cálida y profunda, español latinoamericano neutro.\n\n### DIRECTOR'S NOTES\nEstilo: documental científico cinematográfico, cercano, emotivo y asombrado. Pausas dramáticas breves en los puntos suspensivos. Las preguntas con intención. Ritmo fluido, nunca monótono.\n\n#### TRANSCRIPT",
+  "escenas": [
+    {
+      "id": 1,
+      "nombre": "Gancho",
+      "texto": "¿Y si te dijera que, cuando te enamoras perdidamente, tu cerebro puede convertir a una sola persona… en lo más importante de tu mundo?"
+    },
+    {
+      "id": 2,
+      "nombre": "El cerebro se enciende",
+      "texto": "Todo empieza aquí dentro. Al ver a esa persona, se encienden circuitos de recompensa, como el área tegmental ventral y el núcleo caudado. La dopamina no crea el amor por sí sola… pero impulsa la motivación, el deseo y esa dulce ansiedad por volver a verla."
+    },
+    {
+      "id": 3,
+      "nombre": "El corazón se acelera",
+      "texto": "Y entonces, el cuerpo responde. Tu sistema nervioso simpático libera adrenalina y noradrenalina: el pulso se acelera, las manos sudan y tu estómago cambia su actividad… ahí están las mariposas. Tu corazón no crea la emoción: responde a las señales de tu cerebro."
+    },
+    {
+      "id": 4,
+      "nombre": "No puedes dejar de pensar",
+      "texto": "¿Por qué no puedes dejar de pensar en esa persona? Porque tu atención se vuelve selectiva. Recompensa, emoción y memoria trabajan juntas, y cada recuerdo, cada mensaje, cada posible encuentro… brilla más que todo lo demás."
+    },
+    {
+      "id": 5,
+      "nombre": "El abrazo",
+      "texto": "Y cuando esa persona te abraza, algo cambia. El contacto afectivo se asocia con la liberación de oxitocina, una hormona que participa en la confianza y los vínculos. No es una poción mágica, pero ayuda a que tu cerebro asocie a esa persona con calma y seguridad."
+    },
+    {
+      "id": 6,
+      "nombre": "El amor también duele",
+      "texto": "Pero el amor también puede doler. La incertidumbre activa tu respuesta de estrés, y los estudios muestran que el rechazo amoroso involucra regiones ligadas al deseo, la ansiedad y el malestar emocional. Entonces… si puede doler tanto, ¿por qué seguimos buscándolo?"
+    },
+    {
+      "id": 7,
+      "nombre": "El amor cambia",
+      "texto": "Porque el amor cambia. La euforia del inicio suele calmarse, y en su lugar puede crecer algo más profundo: apego, confianza… y la tranquilidad de sentirte en casa con alguien."
+    },
+    {
+      "id": 8,
+      "nombre": "Final",
+      "texto": "Así que no, no amas solamente con el corazón. Cuando te enamoras, todo tu cuerpo participa en la historia. ¿Quién hizo latir así el tuyo?"
+    }
+  ]
+}

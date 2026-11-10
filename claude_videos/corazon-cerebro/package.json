@@ -1,0 +1,22 @@
+{
+  "name": "mes-corazon-cerebro",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Mente en Segundos — ¿Qué le pasa a tu corazón y a tu cerebro cuando te enamoras?",
+  "scripts": {
+    "narracion": "node scripts/narracion.mjs",
+    "render": "remotion render Enamorado out/video_mudo.mp4 --muted"
+  },
+  "dependencies": {
+    "@fontsource/montserrat": "^5.2.5",
+    "@fontsource/playfair-display": "^5.2.5",
+    "@remotion/cli": "^4.0.541",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.541"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "typescript": "^5.6.0"
+  }
+}

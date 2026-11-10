@@ -1,0 +1,1430 @@
+{
+ "modelo": "gemini-3.8-flash-tts",
+ "voz": "Charon",
+ "escenas": [
+  {
+   "id": 1,
+   "texto": "¿Y si te dijera que, cuando te enamoras perdidamente, tu cerebro puede convertir a una sola persona… en lo más importante de tu mundo?",
+   "audio": "audio/voz/escena1.wav",
+   "duracion": 9.36,
+   "silencios": [
+    {
+     "start": 1.11867,
+     "end": 1.343
+    },
+    {
+     "start": 3.63785,
+     "end": 4.05152
+    },
+    {
+     "start": 6.7104,
+     "end": 7.14073
+    }
+   ],
+   "palabras": [
+    {
+     "w": "¿Y",
+     "t": 0
+    },
+    {
+     "w": "si",
+     "t": 0.146
+    },
+    {
+     "w": "te",
+     "t": 0.35
+    },
+    {
+     "w": "dijera",
+     "t": 0.555
+    },
+    {
+     "w": "que,",
+     "t": 0.993
+    },
+    {
+     "w": "cuando",
+     "t": 1.48
+    },
+    {
+     "w": "te",
+     "t": 1.918
+    },
+    {
+     "w": "enamoras",
+     "t": 2.122
+    },
+    {
+     "w": "perdidamente,",
+     "t": 2.677
+    },
+    {
+     "w": "tu",
+     "t": 3.465
+    },
+    {
+     "w": "cerebro",
+     "t": 4.083
+    },
+    {
+     "w": "puede",
+     "t": 4.579
+    },
+    {
+     "w": "convertir",
+     "t": 4.959
+    },
+    {
+     "w": "a",
+     "t": 5.572
+    },
+    {
+     "w": "una",
+     "t": 5.718
+    },
+    {
+     "w": "sola",
+     "t": 5.981
+    },
+    {
+     "w": "persona…",
+     "t": 6.302
+    },
+    {
+     "w": "en",
+     "t": 7.229
+    },
+    {
+     "w": "lo",
+     "t": 7.433
+    },
+    {
+     "w": "más",
+     "t": 7.637
+    },
+    {
+     "w": "importante",
+     "t": 7.9
+    },
+    {
+     "w": "de",
+     "t": 8.572
+    },
+    {
+     "w": "tu",
+     "t": 8.776
+    },
+    {
+     "w": "mundo?",
+     "t": 8.98
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "texto": "Todo empieza aquí dentro. Al ver a esa persona, se encienden circuitos de recompensa, como el área tegmental ventral y el núcleo caudado. La dopamina no crea el amor por sí sola… pero impulsa la motivación, el deseo y esa dulce ansiedad por volver a verla.",
+   "audio": "audio/voz/escena2.wav",
+   "duracion": 17.348,
+   "silencios": [
+    {
+     "start": 1.86123,
+     "end": 2.27423
+    },
+    {
+     "start": 5.23002,
+     "end": 5.62487
+    },
+    {
+     "start": 8.63323,
+     "end": 9.03052
+    },
+    {
+     "start": 11.3565,
+     "end": 11.76
+    },
+    {
+     "start": 13.685,
+     "end": 13.8911
+    },
+    {
+     "start": 14.5786,
+     "end": 14.8202
+    }
+   ],
+   "palabras": [
+    {
+     "w": "Todo",
+     "t": 0
+    },
+    {
+     "w": "empieza",
+     "t": 0.308
+    },
+    {
+     "w": "aquí",
+     "t": 0.784
+    },
+    {
+     "w": "dentro.",
+     "t": 1.092
+    },
+    {
+     "w": "Al",
+     "t": 1.512
+    },
+    {
+     "w": "ver",
+     "t": 1.708
+    },
+    {
+     "w": "a",
+     "t": 2.373
+    },
+    {
+     "w": "esa",
+     "t": 2.513
+    },
+    {
+     "w": "persona,",
+     "t": 2.766
+    },
+    {
+     "w": "se",
+     "t": 3.242
+    },
+    {
+     "w": "encienden",
+     "t": 3.438
+    },
+    {
+     "w": "circuitos",
+     "t": 4.026
+    },
+    {
+     "w": "de",
+     "t": 4.614
+    },
+    {
+     "w": "recompensa,",
+     "t": 4.81
+    },
+    {
+     "w": "como",
+     "t": 5.849
+    },
+    {
+     "w": "el",
+     "t": 6.157
+    },
+    {
+     "w": "área",
+     "t": 6.353
+    },
+    {
+     "w": "tegmental",
+     "t": 6.661
+    },
+    {
+     "w": "ventral",
+     "t": 7.249
+    },
+    {
+     "w": "y",
+     "t": 7.725
+    },
+    {
+     "w": "el",
+     "t": 7.865
+    },
+    {
+     "w": "núcleo",
+     "t": 8.061
+    },
+    {
+     "w": "caudado.",
+     "t": 8.482
+    },
+    {
+     "w": "La",
+     "t": 9.355
+    },
+    {
+     "w": "dopamina",
+     "t": 9.551
+    },
+    {
+     "w": "no",
+     "t": 10.083
+    },
+    {
+     "w": "crea",
+     "t": 10.279
+    },
+    {
+     "w": "el",
+     "t": 10.587
+    },
+    {
+     "w": "amor",
+     "t": 10.783
+    },
+    {
+     "w": "por",
+     "t": 11.091
+    },
+    {
+     "w": "sí",
+     "t": 11.343
+    },
+    {
+     "w": "sola…",
+     "t": 11.943
+    },
+    {
+     "w": "pero",
+     "t": 12.251
+    },
+    {
+     "w": "impulsa",
+     "t": 12.559
+    },
+    {
+     "w": "la",
+     "t": 13.035
+    },
+    {
+     "w": "motivación,",
+     "t": 13.231
+    },
+    {
+     "w": "el",
+     "t": 14.082
+    },
+    {
+     "w": "deseo",
+     "t": 14.278
+    },
+    {
+     "w": "y",
+     "t": 14.883
+    },
+    {
+     "w": "esa",
+     "t": 15.023
+    },
+    {
+     "w": "dulce",
+     "t": 15.275
+    },
+    {
+     "w": "ansiedad",
+     "t": 15.639
+    },
+    {
+     "w": "por",
+     "t": 16.172
+    },
+    {
+     "w": "volver",
+     "t": 16.424
+    },
+    {
+     "w": "a",
+     "t": 16.844
+    },
+    {
+     "w": "verla.",
+     "t": 16.984
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "texto": "Y entonces, el cuerpo responde. Tu sistema nervioso simpático libera adrenalina y noradrenalina: el pulso se acelera, las manos sudan y tu estómago cambia su actividad… ahí están las mariposas. Tu corazón no crea la emoción: responde a las señales de tu cerebro.",
+   "audio": "audio/voz/escena3.wav",
+   "duracion": 17.817,
+   "silencios": [
+    {
+     "start": 2.30725,
+     "end": 2.70112
+    },
+    {
+     "start": 6.7775,
+     "end": 7.06358
+    },
+    {
+     "start": 8.20452,
+     "end": 8.55708
+    },
+    {
+     "start": 9.54123,
+     "end": 9.72758
+    },
+    {
+     "start": 11.7357,
+     "end": 12.0835
+    },
+    {
+     "start": 13.2158,
+     "end": 13.6301
+    },
+    {
+     "start": 15.7224,
+     "end": 16.0696
+    }
+   ],
+   "palabras": [
+    {
+     "w": "Y",
+     "t": 0
+    },
+    {
+     "w": "entonces,",
+     "t": 0.14
+    },
+    {
+     "w": "el",
+     "t": 0.672
+    },
+    {
+     "w": "cuerpo",
+     "t": 0.868
+    },
+    {
+     "w": "responde.",
+     "t": 1.288
+    },
+    {
+     "w": "Tu",
+     "t": 1.821
+    },
+    {
+     "w": "sistema",
+     "t": 2.017
+    },
+    {
+     "w": "nervioso",
+     "t": 2.887
+    },
+    {
+     "w": "simpático",
+     "t": 3.419
+    },
+    {
+     "w": "libera",
+     "t": 4.007
+    },
+    {
+     "w": "adrenalina",
+     "t": 4.427
+    },
+    {
+     "w": "y",
+     "t": 5.071
+    },
+    {
+     "w": "noradrenalina:",
+     "t": 5.211
+    },
+    {
+     "w": "el",
+     "t": 6.024
+    },
+    {
+     "w": "pulso",
+     "t": 6.22
+    },
+    {
+     "w": "se",
+     "t": 6.584
+    },
+    {
+     "w": "acelera,",
+     "t": 7.066
+    },
+    {
+     "w": "las",
+     "t": 7.542
+    },
+    {
+     "w": "manos",
+     "t": 7.794
+    },
+    {
+     "w": "sudan",
+     "t": 8.158
+    },
+    {
+     "w": "y",
+     "t": 8.875
+    },
+    {
+     "w": "tu",
+     "t": 9.015
+    },
+    {
+     "w": "estómago",
+     "t": 9.211
+    },
+    {
+     "w": "cambia",
+     "t": 9.929
+    },
+    {
+     "w": "su",
+     "t": 10.35
+    },
+    {
+     "w": "actividad…",
+     "t": 10.546
+    },
+    {
+     "w": "ahí",
+     "t": 11.134
+    },
+    {
+     "w": "están",
+     "t": 11.386
+    },
+    {
+     "w": "las",
+     "t": 12.098
+    },
+    {
+     "w": "mariposas.",
+     "t": 12.35
+    },
+    {
+     "w": "Tu",
+     "t": 12.938
+    },
+    {
+     "w": "corazón",
+     "t": 13.134
+    },
+    {
+     "w": "no",
+     "t": 14.025
+    },
+    {
+     "w": "crea",
+     "t": 14.221
+    },
+    {
+     "w": "la",
+     "t": 14.529
+    },
+    {
+     "w": "emoción:",
+     "t": 14.725
+    },
+    {
+     "w": "responde",
+     "t": 15.201
+    },
+    {
+     "w": "a",
+     "t": 16.08
+    },
+    {
+     "w": "las",
+     "t": 16.22
+    },
+    {
+     "w": "señales",
+     "t": 16.472
+    },
+    {
+     "w": "de",
+     "t": 16.949
+    },
+    {
+     "w": "tu",
+     "t": 17.145
+    },
+    {
+     "w": "cerebro.",
+     "t": 17.341
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "texto": "¿Por qué no puedes dejar de pensar en esa persona? Porque tu atención se vuelve selectiva. Recompensa, emoción y memoria trabajan juntas, y cada recuerdo, cada mensaje, cada posible encuentro… brilla más que todo lo demás.",
+   "audio": "audio/voz/escena4.wav",
+   "duracion": 13.757,
+   "silencios": [
+    {
+     "start": 2.18677,
+     "end": 2.6109
+    },
+    {
+     "start": 4.31598,
+     "end": 4.73679
+    },
+    {
+     "start": 8.43519,
+     "end": 8.76642
+    },
+    {
+     "start": 9.60471,
+     "end": 10.0178
+    },
+    {
+     "start": 11.371,
+     "end": 11.78
+    },
+    {
+     "start": 12.6937,
+     "end": 12.8786
+    }
+   ],
+   "palabras": [
+    {
+     "w": "¿Por",
+     "t": 0
+    },
+    {
+     "w": "qué",
+     "t": 0.224
+    },
+    {
+     "w": "no",
+     "t": 0.449
+    },
+    {
+     "w": "puedes",
+     "t": 0.624
+    },
+    {
+     "w": "dejar",
+     "t": 0.998
+    },
+    {
+     "w": "de",
+     "t": 1.322
+    },
+    {
+     "w": "pensar",
+     "t": 1.497
+    },
+    {
+     "w": "en",
+     "t": 1.871
+    },
+    {
+     "w": "esa",
+     "t": 2.045
+    },
+    {
+     "w": "persona?",
+     "t": 2.694
+    },
+    {
+     "w": "Porque",
+     "t": 3.118
+    },
+    {
+     "w": "tu",
+     "t": 3.492
+    },
+    {
+     "w": "atención",
+     "t": 3.667
+    },
+    {
+     "w": "se",
+     "t": 4.141
+    },
+    {
+     "w": "vuelve",
+     "t": 4.315
+    },
+    {
+     "w": "selectiva.",
+     "t": 5.11
+    },
+    {
+     "w": "Recompensa,",
+     "t": 5.634
+    },
+    {
+     "w": "emoción",
+     "t": 6.208
+    },
+    {
+     "w": "y",
+     "t": 6.632
+    },
+    {
+     "w": "memoria",
+     "t": 6.756
+    },
+    {
+     "w": "trabajan",
+     "t": 7.18
+    },
+    {
+     "w": "juntas,",
+     "t": 7.654
+    },
+    {
+     "w": "y",
+     "t": 8.028
+    },
+    {
+     "w": "cada",
+     "t": 8.153
+    },
+    {
+     "w": "recuerdo,",
+     "t": 8.428
+    },
+    {
+     "w": "cada",
+     "t": 9.233
+    },
+    {
+     "w": "mensaje,",
+     "t": 9.507
+    },
+    {
+     "w": "cada",
+     "t": 10.344
+    },
+    {
+     "w": "posible",
+     "t": 10.618
+    },
+    {
+     "w": "encuentro…",
+     "t": 11.043
+    },
+    {
+     "w": "brilla",
+     "t": 11.975
+    },
+    {
+     "w": "más",
+     "t": 12.349
+    },
+    {
+     "w": "que",
+     "t": 12.574
+    },
+    {
+     "w": "todo",
+     "t": 12.983
+    },
+    {
+     "w": "lo",
+     "t": 13.258
+    },
+    {
+     "w": "demás.",
+     "t": 13.432
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "texto": "Y cuando esa persona te abraza, algo cambia. El contacto afectivo se asocia con la liberación de oxitocina, una hormona que participa en la confianza y los vínculos. No es una poción mágica, pero ayuda a que tu cerebro asocie a esa persona con calma y seguridad.",
+   "audio": "audio/voz/escena5.wav",
+   "duracion": 16.216,
+   "silencios": [
+    {
+     "start": 1.61473,
+     "end": 2.03777
+    },
+    {
+     "start": 2.82258,
+     "end": 3.24244
+    },
+    {
+     "start": 6.42729,
+     "end": 6.85577
+    },
+    {
+     "start": 9.83217,
+     "end": 10.2128
+    },
+    {
+     "start": 11.6092,
+     "end": 11.8939
+    }
+   ],
+   "palabras": [
+    {
+     "w": "Y",
+     "t": 0
+    },
+    {
+     "w": "cuando",
+     "t": 0.127
+    },
+    {
+     "w": "esa",
+     "t": 0.509
+    },
+    {
+     "w": "persona",
+     "t": 0.738
+    },
+    {
+     "w": "te",
+     "t": 1.171
+    },
+    {
+     "w": "abraza,",
+     "t": 1.349
+    },
+    {
+     "w": "algo",
+     "t": 2.154
+    },
+    {
+     "w": "cambia.",
+     "t": 2.434
+    },
+    {
+     "w": "El",
+     "t": 2.816
+    },
+    {
+     "w": "contacto",
+     "t": 3.414
+    },
+    {
+     "w": "afectivo",
+     "t": 3.897
+    },
+    {
+     "w": "se",
+     "t": 4.381
+    },
+    {
+     "w": "asocia",
+     "t": 4.559
+    },
+    {
+     "w": "con",
+     "t": 4.941
+    },
+    {
+     "w": "la",
+     "t": 5.17
+    },
+    {
+     "w": "liberación",
+     "t": 5.348
+    },
+    {
+     "w": "de",
+     "t": 5.934
+    },
+    {
+     "w": "oxitocina,",
+     "t": 6.112
+    },
+    {
+     "w": "una",
+     "t": 7.075
+    },
+    {
+     "w": "hormona",
+     "t": 7.304
+    },
+    {
+     "w": "que",
+     "t": 7.737
+    },
+    {
+     "w": "participa",
+     "t": 7.966
+    },
+    {
+     "w": "en",
+     "t": 8.5
+    },
+    {
+     "w": "la",
+     "t": 8.678
+    },
+    {
+     "w": "confianza",
+     "t": 8.857
+    },
+    {
+     "w": "y",
+     "t": 9.391
+    },
+    {
+     "w": "los",
+     "t": 9.518
+    },
+    {
+     "w": "vínculos.",
+     "t": 9.748
+    },
+    {
+     "w": "No",
+     "t": 10.612
+    },
+    {
+     "w": "es",
+     "t": 10.79
+    },
+    {
+     "w": "una",
+     "t": 10.968
+    },
+    {
+     "w": "poción",
+     "t": 11.197
+    },
+    {
+     "w": "mágica,",
+     "t": 11.579
+    },
+    {
+     "w": "pero",
+     "t": 12.246
+    },
+    {
+     "w": "ayuda",
+     "t": 12.526
+    },
+    {
+     "w": "a",
+     "t": 12.856
+    },
+    {
+     "w": "que",
+     "t": 12.984
+    },
+    {
+     "w": "tu",
+     "t": 13.213
+    },
+    {
+     "w": "cerebro",
+     "t": 13.391
+    },
+    {
+     "w": "asocie",
+     "t": 13.824
+    },
+    {
+     "w": "a",
+     "t": 14.206
+    },
+    {
+     "w": "esa",
+     "t": 14.333
+    },
+    {
+     "w": "persona",
+     "t": 14.562
+    },
+    {
+     "w": "con",
+     "t": 14.995
+    },
+    {
+     "w": "calma",
+     "t": 15.224
+    },
+    {
+     "w": "y",
+     "t": 15.555
+    },
+    {
+     "w": "seguridad.",
+     "t": 15.682
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "texto": "Pero el amor también puede doler. La incertidumbre activa tu respuesta de estrés, y los estudios muestran que el rechazo amoroso involucra regiones ligadas al deseo, la ansiedad y el malestar emocional. Entonces… si puede doler tanto, ¿por qué seguimos buscándolo?",
+   "audio": "audio/voz/escena6.wav",
+   "duracion": 18.605,
+   "silencios": [
+    {
+     "start": 0.642188,
+     "end": 1.04731
+    },
+    {
+     "start": 2.13335,
+     "end": 2.5504
+    },
+    {
+     "start": 5.25217,
+     "end": 5.53171
+    },
+    {
+     "start": 10.6644,
+     "end": 11.0775
+    },
+    {
+     "start": 11.8208,
+     "end": 12.2147
+    },
+    {
+     "start": 13.4607,
+     "end": 13.8803
+    },
+    {
+     "start": 14.4881,
+     "end": 14.9153
+    },
+    {
+     "start": 16.5775,
+     "end": 16.9064
+    }
+   ],
+   "palabras": [
+    {
+     "w": "Pero",
+     "t": 0
+    },
+    {
+     "w": "el",
+     "t": 0.308
+    },
+    {
+     "w": "amor",
+     "t": 0.503
+    },
+    {
+     "w": "también",
+     "t": 1.216
+    },
+    {
+     "w": "puede",
+     "t": 1.692
+    },
+    {
+     "w": "doler.",
+     "t": 2.055
+    },
+    {
+     "w": "La",
+     "t": 2.836
+    },
+    {
+     "w": "incertidumbre",
+     "t": 3.031
+    },
+    {
+     "w": "activa",
+     "t": 3.842
+    },
+    {
+     "w": "tu",
+     "t": 4.262
+    },
+    {
+     "w": "respuesta",
+     "t": 4.458
+    },
+    {
+     "w": "de",
+     "t": 5.045
+    },
+    {
+     "w": "estrés,",
+     "t": 5.241
+    },
+    {
+     "w": "y",
+     "t": 5.94
+    },
+    {
+     "w": "los",
+     "t": 6.079
+    },
+    {
+     "w": "estudios",
+     "t": 6.331
+    },
+    {
+     "w": "muestran",
+     "t": 6.862
+    },
+    {
+     "w": "que",
+     "t": 7.394
+    },
+    {
+     "w": "el",
+     "t": 7.645
+    },
+    {
+     "w": "rechazo",
+     "t": 7.841
+    },
+    {
+     "w": "amoroso",
+     "t": 8.317
+    },
+    {
+     "w": "involucra",
+     "t": 8.792
+    },
+    {
+     "w": "regiones",
+     "t": 9.379
+    },
+    {
+     "w": "ligadas",
+     "t": 9.911
+    },
+    {
+     "w": "al",
+     "t": 10.386
+    },
+    {
+     "w": "deseo,",
+     "t": 10.582
+    },
+    {
+     "w": "la",
+     "t": 11.358
+    },
+    {
+     "w": "ansiedad",
+     "t": 11.554
+    },
+    {
+     "w": "y",
+     "t": 12.479
+    },
+    {
+     "w": "el",
+     "t": 12.619
+    },
+    {
+     "w": "malestar",
+     "t": 12.815
+    },
+    {
+     "w": "emocional.",
+     "t": 13.346
+    },
+    {
+     "w": "Entonces…",
+     "t": 14.353
+    },
+    {
+     "w": "si",
+     "t": 15.312
+    },
+    {
+     "w": "puede",
+     "t": 15.507
+    },
+    {
+     "w": "doler",
+     "t": 15.871
+    },
+    {
+     "w": "tanto,",
+     "t": 16.235
+    },
+    {
+     "w": "¿por",
+     "t": 16.927
+    },
+    {
+     "w": "qué",
+     "t": 17.179
+    },
+    {
+     "w": "seguimos",
+     "t": 17.43
+    },
+    {
+     "w": "buscándolo?",
+     "t": 17.962
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "texto": "Porque el amor cambia. La euforia del inicio suele calmarse, y en su lugar puede crecer algo más profundo: apego, confianza… y la tranquilidad de sentirte en casa con alguien.",
+   "audio": "audio/voz/escena7.wav",
+   "duracion": 12.056,
+   "silencios": [
+    {
+     "start": 1.42073,
+     "end": 1.8179
+    },
+    {
+     "start": 3.93994,
+     "end": 4.22783
+    },
+    {
+     "start": 6.68067,
+     "end": 7.07965
+    },
+    {
+     "start": 7.59917,
+     "end": 8.01752
+    },
+    {
+     "start": 8.72588,
+     "end": 9.15702
+    }
+   ],
+   "palabras": [
+    {
+     "w": "Porque",
+     "t": 0
+    },
+    {
+     "w": "el",
+     "t": 0.41
+    },
+    {
+     "w": "amor",
+     "t": 0.602
+    },
+    {
+     "w": "cambia.",
+     "t": 0.903
+    },
+    {
+     "w": "La",
+     "t": 1.313
+    },
+    {
+     "w": "euforia",
+     "t": 1.902
+    },
+    {
+     "w": "del",
+     "t": 2.367
+    },
+    {
+     "w": "inicio",
+     "t": 2.613
+    },
+    {
+     "w": "suele",
+     "t": 3.024
+    },
+    {
+     "w": "calmarse,",
+     "t": 3.379
+    },
+    {
+     "w": "y",
+     "t": 3.899
+    },
+    {
+     "w": "en",
+     "t": 4.324
+    },
+    {
+     "w": "su",
+     "t": 4.515
+    },
+    {
+     "w": "lugar",
+     "t": 4.707
+    },
+    {
+     "w": "puede",
+     "t": 5.062
+    },
+    {
+     "w": "crecer",
+     "t": 5.418
+    },
+    {
+     "w": "algo",
+     "t": 5.828
+    },
+    {
+     "w": "más",
+     "t": 6.129
+    },
+    {
+     "w": "profundo:",
+     "t": 6.375
+    },
+    {
+     "w": "apego,",
+     "t": 7.294
+    },
+    {
+     "w": "confianza…",
+     "t": 8.068
+    },
+    {
+     "w": "y",
+     "t": 8.643
+    },
+    {
+     "w": "la",
+     "t": 9.211
+    },
+    {
+     "w": "tranquilidad",
+     "t": 9.402
+    },
+    {
+     "w": "de",
+     "t": 10.141
+    },
+    {
+     "w": "sentirte",
+     "t": 10.332
+    },
+    {
+     "w": "en",
+     "t": 10.852
+    },
+    {
+     "w": "casa",
+     "t": 11.044
+    },
+    {
+     "w": "con",
+     "t": 11.345
+    },
+    {
+     "w": "alguien.",
+     "t": 11.591
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "texto": "Así que no, no amas solamente con el corazón. Cuando te enamoras, todo tu cuerpo participa en la historia. ¿Quién hizo latir así el tuyo?",
+   "audio": "audio/voz/escena8.wav",
+   "duracion": 9,
+   "silencios": [
+    {
+     "start": 0.726208,
+     "end": 1.13215
+    },
+    {
+     "start": 3.09573,
+     "end": 3.52044
+    },
+    {
+     "start": 4.74917,
+     "end": 4.97148
+    },
+    {
+     "start": 7.13398,
+     "end": 7.55031
+    }
+   ],
+   "palabras": [
+    {
+     "w": "Así",
+     "t": 0
+    },
+    {
+     "w": "que",
+     "t": 0.235
+    },
+    {
+     "w": "no,",
+     "t": 0.469
+    },
+    {
+     "w": "no",
+     "t": 0.651
+    },
+    {
+     "w": "amas",
+     "t": 1.24
+    },
+    {
+     "w": "solamente",
+     "t": 1.526
+    },
+    {
+     "w": "con",
+     "t": 2.074
+    },
+    {
+     "w": "el",
+     "t": 2.308
+    },
+    {
+     "w": "corazón.",
+     "t": 2.491
+    },
+    {
+     "w": "Cuando",
+     "t": 2.934
+    },
+    {
+     "w": "te",
+     "t": 3.749
+    },
+    {
+     "w": "enamoras,",
+     "t": 3.932
+    },
+    {
+     "w": "todo",
+     "t": 4.427
+    },
+    {
+     "w": "tu",
+     "t": 4.713
+    },
+    {
+     "w": "cuerpo",
+     "t": 5.118
+    },
+    {
+     "w": "participa",
+     "t": 5.509
+    },
+    {
+     "w": "en",
+     "t": 6.056
+    },
+    {
+     "w": "la",
+     "t": 6.238
+    },
+    {
+     "w": "historia.",
+     "t": 6.421
+    },
+    {
+     "w": "¿Quién",
+     "t": 6.916
+    },
+    {
+     "w": "hizo",
+     "t": 7.671
+    },
+    {
+     "w": "latir",
+     "t": 7.958
+    },
+    {
+     "w": "así",
+     "t": 8.296
+    },
+    {
+     "w": "el",
+     "t": 8.531
+    },
+    {
+     "w": "tuyo?",
+     "t": 8.713
+    }
+   ]
+  }
+ ]
+}
