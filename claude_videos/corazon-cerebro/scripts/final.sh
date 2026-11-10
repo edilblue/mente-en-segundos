@@ -4,7 +4,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 OUT=../mente_en_segundos_corazon_cerebro_enamorado.mp4
 ffmpeg -loglevel error -y -i out/video_mudo.mp4 -i out/mezcla.wav \
-  -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac -b:a 192k -ar 48000 -ac 2 \
+  -map 0:v:0 -map 1:a:0 -c:v libx264 -preset medium -crf 19 -profile:v high -level 4.2 -pix_fmt yuv420p -vf scale=in_range=full:out_range=tv -color_range tv -colorspace bt709 -color_primaries bt709 -color_trc bt709 -c:a aac -b:a 192k -ar 48000 -ac 2 \
   -movflags +faststart -metadata title="¿Qué le pasa a tu corazón y a tu cerebro cuando te enamoras perdidamente?" \
   -metadata artist="Mente en Segundos" -shortest "$OUT"
 echo "== ffprobe"
