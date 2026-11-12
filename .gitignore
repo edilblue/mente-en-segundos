@@ -3,3 +3,5 @@ __pycache__/
 build/
 models/
 output/*.mp4.part
+referencias/*/video.*
+referencias/*/frames/
