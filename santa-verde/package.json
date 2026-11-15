@@ -1,0 +1,28 @@
+{
+  "name": "santa-verde",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Mente en Segundos — ¿Santa Claus era verde? (Short 35 s, Remotion)",
+  "type": "module",
+  "scripts": {
+    "narracion": "node scripts/narracion.mjs",
+    "musica": "python3 scripts/musica.py",
+    "render": "node scripts/render.mjs",
+    "frames": "node scripts/frames.mjs"
+  },
+  "dependencies": {
+    "@fontsource/black-ops-one": "^5.2.5",
+    "@fontsource/cabin-sketch": "^5.2.5",
+    "@fontsource/luckiest-guy": "^5.3.0",
+    "@remotion/bundler": "^4.0.541",
+    "@remotion/cli": "^4.0.541",
+    "@remotion/renderer": "^4.0.541",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.541"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "typescript": "^5.9.3"
+  }
+}

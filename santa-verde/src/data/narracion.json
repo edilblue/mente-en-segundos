@@ -1,0 +1,523 @@
+{
+  "modelo": "gemini-3.1-flash-tts-preview",
+  "voz": "Puck",
+  "tempo": 1.05,
+  "total": 35,
+  "duracionVoz": 35,
+  "escenas": [
+    {
+      "id": 1,
+      "vozInicio": 0.12,
+      "vozFin": 4.55,
+      "palabras": [
+        {
+          "w": "¿Santa",
+          "start": 0.12,
+          "end": 0.427
+        },
+        {
+          "w": "Claus",
+          "start": 0.427,
+          "end": 0.616
+        },
+        {
+          "w": "era",
+          "start": 0.616,
+          "end": 0.923
+        },
+        {
+          "w": "verde",
+          "start": 0.923,
+          "end": 1.23
+        },
+        {
+          "w": "hasta",
+          "start": 1.23,
+          "end": 1.538
+        },
+        {
+          "w": "que",
+          "start": 1.538,
+          "end": 1.727
+        },
+        {
+          "w": "Coca-Cola",
+          "start": 1.727,
+          "end": 2.27
+        },
+        {
+          "w": "lo",
+          "start": 2.27,
+          "end": 2.459
+        },
+        {
+          "w": "vistió",
+          "start": 2.459,
+          "end": 2.766
+        },
+        {
+          "w": "de",
+          "start": 2.766,
+          "end": 2.955
+        },
+        {
+          "w": "rojo?",
+          "start": 2.955,
+          "end": 3.262
+        },
+        {
+          "w": "¡Mentira!",
+          "start": 3.616,
+          "end": 4.55
+        }
+      ],
+      "inicio": 0,
+      "fin": 4.707
+    },
+    {
+      "id": 2,
+      "vozInicio": 4.865,
+      "vozFin": 11.631,
+      "palabras": [
+        {
+          "w": "Antes",
+          "start": 4.865,
+          "end": 5.196
+        },
+        {
+          "w": "de",
+          "start": 5.196,
+          "end": 5.399
+        },
+        {
+          "w": "1900,",
+          "start": 5.399,
+          "end": 6.11
+        },
+        {
+          "w": "Santa",
+          "start": 6.231,
+          "end": 6.602
+        },
+        {
+          "w": "aparecía",
+          "start": 6.602,
+          "end": 7.26
+        },
+        {
+          "w": "con",
+          "start": 7.26,
+          "end": 7.488
+        },
+        {
+          "w": "túnicas",
+          "start": 7.488,
+          "end": 8.003
+        },
+        {
+          "w": "verdes,",
+          "start": 8.003,
+          "end": 8.375
+        },
+        {
+          "w": "azules",
+          "start": 8.375,
+          "end": 8.889
+        },
+        {
+          "w": "o",
+          "start": 8.889,
+          "end": 9.118
+        },
+        {
+          "w": "marrones.",
+          "start": 9.118,
+          "end": 9.633
+        },
+        {
+          "w": "Cada",
+          "start": 9.94,
+          "end": 10.306
+        },
+        {
+          "w": "país",
+          "start": 10.306,
+          "end": 10.532
+        },
+        {
+          "w": "lo",
+          "start": 10.532,
+          "end": 10.757
+        },
+        {
+          "w": "vestía",
+          "start": 10.757,
+          "end": 11.124
+        },
+        {
+          "w": "distinto.",
+          "start": 11.124,
+          "end": 11.631
+        }
+      ],
+      "inicio": 4.707,
+      "fin": 11.729
+    },
+    {
+      "id": 3,
+      "vozInicio": 11.826,
+      "vozFin": 16.472,
+      "palabras": [
+        {
+          "w": "Y",
+          "start": 11.826,
+          "end": 11.992
+        },
+        {
+          "w": "en",
+          "start": 11.992,
+          "end": 12.157
+        },
+        {
+          "w": "el",
+          "start": 12.157,
+          "end": 12.322
+        },
+        {
+          "w": "siglo",
+          "start": 12.322,
+          "end": 12.591
+        },
+        {
+          "w": "XIX,",
+          "start": 12.591,
+          "end": 13.067
+        },
+        {
+          "w": "el",
+          "start": 13.164,
+          "end": 13.357
+        },
+        {
+          "w": "dibujante",
+          "start": 13.357,
+          "end": 13.911
+        },
+        {
+          "w": "Thomas",
+          "start": 13.911,
+          "end": 14.225
+        },
+        {
+          "w": "Nast",
+          "start": 14.225,
+          "end": 14.418
+        },
+        {
+          "w": "ya",
+          "start": 14.418,
+          "end": 14.712
+        },
+        {
+          "w": "lo",
+          "start": 14.712,
+          "end": 14.905
+        },
+        {
+          "w": "pintaba",
+          "start": 14.905,
+          "end": 15.339
+        },
+        {
+          "w": "de",
+          "start": 15.339,
+          "end": 15.532
+        },
+        {
+          "w": "rojo",
+          "start": 15.532,
+          "end": 15.845
+        },
+        {
+          "w": "en",
+          "start": 15.845,
+          "end": 16.038
+        },
+        {
+          "w": "revistas.",
+          "start": 16.038,
+          "end": 16.472
+        }
+      ],
+      "inicio": 11.729,
+      "fin": 16.57
+    },
+    {
+      "id": 4,
+      "vozInicio": 16.667,
+      "vozFin": 24.669,
+      "palabras": [
+        {
+          "w": "Pero",
+          "start": 16.667,
+          "end": 16.948
+        },
+        {
+          "w": "en",
+          "start": 16.948,
+          "end": 17.12
+        },
+        {
+          "w": "1931,",
+          "start": 17.12,
+          "end": 18.264
+        },
+        {
+          "w": "Coca-Cola",
+          "start": 18.434,
+          "end": 19.151
+        },
+        {
+          "w": "contrató",
+          "start": 19.151,
+          "end": 19.712
+        },
+        {
+          "w": "al",
+          "start": 19.712,
+          "end": 19.962
+        },
+        {
+          "w": "ilustrador",
+          "start": 19.962,
+          "end": 20.679
+        },
+        {
+          "w": "Haddon",
+          "start": 20.679,
+          "end": 21.084
+        },
+        {
+          "w": "Sundblom,",
+          "start": 21.084,
+          "end": 21.489
+        },
+        {
+          "w": "que",
+          "start": 21.489,
+          "end": 21.739
+        },
+        {
+          "w": "lo",
+          "start": 21.739,
+          "end": 21.988
+        },
+        {
+          "w": "pintó",
+          "start": 21.988,
+          "end": 22.393
+        },
+        {
+          "w": "cálido,",
+          "start": 22.393,
+          "end": 22.955
+        },
+        {
+          "w": "humano,",
+          "start": 23.08,
+          "end": 23.384
+        },
+        {
+          "w": "y",
+          "start": 23.384,
+          "end": 23.52
+        },
+        {
+          "w": "con",
+          "start": 23.52,
+          "end": 23.655
+        },
+        {
+          "w": "una",
+          "start": 23.655,
+          "end": 23.875
+        },
+        {
+          "w": "botella",
+          "start": 23.875,
+          "end": 24.179
+        },
+        {
+          "w": "en",
+          "start": 24.179,
+          "end": 24.314
+        },
+        {
+          "w": "la",
+          "start": 24.314,
+          "end": 24.45
+        },
+        {
+          "w": "mano.",
+          "start": 24.45,
+          "end": 24.669
+        }
+      ],
+      "inicio": 16.57,
+      "fin": 24.767
+    },
+    {
+      "id": 5,
+      "vozInicio": 24.865,
+      "vozFin": 29.442,
+      "palabras": [
+        {
+          "w": "Esos",
+          "start": 24.865,
+          "end": 25.172
+        },
+        {
+          "w": "anuncios",
+          "start": 25.172,
+          "end": 25.597
+        },
+        {
+          "w": "se",
+          "start": 25.597,
+          "end": 25.786
+        },
+        {
+          "w": "repitieron",
+          "start": 25.786,
+          "end": 26.33
+        },
+        {
+          "w": "por",
+          "start": 26.33,
+          "end": 26.519
+        },
+        {
+          "w": "más",
+          "start": 26.519,
+          "end": 26.708
+        },
+        {
+          "w": "de",
+          "start": 26.708,
+          "end": 26.897
+        },
+        {
+          "w": "treinta",
+          "start": 27.011,
+          "end": 27.301
+        },
+        {
+          "w": "años",
+          "start": 27.301,
+          "end": 27.608
+        },
+        {
+          "w": "y",
+          "start": 27.608,
+          "end": 27.906
+        },
+        {
+          "w": "el",
+          "start": 27.906,
+          "end": 28.095
+        },
+        {
+          "w": "mundo",
+          "start": 28.095,
+          "end": 28.402
+        },
+        {
+          "w": "entero",
+          "start": 28.402,
+          "end": 28.828
+        },
+        {
+          "w": "lo",
+          "start": 28.828,
+          "end": 29.017
+        },
+        {
+          "w": "adoptó.",
+          "start": 29.017,
+          "end": 29.442
+        }
+      ],
+      "inicio": 24.767,
+      "fin": 29.569
+    },
+    {
+      "id": 6,
+      "vozInicio": 29.697,
+      "vozFin": 34.38,
+      "palabras": [
+        {
+          "w": "Coca-Cola",
+          "start": 29.697,
+          "end": 30.313
+        },
+        {
+          "w": "no",
+          "start": 30.313,
+          "end": 30.527
+        },
+        {
+          "w": "inventó",
+          "start": 30.527,
+          "end": 31.009
+        },
+        {
+          "w": "al",
+          "start": 31.009,
+          "end": 31.223
+        },
+        {
+          "w": "Santa",
+          "start": 31.223,
+          "end": 31.571
+        },
+        {
+          "w": "rojo…",
+          "start": 31.571,
+          "end": 31.92
+        },
+        {
+          "w": "solo",
+          "start": 32.125,
+          "end": 32.459
+        },
+        {
+          "w": "lo",
+          "start": 32.459,
+          "end": 32.664
+        },
+        {
+          "w": "hizo",
+          "start": 32.664,
+          "end": 32.998
+        },
+        {
+          "w": "imposible",
+          "start": 32.998,
+          "end": 33.712
+        },
+        {
+          "w": "de",
+          "start": 33.712,
+          "end": 33.918
+        },
+        {
+          "w": "olvidar.",
+          "start": 33.918,
+          "end": 34.38
+        }
+      ],
+      "inicio": 29.569,
+      "fin": 35
+    }
+  ]
+}

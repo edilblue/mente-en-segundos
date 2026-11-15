@@ -1,0 +1,83 @@
+{
+  "titulo": "¿Santa Claus era verde antes de Coca-Cola?",
+  "duracionTotal": 35,
+  "voz": "Puck",
+  "estiloVoz": "Style: curious, energetic, amazed, like revealing a secret. Neutral Latin American Spanish accent.\nPace: fast and punchy.",
+  "segmentos": [
+    {
+      "id": 1,
+      "nombre": "Mito",
+      "texto": "¿Santa Claus era verde hasta que Coca-Cola lo vistió de rojo? ¡Mentira!",
+      "tts": "¿Santa Claus era verde hasta que Coca-Cola lo vistió de rojo? ¡Mentira!",
+      "claves": {
+        "verde": "green",
+        "rojo": "red",
+        "¡mentira!": "red",
+        "coca-cola": "yellow"
+      }
+    },
+    {
+      "id": 2,
+      "nombre": "Desfile de túnicas",
+      "texto": "Antes de 1900, Santa aparecía con túnicas verdes, azules o marrones. Cada país lo vestía distinto.",
+      "tts": "Antes de mil novecientos, Santa aparecía con túnicas verdes, azules o marrones. Cada país lo vestía distinto.",
+      "claves": {
+        "1900,": "yellow",
+        "verdes,": "green",
+        "azules": "blue",
+        "marrones.": "brown",
+        "distinto.": "yellow"
+      }
+    },
+    {
+      "id": 3,
+      "nombre": "Thomas Nast",
+      "texto": "Y en el siglo XIX, el dibujante Thomas Nast ya lo pintaba de rojo en revistas.",
+      "tts": "Y en el siglo diecinueve, el dibujante Thomas Nast ya lo pintaba de rojo en revistas.",
+      "claves": {
+        "xix,": "yellow",
+        "thomas": "yellow",
+        "nast": "yellow",
+        "rojo": "red"
+      }
+    },
+    {
+      "id": 4,
+      "nombre": "Haddon Sundblom",
+      "texto": "Pero en 1931, Coca-Cola contrató al ilustrador Haddon Sundblom, que lo pintó cálido, humano, y con una botella en la mano.",
+      "tts": "Pero en mil novecientos treinta y uno, Coca-Cola contrató al ilustrador Haddon Sundblom, que lo pintó cálido, humano, y con una botella en la mano.",
+      "claves": {
+        "1931,": "yellow",
+        "coca-cola": "red",
+        "haddon": "yellow",
+        "sundblom,": "yellow",
+        "cálido,": "red",
+        "botella": "yellow"
+      }
+    },
+    {
+      "id": 5,
+      "nombre": "Anuncios por todas partes",
+      "texto": "Esos anuncios se repitieron por más de treinta años y el mundo entero lo adoptó.",
+      "tts": "Esos anuncios se repitieron por más de treinta años y el mundo entero lo adoptó.",
+      "claves": {
+        "treinta": "yellow",
+        "años": "yellow",
+        "mundo": "red",
+        "entero": "red"
+      }
+    },
+    {
+      "id": 6,
+      "nombre": "Guiño final",
+      "texto": "Coca-Cola no inventó al Santa rojo… solo lo hizo imposible de olvidar.",
+      "tts": "Coca-Cola no inventó al Santa rojo… solo lo hizo imposible de olvidar.",
+      "claves": {
+        "inventó": "yellow",
+        "rojo…": "red",
+        "imposible": "yellow",
+        "olvidar.": "yellow"
+      }
+    }
+  ]
+}

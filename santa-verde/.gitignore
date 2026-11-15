@@ -1,0 +1,4 @@
+.tts-cache/
+build/
+node_modules/
+out/frames/

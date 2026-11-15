@@ -67,3 +67,10 @@ assets/fonts/           tipografía Inter (licencia SIL OFL)
 
 Short animado estilo stickman "¿Y si los animales también saltaran?" hecho con Remotion (React + TypeScript)
 en [`stickman-remotion/`](stickman-remotion/README.md). Narración con Gemini TTS (`GEMINI_API_KEY` desde el entorno).
+
+---
+
+## Short: ¿Santa Claus era verde antes de Coca-Cola? (Remotion, 35 s)
+
+Short que desmiente un mito viral, animado como stickman en pizarra de tiza, con narración de Gemini TTS
+y música original. Proyecto en [`santa-verde/`](santa-verde/README.md); video en `santa-verde/out/santa_verde_short.mp4`.
