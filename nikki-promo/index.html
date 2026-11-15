@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Nikki Accesorios — promo 15s</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+  @font-face { font-family: "InterLocal"; src: url("../assets/fonts/Inter-SemiBold.otf"); font-weight: 600; }
+  @font-face { font-family: "InterLocal"; src: url("../assets/fonts/Inter-ExtraBold.otf"); font-weight: 800; }
+  :root {
+    --ink: #0B0B10; --lav: #B9A7E0; --red: #C8102E; --silver: #D9DBE3;
+    --display: "Cinzel Decorative", serif; --serif: "Cinzel", serif; --sans: "InterLocal", "Noto Color Emoji", sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; background: var(--ink); overflow: hidden; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--ink); }
+  .layer, .scene { position: absolute; inset: 0; }
+  .scene { opacity: 0; }
+  #bg { background:
+      radial-gradient(900px 1100px at 50% 42%, rgba(185,167,224,.16), transparent 70%),
+      radial-gradient(700px 600px at 50% 105%, rgba(200,16,46,.10), transparent 70%),
+      var(--ink); }
+  #vignette { background: radial-gradient(ellipse at 50% 50%, transparent 55%, rgba(0,0,0,.75) 100%); pointer-events: none; }
+  canvas { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+  #grain { opacity: .09; mix-blend-mode: screen; }
+  #fade { background: #000; opacity: 0; }
+
+  /* textos */
+  .silver {
+    background: linear-gradient(175deg, #ffffff 0%, #d9dbe3 40%, #8d8fa0 62%, #f2f2f7 80%, #a9abbb 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .glowtxt { filter: drop-shadow(0 0 18px rgba(185,167,224,.75)) drop-shadow(0 0 4px rgba(185,167,224,.9)); }
+  .ttl { position: absolute; left: 0; right: 0; text-align: center; font-family: var(--display); font-weight: 700; line-height: 1; white-space: nowrap; }
+  .ttl .ch { display: inline-block; will-change: transform; }
+  .kicker { position: absolute; left: 0; right: 0; text-align: center; font-family: var(--sans); font-weight: 600;
+            font-size: 34px; letter-spacing: .42em; color: var(--lav); text-transform: uppercase; }
+
+  /* estrella ✦ */
+  .star { position: absolute; width: 200px; height: 200px; margin: -100px 0 0 -100px; will-change: transform; }
+  .star svg { width: 100%; height: 100%; overflow: visible; }
+
+  /* escena 1 */
+  #logo1 { position: absolute; left: 50%; top: 720px; width: 560px; height: 560px; margin: -280px 0 0 -280px; object-fit: contain;
+           filter: drop-shadow(0 0 30px rgba(185,167,224,.85)) drop-shadow(0 0 80px rgba(185,167,224,.45)); }
+  #flash { position: absolute; left: 50%; top: 720px; width: 1600px; height: 1600px; margin: -800px 0 0 -800px; border-radius: 50%;
+           background: radial-gradient(circle, rgba(255,255,255,.95) 0%, rgba(185,167,224,.55) 18%, rgba(185,167,224,0) 55%); opacity: 0; }
+
+  /* marcos de foto */
+  .frame { position: absolute; overflow: hidden; border-radius: 34px; background: #15131c;
+           box-shadow: 0 0 0 2px rgba(217,219,227,.55), 0 0 60px rgba(185,167,224,.28), 0 40px 80px rgba(0,0,0,.6); }
+  .frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; will-change: transform; }
+  .arch { border-radius: 450px 450px 34px 34px; }
+
+  /* escena 2 */
+  #f2 { left: 110px; top: 300px; width: 860px; height: 1080px; }
+  #web { position: absolute; inset: 0; overflow: visible; }
+  #web path, #web line, #web circle { fill: none; stroke: var(--silver); stroke-linecap: round; }
+
+  /* escena 3 */
+  .slide { position: absolute; inset: 0; }
+  .slide .frame { left: 90px; top: 290px; width: 900px; height: 1120px; }
+  .gl { position: absolute; inset: 0; opacity: 0; mix-blend-mode: screen; }
+  .gl.r img { filter: url(#onlyRed); }
+  .gl.b img { filter: url(#onlyBlue); }
+  .slab { position: absolute; left: 0; right: 0; height: 4px; background: rgba(255,255,255,.7); opacity: 0; }
+
+  /* collage */
+  #grid { position: absolute; left: 136px; top: 290px; width: 808px; height: 1212px; }
+  .tile { position: absolute; width: 392px; height: 392px; border-radius: 26px; overflow: hidden; background: #15131c;
+          box-shadow: 0 0 0 2px rgba(217,219,227,.5), 0 0 40px rgba(185,167,224,.25); will-change: transform; }
+  .tile img { width: 100%; height: 100%; object-fit: cover; }
+  .tile.logo { background: radial-gradient(circle, #241d33, #0f0d15); display: flex; align-items: center; justify-content: center; }
+  .tile.logo img { width: 78%; height: 78%; object-fit: contain; filter: drop-shadow(0 0 18px rgba(185,167,224,.8)); }
+
+  /* cierre */
+  #logo5 { position: absolute; left: 50%; top: 610px; width: 470px; height: 470px; margin: -235px 0 0 -235px; object-fit: contain;
+           filter: drop-shadow(0 0 30px rgba(185,167,224,.85)) drop-shadow(0 0 70px rgba(185,167,224,.4)); }
+  #handle { position: absolute; left: 0; right: 0; top: 960px; text-align: center; font-family: var(--sans); font-weight: 800;
+            font-size: 66px; letter-spacing: .01em; color: #fff; }
+  #handle .u { position: absolute; left: 50%; bottom: -18px; height: 4px; width: 620px; margin-left: -310px; background: linear-gradient(90deg, transparent, var(--lav), transparent); transform-origin: 50% 50%; }
+  #dm { position: absolute; left: 0; right: 0; top: 1150px; text-align: center; font-family: var(--serif); font-weight: 700; font-size: 74px; color: #fff; }
+  #dm .emo { font-family: "Noto Color Emoji"; font-size: 66px; margin-left: 14px; display: inline-block; }
+  #pill { position: absolute; left: 50%; top: 1120px; width: 860px; height: 150px; margin-left: -430px; border-radius: 80px;
+          border: 2px solid rgba(185,167,224,.85); background: rgba(185,167,224,.10); box-shadow: 0 0 40px rgba(185,167,224,.35) inset, 0 0 40px rgba(185,167,224,.3); }
+  #arrow { position: absolute; left: 50%; top: 1330px; width: 90px; height: 150px; margin-left: -45px; overflow: visible; }
+  #arrow path { fill: none; stroke: var(--lav); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="onlyRed"><feColorMatrix type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"/></filter>
+    <filter id="onlyBlue"><feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0"/></filter>
+    <radialGradient id="starGrad"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#efe9ff"/><stop offset="1" stop-color="#B9A7E0"/></radialGradient>
+    <symbol id="starShape" viewBox="-100 -100 200 200">
+      <path d="M0,-100 C7,-24 24,-7 100,0 C24,7 7,24 0,100 C-7,24 -24,7 -100,0 C-24,-7 -7,-24 0,-100Z" fill="url(#starGrad)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div id="stage">
+  <div id="bg" class="layer"></div>
+  <canvas id="dust" width="1080" height="1920"></canvas>
+
+  <!-- 1 · intro -->
+  <div id="s1" class="scene">
+    <div id="flash"></div>
+    <img id="logo1" data-asset="logo">
+    <div class="ttl silver glowtxt" id="t1a" style="top:1060px;font-size:168px">Nikki</div>
+    <div class="ttl silver" id="t1b" style="top:1250px;font-size:74px;letter-spacing:.14em;font-family:var(--serif)">Accesorios</div>
+    <div class="kicker" id="k1" style="top:1380px">✦ hecho en El Salvador ✦</div>
+  </div>
+
+  <!-- 2 · collar -->
+  <div id="s2" class="scene">
+    <div class="frame arch" id="f2"><img data-asset="collar" id="img2"></div>
+    <svg id="web" viewBox="0 0 1080 1920"></svg>
+    <div class="kicker" id="k2" style="top:1440px">piezas únicas</div>
+    <div class="ttl silver glowtxt" id="t2" style="top:1500px;font-size:112px">Hecho a mano</div>
+  </div>
+
+  <!-- 3 · cortes rápidos -->
+  <div id="s3" class="scene">
+    <div class="slide" id="sl1" data-asset="pulsera"></div>
+    <div class="slide" id="sl2" data-asset="anillos"></div>
+    <div class="slide" id="sl3" data-asset="stickers"></div>
+    <div class="ttl glowtxt" id="t3a" style="top:1460px;font-size:124px;color:#fff">Bisutería</div>
+    <div class="ttl silver glowtxt" id="t3b" style="top:1460px;font-size:124px">Anillos</div>
+    <div class="ttl silver glowtxt" id="t3c" style="top:1460px;font-size:124px">Stickers</div>
+  </div>
+
+  <!-- 4 · collage -->
+  <div id="s4" class="scene">
+    <div id="grid"></div>
+    <div class="ttl silver glowtxt" id="t4" style="top:1540px;font-size:80px;font-family:var(--serif)">Encuentra tu estilo</div>
+  </div>
+
+  <!-- 5 · cierre -->
+  <div id="s5" class="scene">
+    <img id="logo5" data-asset="logo">
+    <div id="handle"><span id="handleTxt">@nikkii.accesorios</span><div class="u"></div></div>
+    <div id="pill"></div>
+    <div id="dm"><span id="dmTxt">Pedidos al DM</span><span class="emo">💌</span></div>
+    <svg id="arrow" viewBox="-45 0 90 150"><path d="M0,8 L0,128 M-34,94 L0,130 L34,94"/></svg>
+  </div>
+
+  <div id="sparks" class="layer"></div>
+  <div id="vignette" class="layer"></div>
+  <canvas id="grain" width="540" height="960"></canvas>
+  <div id="fade" class="layer"></div>
+</div>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="assets.js"></script>
+<script src="timeline.js"></script>
+</body>
+</html>
