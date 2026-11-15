@@ -85,6 +85,14 @@
           border: 2px solid rgba(185,167,224,.85); background: rgba(185,167,224,.10); box-shadow: 0 0 40px rgba(185,167,224,.35) inset, 0 0 40px rgba(185,167,224,.3); }
   #arrow { position: absolute; left: 50%; top: 1330px; width: 90px; height: 150px; margin-left: -45px; overflow: visible; }
   #arrow path { fill: none; stroke: var(--lav); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+  .wordmark { position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: var(--display); font-weight: 700; color: var(--lav);
+               filter: drop-shadow(0 0 22px rgba(185,167,224,.9)) drop-shadow(0 0 60px rgba(185,167,224,.5)); }
+  .wordmark .wm-txt { font-size: 190px; line-height: 1; letter-spacing: .02em; }
+  .wordmark .wm-star { font-family: var(--sans); font-size: 90px; line-height: 1; color: #fff; margin-bottom: 10px; }
+  #logo1.wordmark, #logo5.wordmark { left: 50%; width: 700px; margin-left: -350px; height: 420px; margin-top: -210px; }
+  #logo1.wordmark { top: 720px; } #logo5.wordmark { top: 610px; }
+  .tile .wordmark { inset: 0; } .tile .wordmark .wm-txt { font-size: 92px; } .tile .wordmark .wm-star { font-size: 44px; }
+  .wordmark.emblem .wm-txt { display: none; } .wordmark.emblem .wm-star { font-size: 300px; margin: 0; }
 </style>
 </head>
 <body>

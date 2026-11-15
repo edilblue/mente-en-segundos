@@ -10,6 +10,14 @@ Salida: `output/nikki_promo_15s.mp4` (1080×1920, 30 fps, 15 s, H.264 + AAC est�
 - `audio/musica.wav` — música ambient oscura generada con `audio/music.py` (sin derechos de terceros), mezclada a −20 dB bajo la voz con ducking.
 - `audio/tts.py` — regenera la voz: `GEMINI_API_KEY=… python3 audio/tts.py Leda salida.wav audio/narracion.txt` (la clave sólo por variable de entorno).
 
+### Modo sin fotos
+Si un asset es `null`, su marco se llena con un panel gráfico abstracto de la marca (telaraña, ✦, anillos geométricos)
+y el logo se sustituye por el logotipo tipográfico "✦ nikki". El render actual de `output/nikki_promo_15s.mp4` usa este modo:
+```bash
+node nikki-promo/render.mjs --assets-json nikki-promo/assets.nofotos.json
+```
+Cuando lleguen las fotos a `assets/nikki/`, basta con `node nikki-promo/render.mjs` (usa `assets.js`).
+
 ## Render
 ```bash
 node nikki-promo/render.mjs                          # video final

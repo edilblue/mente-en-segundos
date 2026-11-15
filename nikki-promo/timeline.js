@@ -22,8 +22,47 @@
   function rng(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 
   // ---------- assets ----------
-  const one = (k) => Array.isArray(A[k]) ? A[k][0] : A[k];
-  $$('img[data-asset]').forEach((im) => { im.src = one(im.dataset.asset); });
+  // ---------- modo sin fotos: si un asset es null se usa un panel gráfico abstracto ----------
+  const STAR = (x, y, r, fill, op = 1) => `<path transform="translate(${x} ${y}) scale(${r / 100})" opacity="${op}" fill="${fill}" d="M0,-100 C7,-24 24,-7 100,0 C24,7 7,24 0,100 C-7,24 -24,7 -100,0 C-24,-7 -7,-24 0,-100Z"/>`;
+  function panelSVG(theme) {
+    const pr = rng(theme.length * 97 + 3); const W = 900, H = 1120; let g = '';
+    const th = {
+      collar: ['#3a2f55', '#14111d', '#d9dbe3'], pulsera: ['#C8102E', '#2a0610', '#f2c6cf'],
+      anillos: ['#6d6f80', '#16161d', '#eef0f6'], gatos: ['#5b4a86', '#151020', '#B9A7E0'], kpop: ['#8a5a9e', '#1a1022', '#f1d9ff'],
+    }[theme] || ['#3a2f55', '#14111d', '#d9dbe3'];
+    const [c1, c2, ln] = th;
+    if (theme === 'collar') {
+      const cx = 450, cy = 520, n = 14;
+      for (let i = 0; i < n; i++) { const a = i / n * 6.283; g += `<line x1="${cx}" y1="${cy}" x2="${cx + Math.cos(a) * 900}" y2="${cy + Math.sin(a) * 900}"/>`; }
+      for (let k = 1; k < 9; k++) { const r = k * 70; let d = ''; for (let i = 0; i <= n; i++) { const a = i / n * 6.283, x = cx + Math.cos(a) * r, y = cy + Math.sin(a) * r; if (!i) d = `M${x},${y}`; else { const am = a - 3.1416 / n; d += ` Q${cx + Math.cos(am) * r * .9},${cy + Math.sin(am) * r * .9} ${x},${y}`; } } g += `<path d="${d}"/>`; }
+      g = `<g stroke="${ln}" stroke-width="2" fill="none" opacity=".55">${g}</g>` + STAR(cx, cy, 70, '#C8102E') + STAR(cx, cy, 30, '#fff', .9);
+    } else if (theme === 'pulsera') {
+      for (let k = 0; k < 7; k++) g += `<circle cx="450" cy="560" r="${120 + k * 70}" fill="none" stroke="${ln}" stroke-width="${k % 2 ? 1.5 : 3}" opacity="${.5 - k * .05}"/>`;
+      g += STAR(450, 560, 150, '#fff', .95) + STAR(450, 560, 90, '#C8102E', .9);
+    } else if (theme === 'anillos') {
+      [[330, 470, 190], [570, 470, 190], [450, 690, 190], [450, 560, 330]].forEach(([x, y, r], i) => { g += `<circle cx="${x}" cy="${y}" r="${r}" fill="none" stroke="${ln}" stroke-width="${i === 3 ? 2 : 6}" opacity="${i === 3 ? .35 : .75}"/>`; });
+      g += STAR(450, 560, 60, '#fff');
+    } else {
+      for (let i = 0; i < 26; i++) g += STAR(pr() * W, pr() * H, 12 + pr() * 46, i % 5 ? ln : '#fff', .35 + pr() * .6);
+      g += STAR(450, 560, 130, '#fff', .95);
+    }
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="b" cx="50%" cy="48%" r="70%"><stop offset="0" stop-color="${c1}"/><stop offset=".55" stop-color="${c2}"/><stop offset="1" stop-color="#0B0B10"/></radialGradient><filter id="gl"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><rect width="${W}" height="${H}" fill="url(#b)"/><g filter="url(#gl)">${g}</g></svg>`;
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  }
+  const STK = ['gatos', 'kpop'];
+  const srcOf = (k, i = 0) => { const v = Array.isArray(A[k]) ? A[k][i] : A[k]; return v || panelSVG(k === 'stickers' ? STK[i] : k); };
+  const one = (k) => srcOf(k, 0);
+  // logo ausente → logotipo tipográfico "nikki"
+  function wordmark(el) {
+    const d = document.createElement('div'); d.id = el.id; d.className = 'wordmark';
+    d.innerHTML = '<span class="wm-star">✦</span><span class="wm-txt">nikki</span>';
+    el.replaceWith(d); return d;
+  }
+  $$('img[data-asset]').forEach((im) => {
+    // en la intro el título ya dice "Nikki": sin logo se muestra sólo la ✦ como emblema
+    if (im.dataset.asset === 'logo' && !A.logo) { const w = wordmark(im); if (w.id === 'logo1') w.classList.add('emblem'); }
+    else im.src = one(im.dataset.asset);
+  });
 
   function frameWithImg(src, cls = '') {
     const f = document.createElement('div'); f.className = 'frame ' + cls;
@@ -42,7 +81,8 @@
   }
   // diapositivas con capas de glitch (rojo / azul desplazados)
   $$('.slide').forEach((sl) => {
-    const v = A[sl.dataset.asset]; const srcs = Array.isArray(v) ? v : [v];
+    const k = sl.dataset.asset; const v = A[k]; const n = Array.isArray(v) ? v.length : (k === 'stickers' && !v ? 2 : 1);
+    const srcs = Array.from({ length: n }, (_, i) => srcOf(k, i));
     const base = document.createElement('div'); base.className = 'frame'; fillFrame(base, srcs);
     const r = document.createElement('div'); r.className = 'gl r'; const rf = document.createElement('div'); rf.className = 'frame'; fillFrame(rf, srcs); r.appendChild(rf);
     const b = document.createElement('div'); b.className = 'gl b'; const bf = document.createElement('div'); bf.className = 'frame'; fillFrame(bf, srcs); b.appendChild(bf);
@@ -52,13 +92,14 @@
 
   // collage
   const tiles = [
-    ['collar'], ['pulsera'], ['anillos'], ['LOGO'], [one('stickers')], [Array.isArray(A.stickers) ? A.stickers[1] || A.stickers[0] : A.stickers],
+    ['collar'], ['pulsera'], ['anillos'], ['LOGO'], [srcOf('stickers', 0)], [srcOf('stickers', 1)],
   ];
   const grid = $('#grid');
   tiles.forEach(([k], i) => {
     const t = document.createElement('div'); t.className = 'tile' + (k === 'LOGO' ? ' logo' : '');
     t.style.left = (i % 2) * 416 + 'px'; t.style.top = Math.floor(i / 2) * 410 + 'px';
-    const im = document.createElement('img'); im.src = k === 'LOGO' ? A.logo : (A[k] ? one(k) : k);
+    if (k === 'LOGO' && !A.logo) { const ph = document.createElement('img'); t.appendChild(ph); grid.appendChild(t); wordmark(ph).id = ''; return; }
+    const im = document.createElement('img'); im.src = k === 'LOGO' ? A.logo : (k in A ? one(k) : k);
     t.appendChild(im); grid.appendChild(t);
   });
 
@@ -238,7 +279,7 @@
   tl.to(ap, { strokeDashoffset: 0, duration: .45, ease: 'power2.out' }, T.dm + .3)
     .to('#arrow', { y: 26, duration: .32, ease: 'sine.inOut', repeat: 3, yoyo: true }, T.dm + .75);
   spark(800, 420, .45, 12.2); spark(240, 900, .3, 12.8);
-  spark(540, 1060, 1.0, 14.05, .8, 135);   // último destello ✦
+  spark(735, 450, .9, 14.05, .8, 135);   // último destello ✦
   tl.to('#fade', { opacity: 1, duration: .55, ease: 'power1.in' }, T.end - .55);
   tl.set({}, {}, T.end);
 
@@ -264,5 +305,5 @@
 
   window.DURATION = T.end;
   window.renderAt = (t) => { tl.seek(Math.min(t, T.end - 1e-4), false); drawDust(t); drawGrain(Math.round(t * 30)); };
-  window.READY = Promise.all([document.fonts.ready, ...$$('img').map((i) => i.decode().catch(() => console.warn('img fail', i.src)))]).then(() => { renderAt(0); return true; });
+  window.READY = Promise.all([document.fonts.ready, ...$$('img').filter((i) => i.src).map((i) => i.decode().catch(() => console.warn('img fail', i.src)))]).then(() => { renderAt(0); return true; });
 })();
