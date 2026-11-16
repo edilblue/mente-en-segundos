@@ -1,0 +1,65 @@
+{
+  "episodio": 1,
+  "titulo": "¿Qué pasaría si tu cerebro dejara de sentir miedo?",
+  "estiloVoz": "Voz masculina joven, español latinoamericano neutro, tono cálido, curioso y natural de divulgador científico en YouTube Shorts; ritmo ágil pero claro, con pequeñas pausas dramáticas en los puntos suspensivos y entonación de pregunta real en las preguntas",
+  "direccionTTS": "Say in a warm, curious and natural Latin American Spanish male narrator voice, like a science YouTuber, lively but clear pace, with short dramatic pauses at the ellipses",
+  "duracionObjetivo": [70, 90],
+  "escenas": [
+    {
+      "id": 1,
+      "nombre": "Gancho",
+      "texto": "¿Y si mañana despertaras sin poder sentir miedo? ¿Serías invencible… o estarías en peligro?",
+      "pre": 0.15,
+      "post": 0.45,
+      "minimo": 5.5
+    },
+    {
+      "id": 2,
+      "nombre": "El miedo como alarma",
+      "texto": "El miedo no es un defecto. Es una alarma que ayuda a tu cerebro a detectar amenazas y a preparar tu cuerpo para reaccionar: el corazón se acelera y los músculos se tensan.",
+      "pre": 1.6,
+      "post": 0.7,
+      "minimo": 12
+    },
+    {
+      "id": 3,
+      "nombre": "El mundo sin miedo",
+      "texto": "Sin esa alarma, podrías subestimar peligros que normalmente te harían retroceder. Y eso puede llevarte a tomar decisiones muy arriesgadas.",
+      "pre": 0.5,
+      "post": 0.9,
+      "minimo": 13.5
+    },
+    {
+      "id": 4,
+      "nombre": "¿Desaparecería todo el miedo?",
+      "texto": "Pero hay algo sorprendente: el miedo no depende de un solo interruptor. La amígdala es importante, aunque otras regiones cerebrales y las señales internas del cuerpo también participan.",
+      "pre": 1.3,
+      "post": 0.8,
+      "minimo": 14
+    },
+    {
+      "id": 5,
+      "nombre": "El giro científico",
+      "texto": "En estudios de personas con lesiones en ambas amígdalas, algunas mostraron muy poco miedo ante amenazas externas… pero todavía podían sentir pánico frente a ciertas señales internas, como un aumento de dióxido de carbono en el aire que respiraban.",
+      "pre": 0.7,
+      "post": 1.0,
+      "minimo": 15
+    },
+    {
+      "id": 6,
+      "nombre": "Conclusión",
+      "texto": "Así que no sentir miedo no te convertiría en un superhéroe. El miedo puede ser incómodo, pero también es una herramienta esencial para sobrevivir.",
+      "pre": 0.4,
+      "post": 1.4,
+      "minimo": 13
+    },
+    {
+      "id": 7,
+      "nombre": "Cierre",
+      "texto": "Ahora dime: ¿preferirías no sentir miedo nunca… o aprender a controlarlo? Te leo en los comentarios.",
+      "pre": 0.3,
+      "post": 2.6,
+      "minimo": 8.5
+    }
+  ]
+}

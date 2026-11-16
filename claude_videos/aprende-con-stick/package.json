@@ -1,0 +1,27 @@
+{
+  "name": "aprende-con-stick",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Aprende con Stick — serie de Shorts animados (Remotion + React + TypeScript + SVG)",
+  "scripts": {
+    "studio": "remotion studio",
+    "narracion": "node scripts/generar-narracion.mjs",
+    "narracion:estimada": "node scripts/generar-narracion.mjs --estimada",
+    "audio": "python3 scripts/generar-audio.py",
+    "frames": "node scripts/frames.mjs",
+    "render": "bash scripts/render.sh",
+    "verificar": "bash scripts/verificar.sh",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource/fredoka": "5.3.0",
+    "@remotion/cli": "4.0.544",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.544"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.2",
+    "typescript": "5.9.3"
+  }
+}
