@@ -29,61 +29,61 @@
         {
           "w": "mañana",
           "start": 0.562,
-          "end": 1.024
+          "end": 1.026
         },
         {
           "w": "despertaras",
-          "start": 1.024,
-          "end": 1.809
+          "start": 1.026,
+          "end": 1.812
         },
         {
           "w": "sin",
-          "start": 1.809,
-          "end": 2.079
+          "start": 1.812,
+          "end": 2.082
         },
         {
           "w": "poder",
-          "start": 2.079,
-          "end": 2.478
+          "start": 2.082,
+          "end": 2.482
         },
         {
           "w": "sentir",
-          "start": 2.478,
-          "end": 2.941
+          "start": 2.482,
+          "end": 2.945
         },
         {
           "w": "miedo?",
-          "start": 2.941,
-          "end": 3.339
+          "start": 2.945,
+          "end": 3.345
         },
         {
           "w": "¿Serías",
-          "start": 3.888,
-          "end": 4.319
+          "start": 3.877,
+          "end": 4.317
         },
         {
           "w": "invencible…",
-          "start": 4.319,
-          "end": 4.991
+          "start": 4.317,
+          "end": 5.002
         },
         {
           "w": "o",
-          "start": 5.482,
-          "end": 5.668
+          "start": 5.468,
+          "end": 5.656
         },
         {
           "w": "estarías",
-          "start": 5.668,
-          "end": 6.202
+          "start": 5.656,
+          "end": 6.195
         },
         {
           "w": "en",
-          "start": 6.202,
-          "end": 6.388
+          "start": 6.195,
+          "end": 6.383
         },
         {
           "w": "peligro?",
-          "start": 6.388,
+          "start": 6.383,
           "end": 6.864
         }
       ]
@@ -102,166 +102,166 @@
         {
           "w": "El",
           "start": 1.6,
-          "end": 1.815
+          "end": 1.818
         },
         {
           "w": "miedo",
-          "start": 1.815,
-          "end": 2.233
+          "start": 1.818,
+          "end": 2.24
         },
         {
           "w": "no",
-          "start": 2.233,
-          "end": 2.448
+          "start": 2.24,
+          "end": 2.458
         },
         {
           "w": "es",
-          "start": 2.448,
-          "end": 2.663
+          "start": 2.458,
+          "end": 2.676
         },
         {
           "w": "un",
-          "start": 2.663,
-          "end": 2.879
+          "start": 2.676,
+          "end": 2.894
         },
         {
           "w": "defecto.",
-          "start": 2.879,
-          "end": 3.431
+          "start": 2.894,
+          "end": 3.452
         },
         {
           "w": "Es",
-          "start": 3.886,
-          "end": 4.058
+          "start": 3.885,
+          "end": 4.059
         },
         {
           "w": "una",
-          "start": 4.058,
-          "end": 4.285
+          "start": 4.059,
+          "end": 4.286
         },
         {
           "w": "alarma",
-          "start": 4.285,
-          "end": 4.673
+          "start": 4.286,
+          "end": 4.676
         },
         {
           "w": "que",
-          "start": 4.673,
-          "end": 4.9
+          "start": 4.676,
+          "end": 4.904
         },
         {
           "w": "ayuda",
-          "start": 4.9,
-          "end": 5.234
+          "start": 4.904,
+          "end": 5.239
         },
         {
           "w": "a",
-          "start": 5.234,
-          "end": 5.407
+          "start": 5.239,
+          "end": 5.413
         },
         {
           "w": "tu",
-          "start": 5.407,
-          "end": 5.58
+          "start": 5.413,
+          "end": 5.586
         },
         {
           "w": "cerebro",
-          "start": 5.58,
-          "end": 6.022
+          "start": 5.586,
+          "end": 6.03
         },
         {
           "w": "a",
-          "start": 6.022,
-          "end": 6.195
+          "start": 6.03,
+          "end": 6.203
         },
         {
           "w": "detectar",
-          "start": 6.195,
-          "end": 6.691
+          "start": 6.203,
+          "end": 6.702
         },
         {
           "w": "amenazas",
-          "start": 6.691,
-          "end": 7.187
+          "start": 6.702,
+          "end": 7.2
         },
         {
           "w": "y",
-          "start": 7.187,
-          "end": 7.36
+          "start": 7.2,
+          "end": 7.373
         },
         {
           "w": "a",
-          "start": 7.36,
-          "end": 7.532
+          "start": 7.373,
+          "end": 7.546
         },
         {
           "w": "preparar",
-          "start": 7.532,
-          "end": 8.029
+          "start": 7.546,
+          "end": 8.045
         },
         {
           "w": "tu",
-          "start": 8.029,
-          "end": 8.201
+          "start": 8.045,
+          "end": 8.218
         },
         {
           "w": "cuerpo",
-          "start": 8.201,
-          "end": 8.59
+          "start": 8.218,
+          "end": 8.608
         },
         {
           "w": "para",
-          "start": 8.59,
-          "end": 8.87
+          "start": 8.608,
+          "end": 8.89
         },
         {
           "w": "reaccionar:",
-          "start": 8.87,
-          "end": 9.474
+          "start": 8.89,
+          "end": 9.496
         },
         {
           "w": "el",
-          "start": 9.878,
-          "end": 10.052
+          "start": 9.846,
+          "end": 10.032
         },
         {
           "w": "corazón",
-          "start": 10.052,
-          "end": 10.5
+          "start": 10.032,
+          "end": 10.508
         },
         {
           "w": "se",
-          "start": 10.5,
-          "end": 10.675
+          "start": 10.508,
+          "end": 10.694
         },
         {
           "w": "acelera",
-          "start": 10.675,
-          "end": 11.123
+          "start": 10.694,
+          "end": 11.17
         },
         {
           "w": "y",
-          "start": 11.123,
-          "end": 11.438
+          "start": 11.17,
+          "end": 11.356
         },
         {
           "w": "los",
-          "start": 11.438,
-          "end": 11.668
+          "start": 11.356,
+          "end": 11.6
         },
         {
           "w": "músculos",
-          "start": 11.668,
-          "end": 12.17
+          "start": 11.6,
+          "end": 12.134
         },
         {
           "w": "se",
-          "start": 12.17,
-          "end": 12.345
+          "start": 12.134,
+          "end": 12.32
         },
         {
           "w": "tensan.",
-          "start": 12.345,
+          "start": 12.32,
           "end": 12.738
         }
       ]
@@ -280,101 +280,101 @@
         {
           "w": "Sin",
           "start": 0.5,
-          "end": 0.955
+          "end": 0.849
         },
         {
           "w": "esa",
-          "start": 0.955,
-          "end": 1.262
+          "start": 0.849,
+          "end": 1.199
         },
         {
           "w": "alarma,",
-          "start": 1.262,
-          "end": 1.787
+          "start": 1.199,
+          "end": 1.798
         },
         {
           "w": "podrías",
-          "start": 2.098,
-          "end": 2.539
+          "start": 2.096,
+          "end": 2.546
         },
         {
           "w": "subestimar",
-          "start": 2.539,
-          "end": 3.142
+          "start": 2.546,
+          "end": 3.161
         },
         {
           "w": "peligros",
-          "start": 3.142,
-          "end": 3.636
+          "start": 3.161,
+          "end": 3.666
         },
         {
           "w": "que",
-          "start": 3.636,
-          "end": 3.862
+          "start": 3.666,
+          "end": 3.897
         },
         {
           "w": "normalmente",
-          "start": 3.862,
-          "end": 4.518
+          "start": 3.897,
+          "end": 4.566
         },
         {
           "w": "te",
-          "start": 4.518,
-          "end": 4.69
+          "start": 4.566,
+          "end": 4.742
         },
         {
           "w": "harían",
-          "start": 4.69,
-          "end": 5.078
+          "start": 4.742,
+          "end": 5.137
         },
         {
           "w": "retroceder.",
-          "start": 5.078,
-          "end": 5.68
+          "start": 5.137,
+          "end": 5.752
         },
         {
           "w": "Y",
-          "start": 6.037,
-          "end": 6.224
+          "start": 6.018,
+          "end": 6.205
         },
         {
           "w": "eso",
-          "start": 6.224,
-          "end": 6.468
+          "start": 6.205,
+          "end": 6.451
         },
         {
           "w": "puede",
-          "start": 6.468,
-          "end": 6.83
+          "start": 6.451,
+          "end": 6.814
         },
         {
           "w": "llevarte",
-          "start": 6.83,
-          "end": 7.365
+          "start": 6.814,
+          "end": 7.353
         },
         {
           "w": "a",
-          "start": 7.365,
-          "end": 7.552
+          "start": 7.353,
+          "end": 7.541
         },
         {
           "w": "tomar",
-          "start": 7.552,
-          "end": 7.913
+          "start": 7.541,
+          "end": 7.904
         },
         {
           "w": "decisiones",
-          "start": 7.913,
-          "end": 8.565
+          "start": 7.904,
+          "end": 8.56
         },
         {
           "w": "muy",
-          "start": 8.565,
-          "end": 8.81
+          "start": 8.56,
+          "end": 8.806
         },
         {
           "w": "arriesgadas.",
-          "start": 8.81,
+          "start": 8.806,
           "end": 9.521
         }
       ]
@@ -393,141 +393,141 @@
         {
           "w": "Pero",
           "start": 1.3,
-          "end": 1.804
+          "end": 1.637
         },
         {
           "w": "hay",
-          "start": 1.804,
-          "end": 2.043
+          "start": 1.637,
+          "end": 1.909
         },
         {
           "w": "algo",
-          "start": 2.043,
-          "end": 2.339
+          "start": 1.909,
+          "end": 2.246
         },
         {
           "w": "sorprendente:",
-          "start": 2.339,
-          "end": 3.091
+          "start": 2.246,
+          "end": 3.102
         },
         {
           "w": "el",
-          "start": 3.64,
-          "end": 3.82
+          "start": 3.637,
+          "end": 3.818
         },
         {
           "w": "miedo",
-          "start": 3.82,
-          "end": 4.169
+          "start": 3.818,
+          "end": 4.17
         },
         {
           "w": "no",
-          "start": 4.169,
-          "end": 4.349
+          "start": 4.17,
+          "end": 4.352
         },
         {
           "w": "depende",
-          "start": 4.349,
-          "end": 4.81
+          "start": 4.352,
+          "end": 4.818
         },
         {
           "w": "de",
-          "start": 4.81,
-          "end": 4.99
+          "start": 4.818,
+          "end": 5
         },
         {
           "w": "un",
-          "start": 4.99,
-          "end": 5.17
+          "start": 5,
+          "end": 5.181
         },
         {
           "w": "solo",
-          "start": 5.17,
-          "end": 5.463
+          "start": 5.181,
+          "end": 5.477
         },
         {
           "w": "interruptor.",
-          "start": 5.463,
-          "end": 6.149
+          "start": 5.477,
+          "end": 6.169
         },
         {
           "w": "La",
-          "start": 6.567,
-          "end": 6.77
+          "start": 6.53,
+          "end": 6.739
         },
         {
           "w": "amígdala",
-          "start": 6.77,
-          "end": 7.355
+          "start": 6.739,
+          "end": 7.341
         },
         {
           "w": "es",
-          "start": 7.355,
-          "end": 7.558
+          "start": 7.341,
+          "end": 7.55
         },
         {
           "w": "importante,",
-          "start": 7.558,
-          "end": 8.27
+          "start": 7.55,
+          "end": 8.282
         },
         {
           "w": "aunque",
-          "start": 8.642,
-          "end": 9.03
+          "start": 8.534,
+          "end": 8.933
         },
         {
           "w": "otras",
-          "start": 9.03,
-          "end": 9.364
+          "start": 8.933,
+          "end": 9.278
         },
         {
           "w": "regiones",
-          "start": 9.364,
-          "end": 9.859
+          "start": 9.278,
+          "end": 9.788
         },
         {
           "w": "cerebrales",
-          "start": 9.859,
-          "end": 10.462
+          "start": 9.788,
+          "end": 10.41
         },
         {
           "w": "y",
-          "start": 10.462,
-          "end": 10.634
+          "start": 10.41,
+          "end": 10.588
         },
         {
           "w": "las",
-          "start": 10.634,
-          "end": 10.86
+          "start": 10.588,
+          "end": 10.821
         },
         {
           "w": "señales",
-          "start": 10.86,
-          "end": 11.301
+          "start": 10.821,
+          "end": 11.276
         },
         {
           "w": "internas",
-          "start": 11.301,
-          "end": 11.796
+          "start": 11.276,
+          "end": 11.787
         },
         {
           "w": "del",
-          "start": 11.796,
-          "end": 12.022
+          "start": 11.787,
+          "end": 12.02
         },
         {
           "w": "cuerpo",
-          "start": 12.022,
-          "end": 12.623
+          "start": 12.02,
+          "end": 12.59
         },
         {
           "w": "también",
-          "start": 12.623,
-          "end": 13.064
+          "start": 12.59,
+          "end": 13.045
         },
         {
           "w": "participan.",
-          "start": 13.064,
+          "start": 13.045,
           "end": 13.667
         }
       ]
@@ -546,186 +546,186 @@
         {
           "w": "En",
           "start": 0.7,
-          "end": 1.068
+          "end": 0.899
         },
         {
           "w": "estudios",
-          "start": 1.068,
-          "end": 1.613
+          "start": 0.899,
+          "end": 1.471
         },
         {
           "w": "de",
-          "start": 1.613,
-          "end": 1.802
+          "start": 1.471,
+          "end": 1.669
         },
         {
           "w": "personas",
-          "start": 1.802,
-          "end": 2.347
+          "start": 1.669,
+          "end": 2.241
         },
         {
           "w": "con",
-          "start": 2.347,
-          "end": 2.596
+          "start": 2.241,
+          "end": 2.502
         },
         {
           "w": "lesiones",
-          "start": 2.596,
-          "end": 3.141
+          "start": 2.502,
+          "end": 3.074
         },
         {
           "w": "en",
-          "start": 3.141,
-          "end": 3.33
+          "start": 3.074,
+          "end": 3.273
         },
         {
           "w": "ambas",
-          "start": 3.33,
-          "end": 3.697
+          "start": 3.273,
+          "end": 3.658
         },
         {
           "w": "amígdalas,",
-          "start": 3.697,
-          "end": 4.302
+          "start": 3.658,
+          "end": 4.292
         },
         {
           "w": "algunas",
-          "start": 4.496,
-          "end": 4.964
+          "start": 4.292,
+          "end": 4.801
         },
         {
           "w": "mostraron",
-          "start": 4.964,
-          "end": 5.546
+          "start": 4.801,
+          "end": 5.435
         },
         {
           "w": "muy",
-          "start": 5.546,
-          "end": 5.786
+          "start": 5.435,
+          "end": 5.696
         },
         {
           "w": "poco",
-          "start": 5.786,
-          "end": 6.083
+          "start": 5.696,
+          "end": 6.019
         },
         {
           "w": "miedo",
-          "start": 6.083,
-          "end": 6.437
+          "start": 6.019,
+          "end": 6.405
         },
         {
           "w": "ante",
-          "start": 6.437,
-          "end": 6.734
+          "start": 6.405,
+          "end": 6.728
         },
         {
           "w": "amenazas",
-          "start": 6.734,
-          "end": 7.259
+          "start": 6.728,
+          "end": 7.299
         },
         {
           "w": "externas…",
-          "start": 7.259,
-          "end": 7.784
+          "start": 7.299,
+          "end": 7.871
         },
         {
           "w": "pero",
-          "start": 8.261,
-          "end": 8.554
+          "start": 8.183,
+          "end": 8.496
         },
         {
           "w": "todavía",
-          "start": 8.554,
-          "end": 9.017
+          "start": 8.496,
+          "end": 8.99
         },
         {
           "w": "podían",
-          "start": 9.017,
-          "end": 9.424
+          "start": 8.99,
+          "end": 9.423
         },
         {
           "w": "sentir",
-          "start": 9.424,
-          "end": 9.831
+          "start": 9.423,
+          "end": 9.857
         },
         {
           "w": "pánico",
-          "start": 9.831,
-          "end": 10.237
+          "start": 9.857,
+          "end": 10.29
         },
         {
           "w": "frente",
-          "start": 10.237,
-          "end": 10.644
+          "start": 10.29,
+          "end": 10.724
         },
         {
           "w": "a",
-          "start": 10.644,
-          "end": 10.825
+          "start": 10.724,
+          "end": 10.916
         },
         {
           "w": "ciertas",
-          "start": 10.825,
-          "end": 11.288
+          "start": 10.916,
+          "end": 11.41
         },
         {
           "w": "señales",
-          "start": 11.288,
-          "end": 11.751
+          "start": 11.41,
+          "end": 11.904
         },
         {
           "w": "internas,",
-          "start": 11.751,
-          "end": 12.271
+          "start": 11.904,
+          "end": 12.457
         },
         {
           "w": "como",
-          "start": 12.66,
-          "end": 12.923
+          "start": 12.657,
+          "end": 12.921
         },
         {
           "w": "un",
-          "start": 12.923,
-          "end": 13.085
+          "start": 12.921,
+          "end": 13.083
         },
         {
           "w": "aumento",
-          "start": 13.085,
-          "end": 13.501
+          "start": 13.083,
+          "end": 13.499
         },
         {
           "w": "de",
-          "start": 13.501,
-          "end": 13.663
+          "start": 13.499,
+          "end": 13.661
         },
         {
           "w": "dióxido",
-          "start": 13.663,
-          "end": 14.078
+          "start": 13.661,
+          "end": 14.077
         },
         {
           "w": "de",
-          "start": 14.078,
-          "end": 14.24
+          "start": 14.077,
+          "end": 14.239
         },
         {
           "w": "carbono",
-          "start": 14.24,
-          "end": 14.656
+          "start": 14.239,
+          "end": 14.655
         },
         {
           "w": "en",
-          "start": 14.656,
-          "end": 14.818
+          "start": 14.655,
+          "end": 14.817
         },
         {
           "w": "el",
-          "start": 14.818,
-          "end": 14.98
+          "start": 14.817,
+          "end": 14.979
         },
         {
           "w": "aire",
-          "start": 14.98,
+          "start": 14.979,
           "end": 15.243
         },
         {
@@ -754,121 +754,121 @@
         {
           "w": "Así",
           "start": 0.4,
-          "end": 0.829
+          "end": 0.67
         },
         {
           "w": "que",
-          "start": 0.829,
-          "end": 1.086
+          "start": 0.67,
+          "end": 0.94
         },
         {
           "w": "no",
-          "start": 1.086,
-          "end": 1.282
+          "start": 0.94,
+          "end": 1.146
         },
         {
           "w": "sentir",
-          "start": 1.282,
-          "end": 1.723
+          "start": 1.146,
+          "end": 1.608
         },
         {
           "w": "miedo",
-          "start": 1.723,
-          "end": 2.103
+          "start": 1.608,
+          "end": 2.007
         },
         {
           "w": "no",
-          "start": 2.103,
-          "end": 2.299
+          "start": 2.007,
+          "end": 2.212
         },
         {
           "w": "te",
-          "start": 2.299,
-          "end": 2.494
+          "start": 2.212,
+          "end": 2.418
         },
         {
           "w": "convertiría",
-          "start": 2.494,
-          "end": 3.241
+          "start": 2.418,
+          "end": 3.202
         },
         {
           "w": "en",
-          "start": 3.241,
-          "end": 3.437
+          "start": 3.202,
+          "end": 3.408
         },
         {
           "w": "un",
-          "start": 3.437,
-          "end": 3.633
+          "start": 3.408,
+          "end": 3.614
         },
         {
           "w": "superhéroe.",
-          "start": 3.633,
-          "end": 4.319
+          "start": 3.614,
+          "end": 4.333
         },
         {
           "w": "El",
-          "start": 4.822,
-          "end": 5.161
+          "start": 4.799,
+          "end": 5.009
         },
         {
           "w": "miedo",
-          "start": 5.161,
-          "end": 5.499
+          "start": 5.009,
+          "end": 5.415
         },
         {
           "w": "puede",
-          "start": 5.499,
-          "end": 5.838
+          "start": 5.415,
+          "end": 5.821
         },
         {
           "w": "ser",
-          "start": 5.838,
-          "end": 6.067
+          "start": 5.821,
+          "end": 6.097
         },
         {
           "w": "incómodo,",
-          "start": 6.067,
-          "end": 6.569
+          "start": 6.097,
+          "end": 6.7
         },
         {
           "w": "pero",
-          "start": 6.958,
-          "end": 7.297
+          "start": 6.957,
+          "end": 7.317
         },
         {
           "w": "también",
-          "start": 7.297,
-          "end": 7.833
+          "start": 7.317,
+          "end": 7.886
         },
         {
           "w": "es",
-          "start": 7.833,
-          "end": 8.041
+          "start": 7.886,
+          "end": 8.108
         },
         {
           "w": "una",
-          "start": 8.041,
-          "end": 8.315
+          "start": 8.108,
+          "end": 8.399
         },
         {
           "w": "herramienta",
-          "start": 8.315,
-          "end": 9.112
+          "start": 8.399,
+          "end": 9.245
         },
         {
           "w": "esencial",
-          "start": 9.112,
-          "end": 9.712
+          "start": 9.245,
+          "end": 9.883
         },
         {
           "w": "para",
-          "start": 9.712,
-          "end": 10.051
+          "start": 9.883,
+          "end": 10.727
         },
         {
           "w": "sobrevivir.",
-          "start": 10.6,
+          "start": 10.727,
           "end": 11.504
         }
       ]
@@ -887,76 +887,76 @@
         {
           "w": "Ahora",
           "start": 0.3,
-          "end": 0.588
+          "end": 0.59
         },
         {
           "w": "dime:",
-          "start": 0.588,
-          "end": 0.83
+          "start": 0.59,
+          "end": 0.833
         },
         {
           "w": "¿preferirías",
-          "start": 0.83,
-          "end": 1.398
+          "start": 0.833,
+          "end": 1.403
         },
         {
           "w": "no",
-          "start": 1.398,
-          "end": 1.546
+          "start": 1.403,
+          "end": 1.552
         },
         {
           "w": "sentir",
-          "start": 1.546,
-          "end": 1.881
+          "start": 1.552,
+          "end": 1.889
         },
         {
           "w": "miedo",
-          "start": 1.881,
-          "end": 2.17
+          "start": 1.889,
+          "end": 2.178
         },
         {
           "w": "nunca…",
-          "start": 2.17,
-          "end": 2.458
+          "start": 2.178,
+          "end": 2.468
         },
         {
           "w": "o",
-          "start": 2.913,
-          "end": 3.058
+          "start": 2.911,
+          "end": 3.059
         },
         {
           "w": "aprender",
-          "start": 3.058,
-          "end": 3.476
+          "start": 3.059,
+          "end": 3.485
         },
         {
           "w": "a",
-          "start": 3.476,
-          "end": 3.622
+          "start": 3.485,
+          "end": 3.633
         },
         {
           "w": "controlarlo?",
-          "start": 3.622,
-          "end": 4.176
+          "start": 3.633,
+          "end": 4.199
         },
         {
           "w": "Te",
-          "start": 4.76,
-          "end": 4.911
+          "start": 4.757,
+          "end": 4.909
         },
         {
           "w": "leo",
-          "start": 4.911,
-          "end": 5.111
+          "start": 4.909,
+          "end": 5.109
         },
         {
           "w": "en",
-          "start": 5.111,
-          "end": 5.262
+          "start": 5.109,
+          "end": 5.261
         },
         {
           "w": "los",
-          "start": 5.262,
+          "start": 5.261,
           "end": 5.461
         },
         {

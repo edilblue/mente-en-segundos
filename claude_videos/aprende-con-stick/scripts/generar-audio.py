@@ -25,12 +25,29 @@ def T(d):
     return np.arange(int(d * SR)) / SR
 
 
-def save(name, x, peak=0.7, folder=SFX):
+def save(name, x, peak=0.7, folder=SFX, rms_db=None):
+    """Guarda WAV estéreo 48 kHz. Los efectos se igualan por SONORIDAD (RMS máximo en ventanas de
+    400 ms = rms_db dBFS) y no por pico, para que ninguno suene desproporcionado; el pico se limita a -1 dBFS."""
     x = np.asarray(x, dtype=np.float64)
     if x.ndim == 1:
         x = np.stack([x, x], 1)
-    m = np.max(np.abs(x)) or 1
-    x = x / m * peak
+    if rms_db is None and folder == SFX:
+        rms_db = -20.0
+    if rms_db is not None:
+        mono = x.mean(1)
+        win = int(0.4 * SR)
+        if len(mono) <= win:
+            r = np.sqrt(np.mean(mono ** 2))
+        else:
+            c = np.cumsum(np.concatenate([[0], mono ** 2]))
+            r = np.sqrt(np.max((c[win:] - c[:-win]) / win))
+        x = x * (10 ** (rms_db / 20) / max(r, 1e-9))
+        m = np.max(np.abs(x))
+        if m > 0.89:
+            x = x / m * 0.89
+    else:
+        m = np.max(np.abs(x)) or 1
+        x = x / m * peak
     fade = min(len(x), int(0.004 * SR))
     x[-fade:] *= np.linspace(1, 0, fade)[:, None]
     data = (np.clip(x, -1, 1) * 32767).astype('<i2')

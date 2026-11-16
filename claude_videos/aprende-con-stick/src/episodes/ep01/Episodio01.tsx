@@ -23,26 +23,41 @@ export const duracionEp01 = () => f(N.total);
 export const allCues = () =>
   N.escenas.flatMap((e, i) => SCENES[i].cues(makeCtx(0, e)).map((q) => ({...q, at: e.inicio + q.at, escena: e.id})));
 
+/** Mezcla (ganancias lineales). La voz siempre manda. */
+const MIX = {voz: 1, musica: 0.2, musicaBajoVoz: 0.08, sfx: 0.55, sfxBajoVoz: 0.45};
+
+/** 1 mientras hay voz (con rampas suaves), 0 en silencio. */
+const vozActiva = (t: number) => {
+  let a = 0;
+  for (const e of N.escenas) {
+    const ini = e.inicio + e.voz.inicio - 0.15;
+    const fin = e.inicio + e.voz.inicio + e.voz.duracion + 0.2;
+    const inn = Math.min(1, Math.max(0, (t - (ini - 0.25)) / 0.25));
+    const out = Math.min(1, Math.max(0, (fin + 0.4 - t) / 0.4));
+    a = Math.max(a, Math.min(inn, out));
+  }
+  return a;
+};
+
 /** Volumen de la música: baja (ducking) mientras hay voz. */
 const musicVolume = (frame: number) => {
   const t = frame / FPS;
-  let duck = 0;
-  for (const e of N.escenas) {
-    const a = e.inicio + e.voz.inicio - 0.25;
-    const b = e.inicio + e.voz.inicio + e.voz.duracion + 0.3;
-    if (t > a - 0.3 && t < b + 0.5) {
-      const inn = Math.min(1, (t - (a - 0.3)) / 0.3);
-      const out = Math.min(1, (b + 0.5 - t) / 0.5);
-      duck = Math.max(duck, Math.min(inn, out));
-    }
-  }
   const fadeIn = Math.min(1, t / 0.6);
   const fadeOut = Math.min(1, (N.total - t) / 1.2);
-  return Math.max(0, (0.32 - duck * 0.2) * fadeIn * fadeOut);
+  const v = vozActiva(t);
+  return Math.max(0, (MIX.musica * (1 - v) + MIX.musicaBajoVoz * v) * fadeIn * fadeOut);
 };
 
-export const Episodio01: React.FC = () => {
+/** Volumen de un efecto que empieza en `at` (s absolutos): se atenúa si coincide con la voz. */
+const sfxVolume = (at: number, vol: number) => (frame: number) => {
+  const v = vozActiva(at + frame / FPS);
+  return Math.min(1, vol * MIX.sfx * (1 - v * (1 - MIX.sfxBajoVoz)));
+};
+
+/** stem: renderiza solo una pista (para medir la mezcla): 'voz' | 'sfx' | 'musica'. */
+export const Episodio01: React.FC<{stem?: 'voz' | 'sfx' | 'musica'}> = ({stem}) => {
   const cues = allCues();
+  const on = (k: 'voz' | 'sfx' | 'musica') => !stem || stem === k;
   return (
     <AbsoluteFill style={{background: C.paper}}>
       {N.escenas.map((e, i) => (
@@ -52,18 +67,18 @@ export const Episodio01: React.FC = () => {
       ))}
       {/* Narración (Gemini TTS) */}
       {N.escenas.map((e) =>
-        e.voz.audio ? (
+        e.voz.audio && on('voz') ? (
           <Sequence key={`v${e.id}`} from={f(e.inicio + e.voz.inicio)} name={`Voz ${e.id}`}>
-            <Html5Audio src={staticFile(e.voz.audio)} volume={1} />
+            <Html5Audio src={staticFile(e.voz.audio)} volume={MIX.voz} />
           </Sequence>
         ) : null,
       )}
       {/* Música original (generada por scripts/generar-audio.py) */}
-      <Html5Audio src={staticFile('audio/musica/ep01_musica.wav')} volume={musicVolume} />
+      {on('musica') && <Html5Audio src={staticFile('audio/musica/ep01_musica.wav')} volume={musicVolume} />}
       {/* Efectos de sonido */}
-      {cues.map((q, i) => (
+      {on('sfx') && cues.map((q, i) => (
         <Sequence key={`s${i}`} from={Math.max(0, f(q.at))} name={`SFX ${q.sfx}`}>
-          <Html5Audio src={staticFile(`audio/sfx/${q.sfx}.wav`)} volume={q.vol ?? 0.5} />
+          <Html5Audio src={staticFile(`audio/sfx/${q.sfx}.wav`)} volume={sfxVolume(q.at, q.vol ?? 0.5)} />
         </Sequence>
       ))}
     </AbsoluteFill>

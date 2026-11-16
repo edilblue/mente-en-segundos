@@ -262,6 +262,9 @@ async function main() {
           'areverse',
           ...(VELOCIDAD !== 1 ? [`atempo=${VELOCIDAD}`] : []),
           'highpass=f=70',
+          // presencia y nivel constante entre escenas (la voz manda sobre música y efectos)
+          'acompressor=threshold=-24dB:ratio=3:attack=8:release=120:makeup=4dB',
+          'loudnorm=I=-16:TP=-1.5:LRA=7',
           'afade=t=in:d=0.02',
         ].join(',');
         execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-i', crudo, '-af', filtros, '-ar', '48000', '-ac', '1', file]);
