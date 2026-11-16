@@ -16,8 +16,12 @@ npm run render                   # música/SFX + Remotion + loudnorm (-14 LUFS) 
 npm run verificar                # códecs, resolución, fps, duración, decodificación, sonoridad
 ```
 
-- Voz: `GEMINI_TTS_VOICE` (por defecto `Charon`), `GEMINI_TTS_MODEL` (por defecto se elige el mejor modelo TTS
-  disponible consultando `/models`), `NARRACION_VELOCIDAD` (1.0). La clave solo se lee del entorno; nunca se
+- Voz: `GEMINI_TTS_VOICE` (por defecto `Charon`), `GEMINI_TTS_MODEL` (por defecto `gemini-3.1-flash-tts-preview`,
+  con respaldo a otros modelos TTS disponibles), `NARRACION_VELOCIDAD` (1.0).
+- Todo el guion se sintetiza en **una sola petición** (voz idéntica en todo el episodio, 1 llamada de cuota) y se
+  divide en escenas por las pausas reales. Se envía **solo el texto**: con indicaciones de estilo, los modelos TTS
+  probados las leían en voz alta o inventaban frases. Comprueba siempre con `node scripts/transcribir.mjs <wav>`.
+- Cuota gratuita: ~10 peticiones/día por modelo TTS. La clave solo se lee del entorno; nunca se
   escribe en archivos. El audio crudo se guarda en `.tts-cache/` (ignorado por git) para no repetir peticiones.
 - Sin clave: `npm run narracion:estimada` + `bash scripts/render.sh --borrador` → `out/borrador_ep01.mp4` (sin voz).
 - Revisión visual: `npm run frames -- --escena 3 0.5 2 4` (PNG en `out/frames/`), `python3 scripts/montage.py`

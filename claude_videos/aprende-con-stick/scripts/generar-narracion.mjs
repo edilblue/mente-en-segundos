@@ -29,8 +29,9 @@ const API = 'https://generativelanguage.googleapis.com/v1beta';
 const VOZ = process.env.GEMINI_TTS_VOICE || 'Charon';
 const VELOCIDAD = parseFloat(process.env.NARRACION_VELOCIDAD || '1.0');
 const MODELOS_PREFERIDOS = [
+  'gemini-3.1-flash-tts-preview', // el más natural en las pruebas de este episodio (transcripción literal 100 %)
   'gemini-3.8-flash-tts',
-  'gemini-3.1-flash-tts-preview',
+  'gemini-3.8-flash-lite-tts',
   'gemini-2.5-pro-tts',
   'gemini-2.5-pro-preview-tts',
   'gemini-2.5-flash-tts',
@@ -102,8 +103,9 @@ function wav(pcm, rate) {
 }
 
 async function sintetizar(modelo, texto) {
-  // Directiva corta (formato documentado "Say …: texto"): las indicaciones largas el modelo las lee en voz alta.
-  const prompt = `${GUION.direccionTTS}: "${texto}"`;
+  // Solo el texto: con cualquier indicación de estilo algunos modelos la leen en voz alta o inventan frases
+  // (comprobado transcribiendo el audio). La voz Charon ya es masculina, cálida y natural en español.
+  const prompt = texto;
   const j = await pedir(`${API}/models/${modelo}:generateContent`, {
     contents: [{parts: [{text: prompt}]}],
     generationConfig: {responseModalities: ['AUDIO'], speechConfig: {voiceConfig: {prebuiltVoiceConfig: {voiceName: VOZ}}}},
@@ -129,6 +131,38 @@ function silencios(file) {
     if (b && s !== null) out.push({start: s, end: parseFloat(b[1])}), (s = null);
   }
   return out;
+}
+
+/**
+ * Elige los N-1 cortes entre escenas entre las pausas del audio completo: programación dinámica que
+ * premia pausas largas y penaliza alejarse de la posición esperada según la longitud del texto.
+ */
+function dividir(file) {
+  const total = ffprobeDur(file);
+  const sil = silencios(file).filter((x) => x.end - x.start >= 0.25 && x.start > 0.3 && x.end < total - 0.3);
+  const textos = GUION.escenas.map((e) => e.texto.replace(/\s+/g, ' ').length);
+  const suma = textos.reduce((a, b) => a + b, 0);
+  const esperado = [];
+  let acc = 0;
+  for (let i = 0; i < textos.length - 1; i++) esperado.push(((acc += textos[i]) / suma) * total);
+  const K = esperado.length;
+  const N = sil.length;
+  if (N < K) throw new Error(`solo ${N} pausas para ${K} cortes`);
+  const costo = (k, j) => {
+    const mid = (sil[j].start + sil[j].end) / 2;
+    return ((mid - esperado[k]) / 2.0) ** 2 - 1.2 * Math.min(1.5, sil[j].end - sil[j].start);
+  };
+  const best = Array.from({length: K}, () => Array(N).fill(Infinity));
+  const prev = Array.from({length: K}, () => Array(N).fill(-1));
+  for (let j = 0; j < N; j++) best[0][j] = costo(0, j);
+  for (let k = 1; k < K; k++)
+    for (let j = k; j < N; j++)
+      for (let i = k - 1; i < j; i++)
+        if (best[k - 1][i] + costo(k, j) < best[k][j]) (best[k][j] = best[k - 1][i] + costo(k, j)), (prev[k][j] = i);
+  let j = best[K - 1].indexOf(Math.min(...best[K - 1]));
+  const elegidos = [];
+  for (let k = K - 1; k >= 0; k--) elegidos.unshift(j), (j = prev[k][j]);
+  return [0, ...elegidos.map((x) => (sil[x].start + sil[x].end) / 2), total];
 }
 
 function escenaDesdeAudio(e, file) {
@@ -192,46 +226,53 @@ async function main() {
   }
   fs.mkdirSync(AUDIO_DIR, {recursive: true});
   fs.mkdirSync(CACHE, {recursive: true});
+  // Todo el guion en UNA petición: misma voz e interpretación en todo el episodio y 1 sola llamada
+  // de cuota. Luego se divide en escenas por las pausas reales del audio.
+  const completo = GUION.escenas.map((e) => e.texto).join('\n\n');
   for (const modelo of lista) {
     try {
       console.log(`→ Modelo: ${modelo} · voz: ${VOZ} · velocidad ${VELOCIDAD}x`);
+      const key = crypto.createHash('sha1').update(`${modelo}|${VOZ}|completo|${completo}`).digest('hex').slice(0, 16);
+      const crudo = path.join(CACHE, `${key}.wav`);
+      const palabrasTotal = completo.split(/\s+/).length;
+      const esperado = palabrasTotal / 2.6;
+      for (let intento = 0; intento < 2; intento++) {
+        if (!fs.existsSync(crudo)) {
+          fs.writeFileSync(crudo, await sintetizar(modelo, completo));
+          console.log('  guion completo: sintetizado');
+        } else console.log('  guion completo: desde caché');
+        const d = ffprobeDur(crudo);
+        if (d < esperado * 1.5) break;
+        console.warn(`  ⚠ ${d.toFixed(1)} s (esperado ≈ ${esperado.toFixed(1)} s): el modelo añadió algo → se repite`);
+        fs.unlinkSync(crudo);
+        if (intento === 1) throw Object.assign(new Error('el audio no coincide con el guion'), {cuota: true});
+      }
+      const cortes = dividir(crudo);
       const escenas = [];
-      for (const e of GUION.escenas) {
-        const key = crypto.createHash('sha1').update(`${modelo}|${VOZ}|${GUION.direccionTTS}|${e.texto}`).digest('hex').slice(0, 16);
-        const crudo = path.join(CACHE, `${key}.wav`);
-        // Esperado ≈ 2,3–3,2 palabras/s. Si el audio dura mucho más, el modelo leyó algo extra: se repite.
-        const esperado = e.texto.split(/\s+/).length / 2.6;
-        for (let intento = 0; intento < 3; intento++) {
-          if (!fs.existsSync(crudo)) {
-            fs.writeFileSync(crudo, await sintetizar(modelo, e.texto));
-            console.log(`  escena ${e.id}: sintetizada`);
-          } else console.log(`  escena ${e.id}: desde caché`);
-          const d = ffprobeDur(crudo);
-          if (d < esperado * 1.6 + 1) break;
-          console.warn(`  ⚠ escena ${e.id}: ${d.toFixed(1)} s (esperado ≈ ${esperado.toFixed(1)} s) → se vuelve a sintetizar`);
-          fs.unlinkSync(crudo);
-          if (intento === 2) throw new Error(`escena ${e.id}: el audio no coincide con el guion`);
-        }
+      GUION.escenas.forEach((e, i) => {
         const rel = `audio/narracion/${EP}/escena${e.id}.wav`;
         const file = path.join(ROOT, 'public', rel);
-        // Recorta silencios de los extremos, normaliza el ritmo opcionalmente y deja 48 kHz mono.
+        const [t0, t1] = [cortes[i], cortes[i + 1]];
         const filtros = [
+          `atrim=${t0.toFixed(3)}:${t1.toFixed(3)}`,
+          'asetpts=PTS-STARTPTS',
           'silenceremove=start_periods=1:start_threshold=-48dB:start_silence=0.03',
           'areverse',
           'silenceremove=start_periods=1:start_threshold=-48dB:start_silence=0.08',
           'areverse',
           ...(VELOCIDAD !== 1 ? [`atempo=${VELOCIDAD}`] : []),
           'highpass=f=70',
+          'afade=t=in:d=0.02',
         ].join(',');
         execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-i', crudo, '-af', filtros, '-ar', '48000', '-ac', '1', file]);
         const {dur, palabras} = escenaDesdeAudio(e, file);
-        if (dur > esperado * 1.8) console.warn(`  ⚠ escena ${e.id}: ${dur.toFixed(1)} s, mucho más de lo esperado (${esperado.toFixed(1)} s). Revisa el audio.`);
+        console.log(`  escena ${e.id}: ${t0.toFixed(2)}–${t1.toFixed(2)} s del audio → ${dur.toFixed(2)} s de voz`);
         escenas.push({e, audio: rel, dur, palabras});
-      }
+      });
       guardar(escenas, {generadoCon: 'gemini', modelo, voz: VOZ, velocidad: VELOCIDAD});
       return;
     } catch (err) {
-      if (err.cuota || err.status === 404 || err.status === 400) {
+      if (err.cuota || err.status === 404 || err.status === 400 || err.status === 429) {
         console.warn(`  ⚠ ${modelo}: ${err.message} → pruebo el siguiente modelo`);
         continue;
       }

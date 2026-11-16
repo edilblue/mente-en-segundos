@@ -1,967 +1,968 @@
 {
-  "generadoCon": "estimado",
-  "modelo": null,
-  "voz": null,
-  "total": 86.59,
+  "generadoCon": "gemini",
+  "modelo": "gemini-3.1-flash-tts-preview",
+  "voz": "Charon",
+  "velocidad": 1,
+  "total": 87.383,
   "escenas": [
     {
       "id": 1,
       "nombre": "Gancho",
       "inicio": 0,
-      "duracion": 6.41,
+      "duracion": 7.314,
       "voz": {
-        "audio": null,
+        "audio": "audio/narracion/ep01/escena1.wav",
         "inicio": 0.15,
-        "duracion": 5.81
+        "duracion": 6.714
       },
       "palabras": [
         {
           "w": "¿Y",
           "start": 0.15,
-          "end": 0.32
+          "end": 0.356
         },
         {
           "w": "si",
-          "start": 0.32,
-          "end": 0.491
+          "start": 0.356,
+          "end": 0.562
         },
         {
           "w": "mañana",
-          "start": 0.491,
-          "end": 0.874
+          "start": 0.562,
+          "end": 1.024
         },
         {
           "w": "despertaras",
-          "start": 0.874,
-          "end": 1.523
+          "start": 1.024,
+          "end": 1.809
         },
         {
           "w": "sin",
-          "start": 1.523,
-          "end": 1.747
+          "start": 1.809,
+          "end": 2.079
         },
         {
           "w": "poder",
-          "start": 1.747,
-          "end": 2.077
+          "start": 2.079,
+          "end": 2.478
         },
         {
           "w": "sentir",
-          "start": 2.077,
-          "end": 2.46
+          "start": 2.478,
+          "end": 2.941
         },
         {
           "w": "miedo?",
-          "start": 2.46,
-          "end": 2.79
+          "start": 2.941,
+          "end": 3.339
         },
         {
           "w": "¿Serías",
-          "start": 3.13,
-          "end": 3.388
+          "start": 3.888,
+          "end": 4.319
         },
         {
           "w": "invencible…",
-          "start": 3.388,
-          "end": 3.79
+          "start": 4.319,
+          "end": 4.991
         },
         {
           "w": "o",
-          "start": 4.3,
-          "end": 4.523
+          "start": 5.482,
+          "end": 5.668
         },
         {
           "w": "estarías",
-          "start": 4.523,
-          "end": 5.165
+          "start": 5.668,
+          "end": 6.202
         },
         {
           "w": "en",
-          "start": 5.165,
-          "end": 5.388
+          "start": 6.202,
+          "end": 6.388
         },
         {
           "w": "peligro?",
-          "start": 5.388,
-          "end": 5.96
+          "start": 6.388,
+          "end": 6.864
         }
       ]
     },
     {
       "id": 2,
       "nombre": "El miedo como alarma",
-      "inicio": 6.41,
-      "duracion": 14.21,
+      "inicio": 7.314,
+      "duracion": 13.438,
       "voz": {
-        "audio": null,
+        "audio": "audio/narracion/ep01/escena2.wav",
         "inicio": 1.6,
-        "duracion": 11.91
+        "duracion": 11.138
       },
       "palabras": [
         {
           "w": "El",
           "start": 1.6,
-          "end": 1.833
+          "end": 1.815
         },
         {
           "w": "miedo",
-          "start": 1.833,
-          "end": 2.284
+          "start": 1.815,
+          "end": 2.233
         },
         {
           "w": "no",
-          "start": 2.284,
-          "end": 2.517
+          "start": 2.233,
+          "end": 2.448
         },
         {
           "w": "es",
-          "start": 2.517,
-          "end": 2.75
+          "start": 2.448,
+          "end": 2.663
         },
         {
           "w": "un",
-          "start": 2.75,
-          "end": 2.983
+          "start": 2.663,
+          "end": 2.879
         },
         {
           "w": "defecto.",
-          "start": 2.983,
-          "end": 3.58
+          "start": 2.879,
+          "end": 3.431
         },
         {
           "w": "Es",
-          "start": 3.92,
-          "end": 4.103
+          "start": 3.886,
+          "end": 4.058
         },
         {
           "w": "una",
-          "start": 4.103,
-          "end": 4.344
+          "start": 4.058,
+          "end": 4.285
         },
         {
           "w": "alarma",
-          "start": 4.344,
-          "end": 4.757
+          "start": 4.285,
+          "end": 4.673
         },
         {
           "w": "que",
-          "start": 4.757,
-          "end": 4.998
+          "start": 4.673,
+          "end": 4.9
         },
         {
           "w": "ayuda",
-          "start": 4.998,
-          "end": 5.353
+          "start": 4.9,
+          "end": 5.234
         },
         {
           "w": "a",
-          "start": 5.353,
-          "end": 5.537
+          "start": 5.234,
+          "end": 5.407
         },
         {
           "w": "tu",
-          "start": 5.537,
-          "end": 5.72
+          "start": 5.407,
+          "end": 5.58
         },
         {
           "w": "cerebro",
-          "start": 5.72,
-          "end": 6.191
+          "start": 5.58,
+          "end": 6.022
         },
         {
           "w": "a",
-          "start": 6.191,
-          "end": 6.374
+          "start": 6.022,
+          "end": 6.195
         },
         {
           "w": "detectar",
-          "start": 6.374,
-          "end": 6.901
+          "start": 6.195,
+          "end": 6.691
         },
         {
           "w": "amenazas",
-          "start": 6.901,
-          "end": 7.429
+          "start": 6.691,
+          "end": 7.187
         },
         {
           "w": "y",
-          "start": 7.429,
-          "end": 7.612
+          "start": 7.187,
+          "end": 7.36
         },
         {
           "w": "a",
-          "start": 7.612,
-          "end": 7.796
+          "start": 7.36,
+          "end": 7.532
         },
         {
           "w": "preparar",
-          "start": 7.796,
-          "end": 8.323
+          "start": 7.532,
+          "end": 8.029
         },
         {
           "w": "tu",
-          "start": 8.323,
-          "end": 8.507
+          "start": 8.029,
+          "end": 8.201
         },
         {
           "w": "cuerpo",
-          "start": 8.507,
-          "end": 8.92
+          "start": 8.201,
+          "end": 8.59
         },
         {
           "w": "para",
-          "start": 8.92,
-          "end": 9.218
+          "start": 8.59,
+          "end": 8.87
         },
         {
           "w": "reaccionar:",
-          "start": 9.218,
-          "end": 9.86
+          "start": 8.87,
+          "end": 9.474
         },
         {
           "w": "el",
-          "start": 10.2,
-          "end": 10.413
+          "start": 9.878,
+          "end": 10.052
         },
         {
           "w": "corazón",
-          "start": 10.413,
-          "end": 10.958
+          "start": 10.052,
+          "end": 10.5
         },
         {
           "w": "se",
-          "start": 10.958,
-          "end": 11.17
+          "start": 10.5,
+          "end": 10.675
         },
         {
           "w": "acelera",
-          "start": 11.17,
-          "end": 11.715
+          "start": 10.675,
+          "end": 11.123
         },
         {
           "w": "y",
-          "start": 11.715,
-          "end": 11.928
+          "start": 11.123,
+          "end": 11.438
         },
         {
           "w": "los",
-          "start": 11.928,
-          "end": 12.207
+          "start": 11.438,
+          "end": 11.668
         },
         {
           "w": "músculos",
-          "start": 12.207,
-          "end": 12.819
+          "start": 11.668,
+          "end": 12.17
         },
         {
           "w": "se",
-          "start": 12.819,
-          "end": 13.031
+          "start": 12.17,
+          "end": 12.345
         },
         {
           "w": "tensan.",
-          "start": 13.031,
-          "end": 13.51
+          "start": 12.345,
+          "end": 12.738
         }
       ]
     },
     {
       "id": 3,
       "nombre": "El mundo sin miedo",
-      "inicio": 20.62,
+      "inicio": 20.752,
       "duracion": 13.5,
       "voz": {
-        "audio": null,
+        "audio": "audio/narracion/ep01/escena3.wav",
         "inicio": 0.5,
-        "duracion": 7.45
+        "duracion": 9.021
       },
       "palabras": [
         {
           "w": "Sin",
           "start": 0.5,
-          "end": 0.767
+          "end": 0.955
         },
         {
           "w": "esa",
-          "start": 0.767,
-          "end": 1.033
+          "start": 0.955,
+          "end": 1.262
         },
         {
           "w": "alarma,",
-          "start": 1.033,
-          "end": 1.49
+          "start": 1.262,
+          "end": 1.787
         },
         {
           "w": "podrías",
-          "start": 1.66,
-          "end": 1.985
+          "start": 2.098,
+          "end": 2.539
         },
         {
           "w": "subestimar",
-          "start": 1.985,
-          "end": 2.429
+          "start": 2.539,
+          "end": 3.142
         },
         {
           "w": "peligros",
-          "start": 2.429,
-          "end": 2.794
+          "start": 3.142,
+          "end": 3.636
         },
         {
           "w": "que",
-          "start": 2.794,
-          "end": 2.96
+          "start": 3.636,
+          "end": 3.862
         },
         {
           "w": "normalmente",
-          "start": 2.96,
-          "end": 3.444
+          "start": 3.862,
+          "end": 4.518
         },
         {
           "w": "te",
-          "start": 3.444,
-          "end": 3.571
+          "start": 4.518,
+          "end": 4.69
         },
         {
           "w": "harían",
-          "start": 3.571,
-          "end": 3.856
+          "start": 4.69,
+          "end": 5.078
         },
         {
           "w": "retroceder.",
-          "start": 3.856,
-          "end": 4.3
+          "start": 5.078,
+          "end": 5.68
         },
         {
           "w": "Y",
-          "start": 4.64,
-          "end": 4.817
+          "start": 6.037,
+          "end": 6.224
         },
         {
           "w": "eso",
-          "start": 4.817,
-          "end": 5.05
+          "start": 6.224,
+          "end": 6.468
         },
         {
           "w": "puede",
-          "start": 5.05,
-          "end": 5.393
+          "start": 6.468,
+          "end": 6.83
         },
         {
           "w": "llevarte",
-          "start": 5.393,
-          "end": 5.902
+          "start": 6.83,
+          "end": 7.365
         },
         {
           "w": "a",
-          "start": 5.902,
-          "end": 6.079
+          "start": 7.365,
+          "end": 7.552
         },
         {
           "w": "tomar",
-          "start": 6.079,
-          "end": 6.422
+          "start": 7.552,
+          "end": 7.913
         },
         {
           "w": "decisiones",
-          "start": 6.422,
-          "end": 7.042
+          "start": 7.913,
+          "end": 8.565
         },
         {
           "w": "muy",
-          "start": 7.042,
-          "end": 7.275
+          "start": 8.565,
+          "end": 8.81
         },
         {
           "w": "arriesgadas.",
-          "start": 7.275,
-          "end": 7.95
+          "start": 8.81,
+          "end": 9.521
         }
       ]
     },
     {
       "id": 4,
       "nombre": "¿Desaparecería todo el miedo?",
-      "inicio": 34.12,
-      "duracion": 14,
+      "inicio": 34.252,
+      "duracion": 14.467,
       "voz": {
-        "audio": null,
+        "audio": "audio/narracion/ep01/escena4.wav",
         "inicio": 1.3,
-        "duracion": 10.43
+        "duracion": 12.367
       },
       "palabras": [
         {
           "w": "Pero",
           "start": 1.3,
-          "end": 1.547
+          "end": 1.804
         },
         {
           "w": "hay",
-          "start": 1.547,
-          "end": 1.746
+          "start": 1.804,
+          "end": 2.043
         },
         {
           "w": "algo",
-          "start": 1.746,
-          "end": 1.993
+          "start": 2.043,
+          "end": 2.339
         },
         {
           "w": "sorprendente:",
-          "start": 1.993,
-          "end": 2.62
+          "start": 2.339,
+          "end": 3.091
         },
         {
           "w": "el",
-          "start": 2.96,
-          "end": 3.149
+          "start": 3.64,
+          "end": 3.82
         },
         {
           "w": "miedo",
-          "start": 3.149,
-          "end": 3.516
+          "start": 3.82,
+          "end": 4.169
         },
         {
           "w": "no",
-          "start": 3.516,
-          "end": 3.706
+          "start": 4.169,
+          "end": 4.349
         },
         {
           "w": "depende",
-          "start": 3.706,
-          "end": 4.191
+          "start": 4.349,
+          "end": 4.81
         },
         {
           "w": "de",
-          "start": 4.191,
-          "end": 4.381
+          "start": 4.81,
+          "end": 4.99
         },
         {
           "w": "un",
-          "start": 4.381,
-          "end": 4.57
+          "start": 4.99,
+          "end": 5.17
         },
         {
           "w": "solo",
-          "start": 4.57,
-          "end": 4.878
+          "start": 5.17,
+          "end": 5.463
         },
         {
           "w": "interruptor.",
-          "start": 4.878,
-          "end": 5.6
+          "start": 5.463,
+          "end": 6.149
         },
         {
           "w": "La",
-          "start": 5.94,
-          "end": 6.098
+          "start": 6.567,
+          "end": 6.77
         },
         {
           "w": "amígdala",
-          "start": 6.098,
-          "end": 6.551
+          "start": 6.77,
+          "end": 7.355
         },
         {
           "w": "es",
-          "start": 6.551,
-          "end": 6.708
+          "start": 7.355,
+          "end": 7.558
         },
         {
           "w": "importante,",
-          "start": 6.708,
-          "end": 7.26
+          "start": 7.558,
+          "end": 8.27
         },
         {
           "w": "aunque",
-          "start": 7.43,
-          "end": 7.776
+          "start": 8.642,
+          "end": 9.03
         },
         {
           "w": "otras",
-          "start": 7.776,
-          "end": 8.075
+          "start": 9.03,
+          "end": 9.364
         },
         {
           "w": "regiones",
-          "start": 8.075,
-          "end": 8.517
+          "start": 9.364,
+          "end": 9.859
         },
         {
           "w": "cerebrales",
-          "start": 8.517,
-          "end": 9.056
+          "start": 9.859,
+          "end": 10.462
         },
         {
           "w": "y",
-          "start": 9.056,
-          "end": 9.21
+          "start": 10.462,
+          "end": 10.634
         },
         {
           "w": "las",
-          "start": 9.21,
-          "end": 9.412
+          "start": 10.634,
+          "end": 10.86
         },
         {
           "w": "señales",
-          "start": 9.412,
-          "end": 9.806
+          "start": 10.86,
+          "end": 11.301
         },
         {
           "w": "internas",
-          "start": 9.806,
-          "end": 10.249
+          "start": 11.301,
+          "end": 11.796
         },
         {
           "w": "del",
-          "start": 10.249,
-          "end": 10.451
+          "start": 11.796,
+          "end": 12.022
         },
         {
           "w": "cuerpo",
-          "start": 10.451,
-          "end": 10.797
+          "start": 12.022,
+          "end": 12.623
         },
         {
           "w": "también",
-          "start": 10.797,
-          "end": 11.191
+          "start": 12.623,
+          "end": 13.064
         },
         {
           "w": "participan.",
-          "start": 11.191,
-          "end": 11.73
+          "start": 13.064,
+          "end": 13.667
         }
       ]
     },
     {
       "id": 5,
       "nombre": "El giro científico",
-      "inicio": 48.12,
-      "duracion": 15.76,
+      "inicio": 48.719,
+      "duracion": 17.024,
       "voz": {
-        "audio": null,
+        "audio": "audio/narracion/ep01/escena5.wav",
         "inicio": 0.7,
-        "duracion": 14.06
+        "duracion": 15.324
       },
       "palabras": [
         {
           "w": "En",
           "start": 0.7,
-          "end": 0.864
+          "end": 1.068
         },
         {
           "w": "estudios",
-          "start": 0.864,
-          "end": 1.337
+          "start": 1.068,
+          "end": 1.613
         },
         {
           "w": "de",
-          "start": 1.337,
-          "end": 1.502
+          "start": 1.613,
+          "end": 1.802
         },
         {
           "w": "personas",
-          "start": 1.502,
-          "end": 1.974
+          "start": 1.802,
+          "end": 2.347
         },
         {
           "w": "con",
-          "start": 1.974,
-          "end": 2.19
+          "start": 2.347,
+          "end": 2.596
         },
         {
           "w": "lesiones",
-          "start": 2.19,
-          "end": 2.663
+          "start": 2.596,
+          "end": 3.141
         },
         {
           "w": "en",
-          "start": 2.663,
-          "end": 2.827
+          "start": 3.141,
+          "end": 3.33
         },
         {
           "w": "ambas",
-          "start": 2.827,
-          "end": 3.146
+          "start": 3.33,
+          "end": 3.697
         },
         {
           "w": "amígdalas,",
-          "start": 3.146,
-          "end": 3.67
+          "start": 3.697,
+          "end": 4.302
         },
         {
           "w": "algunas",
-          "start": 3.84,
-          "end": 4.216
+          "start": 4.496,
+          "end": 4.964
         },
         {
           "w": "mostraron",
-          "start": 4.216,
-          "end": 4.683
+          "start": 4.964,
+          "end": 5.546
         },
         {
           "w": "muy",
-          "start": 4.683,
-          "end": 4.876
+          "start": 5.546,
+          "end": 5.786
         },
         {
           "w": "poco",
-          "start": 4.876,
-          "end": 5.114
+          "start": 5.786,
+          "end": 6.083
         },
         {
           "w": "miedo",
-          "start": 5.114,
-          "end": 5.398
+          "start": 6.083,
+          "end": 6.437
         },
         {
           "w": "ante",
-          "start": 5.398,
-          "end": 5.637
+          "start": 6.437,
+          "end": 6.734
         },
         {
           "w": "amenazas",
-          "start": 5.637,
-          "end": 6.058
+          "start": 6.734,
+          "end": 7.259
         },
         {
           "w": "externas…",
-          "start": 6.058,
-          "end": 6.48
+          "start": 7.259,
+          "end": 7.784
         },
         {
           "w": "pero",
-          "start": 6.99,
-          "end": 7.232
+          "start": 8.261,
+          "end": 8.554
         },
         {
           "w": "todavía",
-          "start": 7.232,
-          "end": 7.613
+          "start": 8.554,
+          "end": 9.017
         },
         {
           "w": "podían",
-          "start": 7.613,
-          "end": 7.947
+          "start": 9.017,
+          "end": 9.424
         },
         {
           "w": "sentir",
-          "start": 7.947,
-          "end": 8.282
+          "start": 9.424,
+          "end": 9.831
         },
         {
           "w": "pánico",
-          "start": 8.282,
-          "end": 8.617
+          "start": 9.831,
+          "end": 10.237
         },
         {
           "w": "frente",
-          "start": 8.617,
-          "end": 8.951
+          "start": 10.237,
+          "end": 10.644
         },
         {
           "w": "a",
-          "start": 8.951,
-          "end": 9.1
+          "start": 10.644,
+          "end": 10.825
         },
         {
           "w": "ciertas",
-          "start": 9.1,
-          "end": 9.481
+          "start": 10.825,
+          "end": 11.288
         },
         {
           "w": "señales",
-          "start": 9.481,
-          "end": 9.862
+          "start": 11.288,
+          "end": 11.751
         },
         {
           "w": "internas,",
-          "start": 9.862,
-          "end": 10.29
+          "start": 11.751,
+          "end": 12.271
         },
         {
           "w": "como",
-          "start": 10.46,
-          "end": 10.797
+          "start": 12.66,
+          "end": 12.923
         },
         {
           "w": "un",
-          "start": 10.797,
-          "end": 11.004
+          "start": 12.923,
+          "end": 13.085
         },
         {
           "w": "aumento",
-          "start": 11.004,
-          "end": 11.535
+          "start": 13.085,
+          "end": 13.501
         },
         {
           "w": "de",
-          "start": 11.535,
-          "end": 11.742
+          "start": 13.501,
+          "end": 13.663
         },
         {
           "w": "dióxido",
-          "start": 11.742,
-          "end": 12.273
+          "start": 13.663,
+          "end": 14.078
         },
         {
           "w": "de",
-          "start": 12.273,
-          "end": 12.48
+          "start": 14.078,
+          "end": 14.24
         },
         {
           "w": "carbono",
-          "start": 12.48,
-          "end": 13.012
+          "start": 14.24,
+          "end": 14.656
         },
         {
           "w": "en",
-          "start": 13.012,
-          "end": 13.219
+          "start": 14.656,
+          "end": 14.818
         },
         {
           "w": "el",
-          "start": 13.219,
-          "end": 13.426
+          "start": 14.818,
+          "end": 14.98
         },
         {
           "w": "aire",
-          "start": 13.426,
-          "end": 13.763
+          "start": 14.98,
+          "end": 15.243
         },
         {
           "w": "que",
-          "start": 13.763,
-          "end": 14.035
+          "start": 15.243,
+          "end": 15.456
         },
         {
           "w": "respiraban.",
-          "start": 14.035,
-          "end": 14.76
+          "start": 15.456,
+          "end": 16.024
         }
       ]
     },
     {
       "id": 6,
       "nombre": "Conclusión",
-      "inicio": 63.88,
+      "inicio": 65.743,
       "duracion": 13,
       "voz": {
-        "audio": null,
+        "audio": "audio/narracion/ep01/escena6.wav",
         "inicio": 0.4,
-        "duracion": 8.77
+        "duracion": 11.104
       },
       "palabras": [
         {
           "w": "Así",
           "start": 0.4,
-          "end": 0.649
+          "end": 0.829
         },
         {
           "w": "que",
-          "start": 0.649,
-          "end": 0.898
+          "start": 0.829,
+          "end": 1.086
         },
         {
           "w": "no",
-          "start": 0.898,
-          "end": 1.088
+          "start": 1.086,
+          "end": 1.282
         },
         {
           "w": "sentir",
-          "start": 1.088,
-          "end": 1.515
+          "start": 1.282,
+          "end": 1.723
         },
         {
           "w": "miedo",
-          "start": 1.515,
-          "end": 1.883
+          "start": 1.723,
+          "end": 2.103
         },
         {
           "w": "no",
-          "start": 1.883,
-          "end": 2.073
+          "start": 2.103,
+          "end": 2.299
         },
         {
           "w": "te",
-          "start": 2.073,
-          "end": 2.262
+          "start": 2.299,
+          "end": 2.494
         },
         {
           "w": "convertiría",
-          "start": 2.262,
-          "end": 2.986
+          "start": 2.494,
+          "end": 3.241
         },
         {
           "w": "en",
-          "start": 2.986,
-          "end": 3.176
+          "start": 3.241,
+          "end": 3.437
         },
         {
           "w": "un",
-          "start": 3.176,
-          "end": 3.366
+          "start": 3.437,
+          "end": 3.633
         },
         {
           "w": "superhéroe.",
-          "start": 3.366,
-          "end": 4.03
+          "start": 3.633,
+          "end": 4.319
         },
         {
           "w": "El",
-          "start": 4.37,
-          "end": 4.552
+          "start": 4.822,
+          "end": 5.161
         },
         {
           "w": "miedo",
-          "start": 4.552,
-          "end": 4.905
+          "start": 5.161,
+          "end": 5.499
         },
         {
           "w": "puede",
-          "start": 4.905,
-          "end": 5.258
+          "start": 5.499,
+          "end": 5.838
         },
         {
           "w": "ser",
-          "start": 5.258,
-          "end": 5.497
+          "start": 5.838,
+          "end": 6.067
         },
         {
           "w": "incómodo,",
-          "start": 5.497,
-          "end": 6.02
+          "start": 6.067,
+          "end": 6.569
         },
         {
           "w": "pero",
-          "start": 6.19,
-          "end": 6.454
+          "start": 6.958,
+          "end": 7.297
         },
         {
           "w": "también",
-          "start": 6.454,
-          "end": 6.871
+          "start": 7.297,
+          "end": 7.833
         },
         {
           "w": "es",
-          "start": 6.871,
-          "end": 7.034
+          "start": 7.833,
+          "end": 8.041
         },
         {
           "w": "una",
-          "start": 7.034,
-          "end": 7.248
+          "start": 8.041,
+          "end": 8.315
         },
         {
           "w": "herramienta",
-          "start": 7.248,
-          "end": 7.868
+          "start": 8.315,
+          "end": 9.112
         },
         {
           "w": "esencial",
-          "start": 7.868,
-          "end": 8.336
+          "start": 9.112,
+          "end": 9.712
         },
         {
           "w": "para",
-          "start": 8.336,
-          "end": 8.6
+          "start": 9.712,
+          "end": 10.051
         },
         {
           "w": "sobrevivir.",
-          "start": 8.6,
-          "end": 9.17
+          "start": 10.6,
+          "end": 11.504
         }
       ]
     },
     {
       "id": 7,
       "nombre": "Cierre",
-      "inicio": 76.88,
-      "duracion": 9.71,
+      "inicio": 78.743,
+      "duracion": 8.64,
       "voz": {
-        "audio": null,
+        "audio": "audio/narracion/ep01/escena7.wav",
         "inicio": 0.3,
-        "duracion": 6.81
+        "duracion": 5.74
       },
       "palabras": [
         {
           "w": "Ahora",
           "start": 0.3,
-          "end": 0.659
+          "end": 0.588
         },
         {
           "w": "dime:",
-          "start": 0.659,
-          "end": 0.96
+          "start": 0.588,
+          "end": 0.83
         },
         {
           "w": "¿preferirías",
-          "start": 1.3,
-          "end": 1.875
+          "start": 0.83,
+          "end": 1.398
         },
         {
           "w": "no",
-          "start": 1.875,
-          "end": 2.026
+          "start": 1.398,
+          "end": 1.546
         },
         {
           "w": "sentir",
-          "start": 2.026,
-          "end": 2.365
+          "start": 1.546,
+          "end": 1.881
         },
         {
           "w": "miedo",
-          "start": 2.365,
-          "end": 2.658
+          "start": 1.881,
+          "end": 2.17
         },
         {
           "w": "nunca…",
-          "start": 2.658,
-          "end": 2.95
+          "start": 2.17,
+          "end": 2.458
         },
         {
           "w": "o",
-          "start": 3.46,
-          "end": 3.612
+          "start": 2.913,
+          "end": 3.058
         },
         {
           "w": "aprender",
-          "start": 3.612,
-          "end": 4.049
+          "start": 3.058,
+          "end": 3.476
         },
         {
           "w": "a",
-          "start": 4.049,
-          "end": 4.201
+          "start": 3.476,
+          "end": 3.622
         },
         {
           "w": "controlarlo?",
-          "start": 4.201,
-          "end": 4.78
+          "start": 3.622,
+          "end": 4.176
         },
         {
           "w": "Te",
-          "start": 5.12,
-          "end": 5.356
+          "start": 4.76,
+          "end": 4.911
         },
         {
           "w": "leo",
-          "start": 5.356,
-          "end": 5.665
+          "start": 4.911,
+          "end": 5.111
         },
         {
           "w": "en",
-          "start": 5.665,
-          "end": 5.901
+          "start": 5.111,
+          "end": 5.262
         },
         {
           "w": "los",
-          "start": 5.901,
-          "end": 6.211
+          "start": 5.262,
+          "end": 5.461
         },
         {
           "w": "comentarios.",
-          "start": 6.211,
-          "end": 7.11
+          "start": 5.461,
+          "end": 6.04
         }
       ]
     }

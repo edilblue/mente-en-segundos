@@ -3,7 +3,7 @@
 //   node scripts/transcribir.mjs public/audio/narracion/ep01/escena1.wav [...]
 import fs from 'node:fs';
 const API = 'https://generativelanguage.googleapis.com/v1beta';
-const modelo = process.env.GEMINI_STT_MODEL || 'gemini-3.8-flash';
+const modelo = process.env.GEMINI_STT_MODEL || 'gemini-3.5-flash';
 for (const f of process.argv.slice(2)) {
   const data = fs.readFileSync(f).toString('base64');
   const r = await fetch(`${API}/models/${modelo}:generateContent`, {
