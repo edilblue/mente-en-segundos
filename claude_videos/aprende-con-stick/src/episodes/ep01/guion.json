@@ -2,6 +2,7 @@
   "episodio": 1,
   "titulo": "¿Qué pasaría si tu cerebro dejara de sentir miedo?",
   "estiloVoz": "Voz masculina joven, español latinoamericano neutro, tono cálido, curioso y natural de divulgador científico en YouTube Shorts; ritmo ágil pero claro, con pequeñas pausas dramáticas en los puntos suspensivos y entonación de pregunta real en las preguntas",
+  "direccionTTS": "Say in a warm, curious and natural Latin American Spanish male narrator voice, like a science YouTuber, lively but clear pace, with short dramatic pauses at the ellipses",
   "duracionObjetivo": [70, 90],
   "escenas": [
     {

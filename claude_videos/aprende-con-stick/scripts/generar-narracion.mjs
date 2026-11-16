@@ -29,6 +29,8 @@ const API = 'https://generativelanguage.googleapis.com/v1beta';
 const VOZ = process.env.GEMINI_TTS_VOICE || 'Charon';
 const VELOCIDAD = parseFloat(process.env.NARRACION_VELOCIDAD || '1.0');
 const MODELOS_PREFERIDOS = [
+  'gemini-3.8-flash-tts',
+  'gemini-3.1-flash-tts-preview',
   'gemini-2.5-pro-tts',
   'gemini-2.5-pro-preview-tts',
   'gemini-2.5-flash-tts',
@@ -100,7 +102,8 @@ function wav(pcm, rate) {
 }
 
 async function sintetizar(modelo, texto) {
-  const prompt = `${GUION.estiloVoz}. Lee en voz alta exactamente el siguiente texto, sin añadir ni omitir palabras:\n\n${texto}`;
+  // Directiva corta (formato documentado "Say …: texto"): las indicaciones largas el modelo las lee en voz alta.
+  const prompt = `${GUION.direccionTTS}: "${texto}"`;
   const j = await pedir(`${API}/models/${modelo}:generateContent`, {
     contents: [{parts: [{text: prompt}]}],
     generationConfig: {responseModalities: ['AUDIO'], speechConfig: {voiceConfig: {prebuiltVoiceConfig: {voiceName: VOZ}}}},
@@ -194,12 +197,21 @@ async function main() {
       console.log(`→ Modelo: ${modelo} · voz: ${VOZ} · velocidad ${VELOCIDAD}x`);
       const escenas = [];
       for (const e of GUION.escenas) {
-        const key = crypto.createHash('sha1').update(`${modelo}|${VOZ}|${GUION.estiloVoz}|${e.texto}`).digest('hex').slice(0, 16);
+        const key = crypto.createHash('sha1').update(`${modelo}|${VOZ}|${GUION.direccionTTS}|${e.texto}`).digest('hex').slice(0, 16);
         const crudo = path.join(CACHE, `${key}.wav`);
-        if (!fs.existsSync(crudo)) {
-          fs.writeFileSync(crudo, await sintetizar(modelo, e.texto));
-          console.log(`  escena ${e.id}: sintetizada`);
-        } else console.log(`  escena ${e.id}: desde caché`);
+        // Esperado ≈ 2,3–3,2 palabras/s. Si el audio dura mucho más, el modelo leyó algo extra: se repite.
+        const esperado = e.texto.split(/\s+/).length / 2.6;
+        for (let intento = 0; intento < 3; intento++) {
+          if (!fs.existsSync(crudo)) {
+            fs.writeFileSync(crudo, await sintetizar(modelo, e.texto));
+            console.log(`  escena ${e.id}: sintetizada`);
+          } else console.log(`  escena ${e.id}: desde caché`);
+          const d = ffprobeDur(crudo);
+          if (d < esperado * 1.6 + 1) break;
+          console.warn(`  ⚠ escena ${e.id}: ${d.toFixed(1)} s (esperado ≈ ${esperado.toFixed(1)} s) → se vuelve a sintetizar`);
+          fs.unlinkSync(crudo);
+          if (intento === 2) throw new Error(`escena ${e.id}: el audio no coincide con el guion`);
+        }
         const rel = `audio/narracion/${EP}/escena${e.id}.wav`;
         const file = path.join(ROOT, 'public', rel);
         // Recorta silencios de los extremos, normaliza el ritmo opcionalmente y deja 48 kHz mono.
@@ -213,7 +225,6 @@ async function main() {
         ].join(',');
         execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-i', crudo, '-af', filtros, '-ar', '48000', '-ac', '1', file]);
         const {dur, palabras} = escenaDesdeAudio(e, file);
-        const esperado = e.texto.split(/\s+/).length / 2.6;
         if (dur > esperado * 1.8) console.warn(`  ⚠ escena ${e.id}: ${dur.toFixed(1)} s, mucho más de lo esperado (${esperado.toFixed(1)} s). Revisa el audio.`);
         escenas.push({e, audio: rel, dur, palabras});
       }
