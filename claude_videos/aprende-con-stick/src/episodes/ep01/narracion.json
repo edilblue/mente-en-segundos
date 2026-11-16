@@ -1,0 +1,969 @@
+{
+  "generadoCon": "estimado",
+  "modelo": null,
+  "voz": null,
+  "total": 86.59,
+  "escenas": [
+    {
+      "id": 1,
+      "nombre": "Gancho",
+      "inicio": 0,
+      "duracion": 6.41,
+      "voz": {
+        "audio": null,
+        "inicio": 0.15,
+        "duracion": 5.81
+      },
+      "palabras": [
+        {
+          "w": "¿Y",
+          "start": 0.15,
+          "end": 0.32
+        },
+        {
+          "w": "si",
+          "start": 0.32,
+          "end": 0.491
+        },
+        {
+          "w": "mañana",
+          "start": 0.491,
+          "end": 0.874
+        },
+        {
+          "w": "despertaras",
+          "start": 0.874,
+          "end": 1.523
+        },
+        {
+          "w": "sin",
+          "start": 1.523,
+          "end": 1.747
+        },
+        {
+          "w": "poder",
+          "start": 1.747,
+          "end": 2.077
+        },
+        {
+          "w": "sentir",
+          "start": 2.077,
+          "end": 2.46
+        },
+        {
+          "w": "miedo?",
+          "start": 2.46,
+          "end": 2.79
+        },
+        {
+          "w": "¿Serías",
+          "start": 3.13,
+          "end": 3.388
+        },
+        {
+          "w": "invencible…",
+          "start": 3.388,
+          "end": 3.79
+        },
+        {
+          "w": "o",
+          "start": 4.3,
+          "end": 4.523
+        },
+        {
+          "w": "estarías",
+          "start": 4.523,
+          "end": 5.165
+        },
+        {
+          "w": "en",
+          "start": 5.165,
+          "end": 5.388
+        },
+        {
+          "w": "peligro?",
+          "start": 5.388,
+          "end": 5.96
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "El miedo como alarma",
+      "inicio": 6.41,
+      "duracion": 14.21,
+      "voz": {
+        "audio": null,
+        "inicio": 1.6,
+        "duracion": 11.91
+      },
+      "palabras": [
+        {
+          "w": "El",
+          "start": 1.6,
+          "end": 1.833
+        },
+        {
+          "w": "miedo",
+          "start": 1.833,
+          "end": 2.284
+        },
+        {
+          "w": "no",
+          "start": 2.284,
+          "end": 2.517
+        },
+        {
+          "w": "es",
+          "start": 2.517,
+          "end": 2.75
+        },
+        {
+          "w": "un",
+          "start": 2.75,
+          "end": 2.983
+        },
+        {
+          "w": "defecto.",
+          "start": 2.983,
+          "end": 3.58
+        },
+        {
+          "w": "Es",
+          "start": 3.92,
+          "end": 4.103
+        },
+        {
+          "w": "una",
+          "start": 4.103,
+          "end": 4.344
+        },
+        {
+          "w": "alarma",
+          "start": 4.344,
+          "end": 4.757
+        },
+        {
+          "w": "que",
+          "start": 4.757,
+          "end": 4.998
+        },
+        {
+          "w": "ayuda",
+          "start": 4.998,
+          "end": 5.353
+        },
+        {
+          "w": "a",
+          "start": 5.353,
+          "end": 5.537
+        },
+        {
+          "w": "tu",
+          "start": 5.537,
+          "end": 5.72
+        },
+        {
+          "w": "cerebro",
+          "start": 5.72,
+          "end": 6.191
+        },
+        {
+          "w": "a",
+          "start": 6.191,
+          "end": 6.374
+        },
+        {
+          "w": "detectar",
+          "start": 6.374,
+          "end": 6.901
+        },
+        {
+          "w": "amenazas",
+          "start": 6.901,
+          "end": 7.429
+        },
+        {
+          "w": "y",
+          "start": 7.429,
+          "end": 7.612
+        },
+        {
+          "w": "a",
+          "start": 7.612,
+          "end": 7.796
+        },
+        {
+          "w": "preparar",
+          "start": 7.796,
+          "end": 8.323
+        },
+        {
+          "w": "tu",
+          "start": 8.323,
+          "end": 8.507
+        },
+        {
+          "w": "cuerpo",
+          "start": 8.507,
+          "end": 8.92
+        },
+        {
+          "w": "para",
+          "start": 8.92,
+          "end": 9.218
+        },
+        {
+          "w": "reaccionar:",
+          "start": 9.218,
+          "end": 9.86
+        },
+        {
+          "w": "el",
+          "start": 10.2,
+          "end": 10.413
+        },
+        {
+          "w": "corazón",
+          "start": 10.413,
+          "end": 10.958
+        },
+        {
+          "w": "se",
+          "start": 10.958,
+          "end": 11.17
+        },
+        {
+          "w": "acelera",
+          "start": 11.17,
+          "end": 11.715
+        },
+        {
+          "w": "y",
+          "start": 11.715,
+          "end": 11.928
+        },
+        {
+          "w": "los",
+          "start": 11.928,
+          "end": 12.207
+        },
+        {
+          "w": "músculos",
+          "start": 12.207,
+          "end": 12.819
+        },
+        {
+          "w": "se",
+          "start": 12.819,
+          "end": 13.031
+        },
+        {
+          "w": "tensan.",
+          "start": 13.031,
+          "end": 13.51
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nombre": "El mundo sin miedo",
+      "inicio": 20.62,
+      "duracion": 13.5,
+      "voz": {
+        "audio": null,
+        "inicio": 0.5,
+        "duracion": 7.45
+      },
+      "palabras": [
+        {
+          "w": "Sin",
+          "start": 0.5,
+          "end": 0.767
+        },
+        {
+          "w": "esa",
+          "start": 0.767,
+          "end": 1.033
+        },
+        {
+          "w": "alarma,",
+          "start": 1.033,
+          "end": 1.49
+        },
+        {
+          "w": "podrías",
+          "start": 1.66,
+          "end": 1.985
+        },
+        {
+          "w": "subestimar",
+          "start": 1.985,
+          "end": 2.429
+        },
+        {
+          "w": "peligros",
+          "start": 2.429,
+          "end": 2.794
+        },
+        {
+          "w": "que",
+          "start": 2.794,
+          "end": 2.96
+        },
+        {
+          "w": "normalmente",
+          "start": 2.96,
+          "end": 3.444
+        },
+        {
+          "w": "te",
+          "start": 3.444,
+          "end": 3.571
+        },
+        {
+          "w": "harían",
+          "start": 3.571,
+          "end": 3.856
+        },
+        {
+          "w": "retroceder.",
+          "start": 3.856,
+          "end": 4.3
+        },
+        {
+          "w": "Y",
+          "start": 4.64,
+          "end": 4.817
+        },
+        {
+          "w": "eso",
+          "start": 4.817,
+          "end": 5.05
+        },
+        {
+          "w": "puede",
+          "start": 5.05,
+          "end": 5.393
+        },
+        {
+          "w": "llevarte",
+          "start": 5.393,
+          "end": 5.902
+        },
+        {
+          "w": "a",
+          "start": 5.902,
+          "end": 6.079
+        },
+        {
+          "w": "tomar",
+          "start": 6.079,
+          "end": 6.422
+        },
+        {
+          "w": "decisiones",
+          "start": 6.422,
+          "end": 7.042
+        },
+        {
+          "w": "muy",
+          "start": 7.042,
+          "end": 7.275
+        },
+        {
+          "w": "arriesgadas.",
+          "start": 7.275,
+          "end": 7.95
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nombre": "¿Desaparecería todo el miedo?",
+      "inicio": 34.12,
+      "duracion": 14,
+      "voz": {
+        "audio": null,
+        "inicio": 1.3,
+        "duracion": 10.43
+      },
+      "palabras": [
+        {
+          "w": "Pero",
+          "start": 1.3,
+          "end": 1.547
+        },
+        {
+          "w": "hay",
+          "start": 1.547,
+          "end": 1.746
+        },
+        {
+          "w": "algo",
+          "start": 1.746,
+          "end": 1.993
+        },
+        {
+          "w": "sorprendente:",
+          "start": 1.993,
+          "end": 2.62
+        },
+        {
+          "w": "el",
+          "start": 2.96,
+          "end": 3.149
+        },
+        {
+          "w": "miedo",
+          "start": 3.149,
+          "end": 3.516
+        },
+        {
+          "w": "no",
+          "start": 3.516,
+          "end": 3.706
+        },
+        {
+          "w": "depende",
+          "start": 3.706,
+          "end": 4.191
+        },
+        {
+          "w": "de",
+          "start": 4.191,
+          "end": 4.381
+        },
+        {
+          "w": "un",
+          "start": 4.381,
+          "end": 4.57
+        },
+        {
+          "w": "solo",
+          "start": 4.57,
+          "end": 4.878
+        },
+        {
+          "w": "interruptor.",
+          "start": 4.878,
+          "end": 5.6
+        },
+        {
+          "w": "La",
+          "start": 5.94,
+          "end": 6.098
+        },
+        {
+          "w": "amígdala",
+          "start": 6.098,
+          "end": 6.551
+        },
+        {
+          "w": "es",
+          "start": 6.551,
+          "end": 6.708
+        },
+        {
+          "w": "importante,",
+          "start": 6.708,
+          "end": 7.26
+        },
+        {
+          "w": "aunque",
+          "start": 7.43,
+          "end": 7.776
+        },
+        {
+          "w": "otras",
+          "start": 7.776,
+          "end": 8.075
+        },
+        {
+          "w": "regiones",
+          "start": 8.075,
+          "end": 8.517
+        },
+        {
+          "w": "cerebrales",
+          "start": 8.517,
+          "end": 9.056
+        },
+        {
+          "w": "y",
+          "start": 9.056,
+          "end": 9.21
+        },
+        {
+          "w": "las",
+          "start": 9.21,
+          "end": 9.412
+        },
+        {
+          "w": "señales",
+          "start": 9.412,
+          "end": 9.806
+        },
+        {
+          "w": "internas",
+          "start": 9.806,
+          "end": 10.249
+        },
+        {
+          "w": "del",
+          "start": 10.249,
+          "end": 10.451
+        },
+        {
+          "w": "cuerpo",
+          "start": 10.451,
+          "end": 10.797
+        },
+        {
+          "w": "también",
+          "start": 10.797,
+          "end": 11.191
+        },
+        {
+          "w": "participan.",
+          "start": 11.191,
+          "end": 11.73
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "nombre": "El giro científico",
+      "inicio": 48.12,
+      "duracion": 15.76,
+      "voz": {
+        "audio": null,
+        "inicio": 0.7,
+        "duracion": 14.06
+      },
+      "palabras": [
+        {
+          "w": "En",
+          "start": 0.7,
+          "end": 0.864
+        },
+        {
+          "w": "estudios",
+          "start": 0.864,
+          "end": 1.337
+        },
+        {
+          "w": "de",
+          "start": 1.337,
+          "end": 1.502
+        },
+        {
+          "w": "personas",
+          "start": 1.502,
+          "end": 1.974
+        },
+        {
+          "w": "con",
+          "start": 1.974,
+          "end": 2.19
+        },
+        {
+          "w": "lesiones",
+          "start": 2.19,
+          "end": 2.663
+        },
+        {
+          "w": "en",
+          "start": 2.663,
+          "end": 2.827
+        },
+        {
+          "w": "ambas",
+          "start": 2.827,
+          "end": 3.146
+        },
+        {
+          "w": "amígdalas,",
+          "start": 3.146,
+          "end": 3.67
+        },
+        {
+          "w": "algunas",
+          "start": 3.84,
+          "end": 4.216
+        },
+        {
+          "w": "mostraron",
+          "start": 4.216,
+          "end": 4.683
+        },
+        {
+          "w": "muy",
+          "start": 4.683,
+          "end": 4.876
+        },
+        {
+          "w": "poco",
+          "start": 4.876,
+          "end": 5.114
+        },
+        {
+          "w": "miedo",
+          "start": 5.114,
+          "end": 5.398
+        },
+        {
+          "w": "ante",
+          "start": 5.398,
+          "end": 5.637
+        },
+        {
+          "w": "amenazas",
+          "start": 5.637,
+          "end": 6.058
+        },
+        {
+          "w": "externas…",
+          "start": 6.058,
+          "end": 6.48
+        },
+        {
+          "w": "pero",
+          "start": 6.99,
+          "end": 7.232
+        },
+        {
+          "w": "todavía",
+          "start": 7.232,
+          "end": 7.613
+        },
+        {
+          "w": "podían",
+          "start": 7.613,
+          "end": 7.947
+        },
+        {
+          "w": "sentir",
+          "start": 7.947,
+          "end": 8.282
+        },
+        {
+          "w": "pánico",
+          "start": 8.282,
+          "end": 8.617
+        },
+        {
+          "w": "frente",
+          "start": 8.617,
+          "end": 8.951
+        },
+        {
+          "w": "a",
+          "start": 8.951,
+          "end": 9.1
+        },
+        {
+          "w": "ciertas",
+          "start": 9.1,
+          "end": 9.481
+        },
+        {
+          "w": "señales",
+          "start": 9.481,
+          "end": 9.862
+        },
+        {
+          "w": "internas,",
+          "start": 9.862,
+          "end": 10.29
+        },
+        {
+          "w": "como",
+          "start": 10.46,
+          "end": 10.797
+        },
+        {
+          "w": "un",
+          "start": 10.797,
+          "end": 11.004
+        },
+        {
+          "w": "aumento",
+          "start": 11.004,
+          "end": 11.535
+        },
+        {
+          "w": "de",
+          "start": 11.535,
+          "end": 11.742
+        },
+        {
+          "w": "dióxido",
+          "start": 11.742,
+          "end": 12.273
+        },
+        {
+          "w": "de",
+          "start": 12.273,
+          "end": 12.48
+        },
+        {
+          "w": "carbono",
+          "start": 12.48,
+          "end": 13.012
+        },
+        {
+          "w": "en",
+          "start": 13.012,
+          "end": 13.219
+        },
+        {
+          "w": "el",
+          "start": 13.219,
+          "end": 13.426
+        },
+        {
+          "w": "aire",
+          "start": 13.426,
+          "end": 13.763
+        },
+        {
+          "w": "que",
+          "start": 13.763,
+          "end": 14.035
+        },
+        {
+          "w": "respiraban.",
+          "start": 14.035,
+          "end": 14.76
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "nombre": "Conclusión",
+      "inicio": 63.88,
+      "duracion": 13,
+      "voz": {
+        "audio": null,
+        "inicio": 0.4,
+        "duracion": 8.77
+      },
+      "palabras": [
+        {
+          "w": "Así",
+          "start": 0.4,
+          "end": 0.649
+        },
+        {
+          "w": "que",
+          "start": 0.649,
+          "end": 0.898
+        },
+        {
+          "w": "no",
+          "start": 0.898,
+          "end": 1.088
+        },
+        {
+          "w": "sentir",
+          "start": 1.088,
+          "end": 1.515
+        },
+        {
+          "w": "miedo",
+          "start": 1.515,
+          "end": 1.883
+        },
+        {
+          "w": "no",
+          "start": 1.883,
+          "end": 2.073
+        },
+        {
+          "w": "te",
+          "start": 2.073,
+          "end": 2.262
+        },
+        {
+          "w": "convertiría",
+          "start": 2.262,
+          "end": 2.986
+        },
+        {
+          "w": "en",
+          "start": 2.986,
+          "end": 3.176
+        },
+        {
+          "w": "un",
+          "start": 3.176,
+          "end": 3.366
+        },
+        {
+          "w": "superhéroe.",
+          "start": 3.366,
+          "end": 4.03
+        },
+        {
+          "w": "El",
+          "start": 4.37,
+          "end": 4.552
+        },
+        {
+          "w": "miedo",
+          "start": 4.552,
+          "end": 4.905
+        },
+        {
+          "w": "puede",
+          "start": 4.905,
+          "end": 5.258
+        },
+        {
+          "w": "ser",
+          "start": 5.258,
+          "end": 5.497
+        },
+        {
+          "w": "incómodo,",
+          "start": 5.497,
+          "end": 6.02
+        },
+        {
+          "w": "pero",
+          "start": 6.19,
+          "end": 6.454
+        },
+        {
+          "w": "también",
+          "start": 6.454,
+          "end": 6.871
+        },
+        {
+          "w": "es",
+          "start": 6.871,
+          "end": 7.034
+        },
+        {
+          "w": "una",
+          "start": 7.034,
+          "end": 7.248
+        },
+        {
+          "w": "herramienta",
+          "start": 7.248,
+          "end": 7.868
+        },
+        {
+          "w": "esencial",
+          "start": 7.868,
+          "end": 8.336
+        },
+        {
+          "w": "para",
+          "start": 8.336,
+          "end": 8.6
+        },
+        {
+          "w": "sobrevivir.",
+          "start": 8.6,
+          "end": 9.17
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "nombre": "Cierre",
+      "inicio": 76.88,
+      "duracion": 9.71,
+      "voz": {
+        "audio": null,
+        "inicio": 0.3,
+        "duracion": 6.81
+      },
+      "palabras": [
+        {
+          "w": "Ahora",
+          "start": 0.3,
+          "end": 0.659
+        },
+        {
+          "w": "dime:",
+          "start": 0.659,
+          "end": 0.96
+        },
+        {
+          "w": "¿preferirías",
+          "start": 1.3,
+          "end": 1.875
+        },
+        {
+          "w": "no",
+          "start": 1.875,
+          "end": 2.026
+        },
+        {
+          "w": "sentir",
+          "start": 2.026,
+          "end": 2.365
+        },
+        {
+          "w": "miedo",
+          "start": 2.365,
+          "end": 2.658
+        },
+        {
+          "w": "nunca…",
+          "start": 2.658,
+          "end": 2.95
+        },
+        {
+          "w": "o",
+          "start": 3.46,
+          "end": 3.612
+        },
+        {
+          "w": "aprender",
+          "start": 3.612,
+          "end": 4.049
+        },
+        {
+          "w": "a",
+          "start": 4.049,
+          "end": 4.201
+        },
+        {
+          "w": "controlarlo?",
+          "start": 4.201,
+          "end": 4.78
+        },
+        {
+          "w": "Te",
+          "start": 5.12,
+          "end": 5.356
+        },
+        {
+          "w": "leo",
+          "start": 5.356,
+          "end": 5.665
+        },
+        {
+          "w": "en",
+          "start": 5.665,
+          "end": 5.901
+        },
+        {
+          "w": "los",
+          "start": 5.901,
+          "end": 6.211
+        },
+        {
+          "w": "comentarios.",
+          "start": 6.211,
+          "end": 7.11
+        }
+      ]
+    }
+  ]
+}
