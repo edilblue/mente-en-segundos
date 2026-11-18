@@ -1,0 +1,42 @@
+{
+  "titulo": "Los flamencos no nacen rosados",
+  "duracion": 35.0,
+  "inicioVoz": 0.1,
+  "huecoMinimo": 0.25,
+  "huecoMaximo": 0.75,
+  "colaFinal": 1.1,
+  "voz": {
+    "perfil": "Narrador de datos curiosos",
+    "descripcion": "Joven narrador latinoamericano de YouTube Shorts.",
+    "estilo": "curioso, divertido y muy enérgico, como quien revela un secreto sorprendente. Sonrisa en la voz.",
+    "ritmo": "rápido y ágil, pausas muy breves entre frases.",
+    "acento": "español latinoamericano neutro."
+  },
+  "escenas": [
+    {
+      "id": 1,
+      "nombre": "Gancho",
+      "texto": "Los flamencos no nacen rosados. ¡Nacen grises! Y tardan años en cambiar."
+    },
+    {
+      "id": 2,
+      "nombre": "Dieta",
+      "texto": "Su color viene de lo que comen: algas y diminutos camarones llenos de pigmentos llamados carotenoides."
+    },
+    {
+      "id": 3,
+      "nombre": "Rayos X",
+      "texto": "Su hígado transforma esos pigmentos en tonos rosados y naranjas, que se guardan en sus plumas."
+    },
+    {
+      "id": 4,
+      "nombre": "Padres",
+      "texto": "Y los padres alimentan a las crías con una leche rojiza que ellos mismos producen. Por eso, criar los deja pálidos."
+    },
+    {
+      "id": 5,
+      "nombre": "Final",
+      "texto": "Sin esa dieta, hasta un flamenco adulto se vuelve blanco. Eres lo que comes... literalmente."
+    }
+  ]
+}

@@ -5,3 +5,6 @@ out/*.png
 out/frames/
 out/*.log
 .tts-cache/
+out/frames-flamencos/
+out/flamencos-*
+out/render-flamencos.log

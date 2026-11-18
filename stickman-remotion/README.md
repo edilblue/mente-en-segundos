@@ -71,3 +71,39 @@ scripts/
 
 Todo el contenido importante queda entre y = 150 y y = 1670 (150 px libres arriba, 250 px abajo):
 la barra-lápiz empieza en y ≈ 168 y los subtítulos terminan en y ≈ 1646.
+
+---
+
+# Short: "Los flamencos no nacen rosados" (35 s)
+
+Composición **`Flamencos`** (`src/flamencos/`): animación stickman 2D en pizarra (trazo de tiza), donde el color
+solo vive en el flamenco y su dieta. 1080×1920, 30 fps, **35,000 s exactos** (1050 frames), loop: el último frame
+(flamenco desteñido, zoom a su ojo) empalma con el primero (ojo de la cría gris).
+
+```bash
+cd stickman-remotion && npm install
+export REMOTION_CHROME=/ruta/a/chrome-headless-shell   # si no hay Chrome Headless Shell descargado
+
+# 1) Voz con Gemini TTS (una sola toma; la clave solo se lee de GEMINI_API_KEY)
+GEMINI_API_KEY=... python3 scripts/flamencos/narracion.py   # → public/flamencos/voz/*.wav + src/flamencos/data/narracion.json
+# 2) Música original + efectos + mezcla con ducking, -14 LUFS
+python3 scripts/flamencos/audio.py                          # → out/flamencos-audio.wav
+# 3) Video y mezcla final
+npx remotion render Flamencos out/flamencos-video.mp4 --muted --browser-executable="$REMOTION_CHROME"
+ffmpeg -i out/flamencos-video.mp4 -i out/flamencos-audio.wav -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k \
+  -movflags +faststart ../output/flamencos_no_nacen_rosados.mp4
+# Fotogramas de revisión
+node scripts/flamencos/frames.mjs 0.3 9 16 25 34.9
+```
+
+- `scripts/flamencos/narracion.py`: elige el modelo TTS más nuevo de la cuenta (`/models`), pide toda la narración en
+  una petición con el formato "AUDIO PROFILE / DIRECTOR'S NOTES / TRANSCRIPT" (el estilo no se lee en voz alta), mide la
+  toma, la corta por escenas en las pausas reales y reparte el tiempo para que cuadre en 35 s. Los subtítulos se
+  sincronizan con los núcleos silábicos detectados en la voz.
+- `src/flamencos/data/guion.json`: texto exacto del guion y notas de voz.
+- `src/flamencos/components/`: pizarra y filtros de tiza, flamenco y cría (rig con squash & stretch, ojos, degradado
+  de color que pinta/destiñe, rayos X), camarones, algas, hígado chef, subtítulos.
+- `src/flamencos/scenes/S1..S5.tsx`: una escena por bloque del guion; las transiciones (barridos con desenfoque de
+  movimiento y zoom) están en `src/flamencos/Flamencos.tsx`.
+- Zonas seguras: el contenido importante queda en x ≤ 890 e y ≤ 1500 (20 % inferior y borde derecho libres);
+  subtítulos centrados a y ≈ 1235.

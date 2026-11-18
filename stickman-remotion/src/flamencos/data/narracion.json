@@ -1,0 +1,464 @@
+{
+  "modelo": "gemini-3.8-flash-tts",
+  "voz": "Puck",
+  "ritmo": 0.94,
+  "duracion": 35.0,
+  "finVoz": 32.656,
+  "escenas": [
+    {
+      "id": 1,
+      "texto": "Los flamencos no nacen rosados. ¡Nacen grises! Y tardan años en cambiar.",
+      "audio": "flamencos/voz/escena1.wav",
+      "vozInicio": 0.1,
+      "vozDur": 5.288,
+      "palabras": [
+        {
+          "w": "Los",
+          "start": 0.0,
+          "end": 0.251
+        },
+        {
+          "w": "flamencos",
+          "start": 0.251,
+          "end": 0.974
+        },
+        {
+          "w": "no",
+          "start": 0.974,
+          "end": 1.128
+        },
+        {
+          "w": "nacen",
+          "start": 1.128,
+          "end": 1.576
+        },
+        {
+          "w": "rosados.",
+          "start": 1.576,
+          "end": 2.183
+        },
+        {
+          "w": "¡Nacen",
+          "start": 2.365,
+          "end": 2.83
+        },
+        {
+          "w": "grises!",
+          "start": 2.83,
+          "end": 3.339
+        },
+        {
+          "w": "Y",
+          "start": 3.568,
+          "end": 3.67
+        },
+        {
+          "w": "tardan",
+          "start": 3.67,
+          "end": 4.33
+        },
+        {
+          "w": "años",
+          "start": 4.33,
+          "end": 4.64
+        },
+        {
+          "w": "en",
+          "start": 4.64,
+          "end": 4.83
+        },
+        {
+          "w": "cambiar.",
+          "start": 4.83,
+          "end": 5.288
+        }
+      ],
+      "inicio": 0.0,
+      "fin": 5.788
+    },
+    {
+      "id": 2,
+      "texto": "Su color viene de lo que comen: algas y diminutos camarones llenos de pigmentos llamados carotenoides.",
+      "audio": "flamencos/voz/escena2.wav",
+      "vozInicio": 6.138,
+      "vozDur": 6.449,
+      "palabras": [
+        {
+          "w": "Su",
+          "start": 0.0,
+          "end": 0.2
+        },
+        {
+          "w": "color",
+          "start": 0.2,
+          "end": 0.48
+        },
+        {
+          "w": "viene",
+          "start": 0.48,
+          "end": 0.74
+        },
+        {
+          "w": "de",
+          "start": 0.74,
+          "end": 0.82
+        },
+        {
+          "w": "lo",
+          "start": 0.82,
+          "end": 0.93
+        },
+        {
+          "w": "que",
+          "start": 0.93,
+          "end": 1.07
+        },
+        {
+          "w": "comen:",
+          "start": 1.07,
+          "end": 1.441
+        },
+        {
+          "w": "algas",
+          "start": 1.799,
+          "end": 2.3
+        },
+        {
+          "w": "y",
+          "start": 2.3,
+          "end": 2.449
+        },
+        {
+          "w": "diminutos",
+          "start": 2.449,
+          "end": 3.275
+        },
+        {
+          "w": "camarones",
+          "start": 3.275,
+          "end": 3.882
+        },
+        {
+          "w": "llenos",
+          "start": 3.882,
+          "end": 4.065
+        },
+        {
+          "w": "de",
+          "start": 4.065,
+          "end": 4.185
+        },
+        {
+          "w": "pigmentos",
+          "start": 4.185,
+          "end": 4.651
+        },
+        {
+          "w": "llamados",
+          "start": 4.651,
+          "end": 5.165
+        },
+        {
+          "w": "carotenoides.",
+          "start": 5.165,
+          "end": 6.449
+        }
+      ],
+      "inicio": 5.788,
+      "fin": 12.987
+    },
+    {
+      "id": 3,
+      "texto": "Su hígado transforma esos pigmentos en tonos rosados y naranjas, que se guardan en sus plumas.",
+      "audio": "flamencos/voz/escena3.wav",
+      "vozInicio": 13.337,
+      "vozDur": 4.993,
+      "palabras": [
+        {
+          "w": "Su",
+          "start": 0.0,
+          "end": 0.296
+        },
+        {
+          "w": "hígado",
+          "start": 0.296,
+          "end": 0.709
+        },
+        {
+          "w": "transforma",
+          "start": 0.709,
+          "end": 1.263
+        },
+        {
+          "w": "esos",
+          "start": 1.263,
+          "end": 1.566
+        },
+        {
+          "w": "pigmentos",
+          "start": 1.566,
+          "end": 1.976
+        },
+        {
+          "w": "en",
+          "start": 1.976,
+          "end": 2.104
+        },
+        {
+          "w": "tonos",
+          "start": 2.104,
+          "end": 2.33
+        },
+        {
+          "w": "rosados",
+          "start": 2.33,
+          "end": 2.819
+        },
+        {
+          "w": "y",
+          "start": 2.819,
+          "end": 3.037
+        },
+        {
+          "w": "naranjas,",
+          "start": 3.037,
+          "end": 3.727
+        },
+        {
+          "w": "que",
+          "start": 3.828,
+          "end": 3.893
+        },
+        {
+          "w": "se",
+          "start": 3.893,
+          "end": 4.003
+        },
+        {
+          "w": "guardan",
+          "start": 4.003,
+          "end": 4.294
+        },
+        {
+          "w": "en",
+          "start": 4.294,
+          "end": 4.48
+        },
+        {
+          "w": "sus",
+          "start": 4.48,
+          "end": 4.644
+        },
+        {
+          "w": "plumas.",
+          "start": 4.644,
+          "end": 4.993
+        }
+      ],
+      "inicio": 12.987,
+      "fin": 18.73
+    },
+    {
+      "id": 4,
+      "texto": "Y los padres alimentan a las crías con una leche rojiza que ellos mismos producen. Por eso, criar los deja pálidos.",
+      "audio": "flamencos/voz/escena4.wav",
+      "vozInicio": 19.08,
+      "vozDur": 7.161,
+      "palabras": [
+        {
+          "w": "Y",
+          "start": 0.0,
+          "end": 0.073
+        },
+        {
+          "w": "los",
+          "start": 0.073,
+          "end": 0.293
+        },
+        {
+          "w": "padres",
+          "start": 0.293,
+          "end": 0.609
+        },
+        {
+          "w": "alimentan",
+          "start": 0.609,
+          "end": 1.081
+        },
+        {
+          "w": "a",
+          "start": 1.081,
+          "end": 1.17
+        },
+        {
+          "w": "las",
+          "start": 1.17,
+          "end": 1.321
+        },
+        {
+          "w": "crías",
+          "start": 1.321,
+          "end": 1.863
+        },
+        {
+          "w": "con",
+          "start": 1.863,
+          "end": 1.974
+        },
+        {
+          "w": "una",
+          "start": 1.974,
+          "end": 2.258
+        },
+        {
+          "w": "leche",
+          "start": 2.258,
+          "end": 2.6
+        },
+        {
+          "w": "rojiza",
+          "start": 2.6,
+          "end": 3.12
+        },
+        {
+          "w": "que",
+          "start": 3.12,
+          "end": 3.312
+        },
+        {
+          "w": "ellos",
+          "start": 3.312,
+          "end": 3.575
+        },
+        {
+          "w": "mismos",
+          "start": 3.575,
+          "end": 3.998
+        },
+        {
+          "w": "producen.",
+          "start": 3.998,
+          "end": 4.775
+        },
+        {
+          "w": "Por",
+          "start": 5.0,
+          "end": 5.06
+        },
+        {
+          "w": "eso,",
+          "start": 5.06,
+          "end": 5.66
+        },
+        {
+          "w": "criar",
+          "start": 5.66,
+          "end": 5.85
+        },
+        {
+          "w": "los",
+          "start": 5.85,
+          "end": 6.02
+        },
+        {
+          "w": "deja",
+          "start": 6.02,
+          "end": 6.49
+        },
+        {
+          "w": "pálidos.",
+          "start": 6.49,
+          "end": 7.161
+        }
+      ],
+      "inicio": 18.73,
+      "fin": 26.641
+    },
+    {
+      "id": 5,
+      "texto": "Sin esa dieta, hasta un flamenco adulto se vuelve blanco. Eres lo que comes... literalmente.",
+      "audio": "flamencos/voz/escena5.wav",
+      "vozInicio": 26.991,
+      "vozDur": 5.665,
+      "palabras": [
+        {
+          "w": "Sin",
+          "start": 0.0,
+          "end": 0.263
+        },
+        {
+          "w": "esa",
+          "start": 0.263,
+          "end": 0.49
+        },
+        {
+          "w": "dieta,",
+          "start": 0.49,
+          "end": 0.729
+        },
+        {
+          "w": "hasta",
+          "start": 0.858,
+          "end": 1.189
+        },
+        {
+          "w": "un",
+          "start": 1.189,
+          "end": 1.33
+        },
+        {
+          "w": "flamenco",
+          "start": 1.33,
+          "end": 1.716
+        },
+        {
+          "w": "adulto",
+          "start": 1.716,
+          "end": 2.172
+        },
+        {
+          "w": "se",
+          "start": 2.172,
+          "end": 2.29
+        },
+        {
+          "w": "vuelve",
+          "start": 2.29,
+          "end": 2.516
+        },
+        {
+          "w": "blanco.",
+          "start": 2.516,
+          "end": 2.786
+        },
+        {
+          "w": "Eres",
+          "start": 3.349,
+          "end": 3.63
+        },
+        {
+          "w": "lo",
+          "start": 3.63,
+          "end": 3.75
+        },
+        {
+          "w": "que",
+          "start": 3.75,
+          "end": 3.92
+        },
+        {
+          "w": "comes...",
+          "start": 3.92,
+          "end": 4.317
+        },
+        {
+          "w": "literalmente.",
+          "start": 4.623,
+          "end": 5.665
+        }
+      ],
+      "inicio": 26.641,
+      "fin": 35.0
+    }
+  ]
+}
