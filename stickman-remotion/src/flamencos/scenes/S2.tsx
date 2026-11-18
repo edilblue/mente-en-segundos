@@ -90,10 +90,10 @@ export const S2: React.FC<{t: number}> = ({t}) => {
   const algas = [0, 1, 2, 3, 4].map((i) => ({t0: tAlgas - 0.3 + i * 0.32, y0: [560, 930, 700, 1000, 820][i], seed: i}));
   // camarones: entran nadando hasta su sitio, forcejean contra la corriente y el pico los traga en el ¡ÑAM!
   const camarones = [
-    {x: 720, y: 455, t0: tCam - 0.35},
-    {x: 790, y: 640, t0: tCam - 0.15},
-    {x: 705, y: 820, t0: tCam + 0.05},
-    {x: 790, y: 1000, t0: tCam + 0.25},
+    {x: 730, y: 400, t0: tCam - 0.35},
+    {x: 770, y: 600, t0: tCam - 0.15},
+    {x: 770, y: 800, t0: tCam + 0.05},
+    {x: 730, y: 1000, t0: tCam + 0.25},
   ];
   const pig = clamp(spr(t, tPig, 2.5, 5));
   return (
@@ -134,15 +134,15 @@ export const S2: React.FC<{t: number}> = ({t}) => {
         if (inK <= 0) return null;
         const suck = ease.in(clamp((t - (gulpT - 0.25 + i * 0.03)) / 0.3));
         if (suck >= 1) return null;
-        const x0 = lerp(1180, c.x, inK) + Math.sin(t * 4 + i) * 12;
+        const x0 = lerp(1180, c.x, inK) + Math.sin(t * 4 + i) * 8;
         const y0 = c.y + Math.sin(t * 3 + i * 2) * 10;
         const x = lerp(x0, MOUTH.x + 30, suck);
         const y = lerp(y0, MOUTH.y, suck);
-        const sc = 1.4 * (1 - 0.8 * suck);
+        const sc = 1.15 * (1 - 0.8 * suck);
         return (
           <g key={i}>
             <Shrimp x={x} y={y} s={sc} t={t} seed={i + 10} flip fear={0.6 + 0.4 * inK} rot={Math.sin(t * 8 + i) * 8 - 20 * suck} />
-            <Pigment x={x - 8 * sc} y={y - 78 * sc} r={(12 + 6 * pig) * (sc / 1.4)} t={t} seed={i} ring={t > tPig ? ((t - tPig + i * 0.17) % 0.8) / 0.8 : 0} />
+            <Pigment x={x - 8 * sc} y={y - 78 * sc} r={(12 + 6 * pig) * (sc / 1.15)} t={t} seed={i} ring={t > tPig ? ((t - tPig + i * 0.17) % 0.8) / 0.8 : 0} />
             <g transform={`translate(${x - 8 * sc},${y - 118 * sc}) scale(${clamp(spr(t, tCaro - 0.05 + i * 0.07, 3, 6)) * (1 - suck)})`}>
               <text textAnchor="middle" fontFamily='"Cabin Sketch", sans-serif' fontWeight={700} fontSize={36} fill={P.orange} stroke="#0d1311" strokeWidth={8} style={{paintOrder: 'stroke'}}>
                 carotenoides

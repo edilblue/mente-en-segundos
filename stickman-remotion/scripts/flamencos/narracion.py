@@ -283,6 +283,14 @@ def alinear(texto, path):
             continue
         res += repartir(words[desde : i + 1], t, s[0], picos)
         desde, t, ult = i + 1, s[1], s[0]
+    # ninguna palabra empieza dentro de una pausa (p. ej. la pausa dramática antes de "carotenoides")
+    for k in range(1, len(res)):
+        for s0, s1 in internas:
+            if s0 - 0.06 <= res[k]["start"] < s1:
+                res[k]["start"] = round(s1 - 0.02, 3)
+                res[k - 1]["end"] = round(min(res[k - 1]["end"], s0), 3)
+                if res[k]["end"] <= res[k]["start"]:
+                    res[k]["end"] = round(res[k]["start"] + 0.1, 3)
     return res
 
 

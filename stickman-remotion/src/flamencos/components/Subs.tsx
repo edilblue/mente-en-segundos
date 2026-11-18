@@ -86,7 +86,7 @@ export const Subs: React.FC<{y?: number}> = ({y = 1235}) => {
             style={{
               fontFamily: FONT_SUB,
               fontSize: w.color ? 106 : 94,
-              margin: '0 6px',
+              margin: w.color ? '0 18px' : '0 6px',
               color: w.color ?? P.chalk,
               WebkitTextStroke: '16px #0d1311',
               paintOrder: 'stroke fill',
